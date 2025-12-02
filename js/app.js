@@ -23,6 +23,9 @@ const landingScreenEl = document.getElementById("landingScreen");
 const landingTitleEl = document.getElementById("landingTitle");
 const startMissionBtnEl = document.getElementById("startMissionBtn");
 const backBtnEl = document.getElementById("backBtn");
+const puzzleTriggerEl = document.getElementById("puzzleTrigger");
+const puzzleTriggerTextEl = document.getElementById("puzzleTriggerText");
+const puzzleAcceptBtnEl = document.getElementById("puzzleAcceptBtn");
 
 let scenes = {};
 let agents = {};
@@ -35,15 +38,18 @@ let sceneHistory = [];
 let initialSceneId = "intro";
 let dataReady = false;
 let pendingStart = false;
+let pendingPuzzle = null;
 
 const gameConfig = {
   showBackButton: true,
   showSceneIdInHeader: true,
-  showLanding: true
+  showLanding: false
 };
 
 const puzzleManager = createPuzzleManager({
-  panel: document.getElementById("puzzlePanel"),
+  modal: document.getElementById("puzzleModal"),
+  backdrop: document.getElementById("puzzleModalBackdrop"),
+  closeBtn: document.getElementById("puzzleModalClose"),
   title: document.getElementById("puzzleTitle"),
   hint: document.getElementById("puzzleHint"),
   description: document.getElementById("puzzleDescription"),
@@ -56,6 +62,14 @@ const puzzleManager = createPuzzleManager({
 
 function agentNameValue() {
   return currentAgent?.name || "Agente";
+}
+
+function applyLandingVisibility() {
+  if (!gameConfig.showLanding) {
+    landingScreenEl.style.display = "none";
+  } else if (!missionStarted) {
+    landingScreenEl.style.display = "flex";
+  }
 }
 
 function injectAgentName(text) {
@@ -197,6 +211,10 @@ function renderScene(id) {
     sceneImageEl.style.visibility = "hidden";
   }
 
+  pendingPuzzle = null;
+  puzzleManager.hide();
+  puzzleTriggerEl.style.display = "none";
+
   if (scene.puzzle) {
     const puzzleConfig = scene.puzzle;
     const fallback = puzzleConfig.id ? puzzles[puzzleConfig.id] : null;
@@ -207,12 +225,10 @@ function renderScene(id) {
           data: { ...(fallback.data || {}), ...(puzzleConfig.data || {}) }
         }
       : puzzleConfig;
-    puzzleManager.render(id, mergedConfig, nextScene => {
-      sceneHistory.push(id);
-      renderScene(nextScene);
-    });
-  } else {
-    puzzleManager.hide();
+    pendingPuzzle = { sceneId: id, config: mergedConfig };
+    puzzleTriggerEl.style.display = "flex";
+    puzzleTriggerTextEl.textContent =
+      mergedConfig.title || "Reto activo: resuélvelo para continuar";
   }
 
   (scene.choices || []).forEach(choice => {
@@ -246,7 +262,7 @@ async function init() {
       loadJson("data/story.json"),
       loadJson("data/puzzles.json")
     ]);
-    agents = agentsData.agents || {};
+    agents = agentsData.agents || agentsData || {};
     scenes = storyData.scenes || {};
     puzzles = puzzlesData.puzzles || {};
     startSceneId = storyData.meta?.start || "intro";
@@ -258,6 +274,7 @@ async function init() {
     if (!gameConfig.showBackButton) {
       backBtnEl.style.display = "none";
     }
+    applyLandingVisibility();
     dataReady = true;
     if (!gameConfig.showLanding) {
       startMission();
@@ -278,9 +295,7 @@ function startMission() {
     return;
   }
   missionStarted = true;
-  if (gameConfig.showLanding) {
-    landingScreenEl.style.display = "none";
-  }
+  applyLandingVisibility();
   sceneHistory = [];
   renderScene(initialSceneId);
 }
@@ -311,6 +326,14 @@ agentAvatarBtnEl.addEventListener("click", openAgentModal);
 agentModalCloseEl.addEventListener("click", closeAgentModal);
 agentModalBackdropEl.addEventListener("click", closeAgentModal);
 startMissionBtnEl.addEventListener("click", startMission);
+puzzleAcceptBtnEl.addEventListener("click", () => {
+  if (!pendingPuzzle) return;
+  const { sceneId, config } = pendingPuzzle;
+  puzzleManager.render(sceneId, config, nextScene => {
+    sceneHistory.push(sceneId);
+    renderScene(nextScene);
+  });
+});
 
 document.addEventListener("DOMContentLoaded", init);
 

@@ -56,19 +56,9 @@
             </div>
           </div>
           <div class="story" id="story"></div>
-          <div class="puzzle-panel" id="puzzlePanel">
-            <div class="puzzle-header">
-              <div class="puzzle-title" id="puzzleTitle">Reto activo</div>
-              <div class="puzzle-hint" id="puzzleHint"></div>
-            </div>
-            <div class="puzzle-description" id="puzzleDescription"></div>
-            <div class="puzzle-content" id="puzzleContent"></div>
-            <div class="puzzle-actions">
-              <button class="puzzle-btn" id="puzzleCheckBtn">Comprobar</button>
-              <button class="puzzle-btn ghost" id="puzzleResetBtn">Reiniciar</button>
-              <button class="puzzle-btn success" id="puzzleContinueBtn">Continuar</button>
-            </div>
-            <div class="puzzle-message" id="puzzleMessage"></div>
+          <div class="puzzle-trigger" id="puzzleTrigger" style="display: none;">
+            <div class="puzzle-trigger__text" id="puzzleTriggerText">Reto disponible</div>
+            <button class="puzzle-btn" id="puzzleAcceptBtn">Aceptar reto</button>
           </div>
           <div class="choices" id="choices"></div>
         </div>
@@ -97,6 +87,27 @@
         <div class="agent-qualities" id="agentModalQualities"></div>
         <div class="agent-item" id="agentModalItem"></div>
       </div>
+    </div>
+  </div>
+
+  <div class="puzzle-modal" id="puzzleModal" aria-hidden="true">
+    <div class="puzzle-modal__backdrop" id="puzzleModalBackdrop"></div>
+    <div class="puzzle-modal__content" role="dialog" aria-modal="true">
+      <div class="puzzle-modal__header">
+        <div>
+          <div class="puzzle-title" id="puzzleTitle">Reto activo</div>
+          <div class="puzzle-hint" id="puzzleHint"></div>
+        </div>
+        <button class="puzzle-modal__close" id="puzzleModalClose" aria-label="Cerrar">×</button>
+      </div>
+      <div class="puzzle-description" id="puzzleDescription"></div>
+      <div class="puzzle-content" id="puzzleContent"></div>
+      <div class="puzzle-actions">
+        <button class="puzzle-btn" id="puzzleCheckBtn">Comprobar</button>
+        <button class="puzzle-btn ghost" id="puzzleResetBtn">Reiniciar</button>
+        <button class="puzzle-btn success" id="puzzleContinueBtn">Continuar</button>
+      </div>
+      <div class="puzzle-message" id="puzzleMessage"></div>
     </div>
   </div>
 </body>

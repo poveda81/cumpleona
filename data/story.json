@@ -272,14 +272,34 @@
         },
         "successNext": "casa_altillo_viga",
         "failText": "Colocáis las palabras, pero no pasa nada. El suelo del altillo sigue en silencio; quizá ese no es el orden correcto."
-      },
-      "choices": [
-        {
-          "text": "➤ Continuar cuando tengáis el código correcto.",
-          "next": "casa_altillo_viga"
-        }
-      ]
+      }
     },
+
+
+"casa_jardin_jigsaw": {
+  "datetime": "2026-01-02 18:33",
+  "place": "Casa de Ona – Jardín",
+  "characters": ["ona", "agent", "lina"],
+  "ending": false,
+  "textLines": [
+    "En el jardín, cerca del símbolo del suelo, encontráis una foto rota en varios trozos. Parece la imagen del mismo símbolo, pero partida como si alguien hubiera intentado borrar la pista.",
+    "Ona coloca los trozos sobre una piedra plana y dice que si conseguís recomponer la imagen quizá el Portal 27 muestre su forma completa y se deje estudiar mejor.",
+    "Sabes que tendrás que ordenar las piezas como si fuera un rompecabezas para ver el símbolo tal y como era al principio."
+  ],
+  "puzzle": {
+    "type": "jigsaw",
+    "id": "jardin_rompecabezas_simbolo",
+    "data": {
+      "image": "img/puzzles/demogorgon.jpg",
+      "rows": 3,
+      "cols": 3,
+      "pieces": 9,
+      "hint": "Piensa en cómo encajarías las esquinas y los bordes de una foto normal antes de completar el centro."
+    },
+    "successNext": "casa_jardin_simbolo",
+    "failText": "Colocáis las piezas una y otra vez, pero la imagen no termina de encajar. El símbolo parece seguir roto y el jardín se queda en silencio."
+  }
+},  
 
     "casa_altillo_viga": {
       "datetime": "2026-01-02 18:20",
@@ -336,6 +356,10 @@
   ],
   "choices": [
     {
+  "text": "➤ Intentar descifrar el patrón de luces que acabáis de ver.",
+  "next": "casa_luces_pattern"
+},
+    {
       "text": "➤ Guardar el código como pista para la vuelta al cole.",
       "next": "espera_hasta_vuelta_cole"
     },
@@ -344,6 +368,28 @@
       "next": "casa_jardin_linternas"
     }
   ]
+},
+
+"casa_luces_pattern": {
+  "datetime": "2026-01-02 18:27",
+  "place": "Casa de Ona – Salón",
+  "characters": ["ona", "agent", "familia"],
+  "ending": false,
+  "textLines": [
+    "Después de que las luces del salón parpadeen con ese patrón extraño, tú y Ona volvéis a encender la tablet para ver de nuevo la foto del símbolo y pensar con calma.",
+    "Ona está segura de que el parpadeo no fue un fallo eléctrico, sino un mensaje del mismo lugar que enviaba señales en Super Jump y en el pabellón del cole.",
+    "Te pide que intentéis reproducir la secuencia exacta tocando los botones de luz que tenéis delante, porque quizá el Portal 27 solo responde si repetís el patrón de forma correcta."
+  ],
+  "puzzle": {
+    "type": "pattern",
+    "id": "patron_luces_salon",
+    "data": {
+      "sequence": ["verde", "amarillo", "amarillo", "rojo", "azul", "verde"],
+      "hint": "Piensa en cómo parpadearon las luces la primera vez."
+    },
+    "successNext": "casa_jardin_linternas",
+    "failText": "Las luces del salón no responden a vuestra secuencia. Quizá no es exactamente así como parpadearon antes."
+  }
 },
 
     "casa_jardin": {
