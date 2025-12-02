@@ -1,0 +1,119 @@
+flowchart TD
+
+  %% --- Inicio Super Jump (27 diciembre) ---
+  intro["intro<br>Super Jump · 27/12 11:20"]
+  ninja_simbolo["ninja_simbolo<br>Zona Ninja"]
+  superjump_tarta["superjump_tarta<br>Tarta y regalos"]
+  superjump_monitor["superjump_monitor<br>Hablar con el monitor"]
+  superjump_ignorar["superjump_ignorar<br>FINAL · Misterio ignorado"]
+
+  intro -->|"Investigar símbolo"| ninja_simbolo
+  intro -->|"Seguir saltando"| superjump_ignorar
+
+  ninja_simbolo -->|"Guardar pistas para luego"| superjump_tarta
+  ninja_simbolo -->|"Llamar al monitor"| superjump_monitor
+
+  superjump_monitor -->|"Volver a la fiesta"| superjump_tarta
+
+  superjump_tarta -->|"No pensar más en ello"| superjump_ignorar
+  superjump_tarta -->|"Prometer investigar tras fiestas"| tiempo_pasa_hasta_casa
+
+  %% --- Vacaciones hasta casa de Ona (2 enero) ---
+  tiempo_pasa_hasta_casa["tiempo_pasa_hasta_casa<br>Vacaciones hasta 2/01"]
+  casa_llegada["casa_llegada<br>Casa de Ona · 2/01"]
+  casa_altillo["casa_altillo<br>Altillo"]
+  casa_altillo_viga["casa_altillo_viga<br>Mensaje en la viga"]
+  casa_salon_luces["casa_salon_luces<br>Luces en el salón"]
+  casa_jardin["casa_jardin<br>Jardín y pinos"]
+  casa_jardin_simbolo["casa_jardin_simbolo<br>Símbolo en el jardín"]
+  casa_jardin_linternas["casa_jardin_linternas<br>FINAL · Mensaje de luz"]
+  final_lina_guardiana["final_lina_guardiana<br>FINAL · Lina guardiana"]
+
+  tiempo_pasa_hasta_casa --> casa_llegada
+
+  casa_llegada -->|"Altillo laboratorio"| casa_altillo
+  casa_llegada -->|"Seguir a Lina al jardín"| casa_jardin
+
+  casa_altillo -->|"Leer la viga"| casa_altillo_viga
+  casa_altillo -->|"Bajar al salón"| casa_salon_luces
+
+  casa_altillo_viga -->|"Planear investigar el cole (8/01)"| espera_hasta_vuelta_cole
+  casa_altillo_viga -->|"Mirar el jardín"| casa_jardin
+  casa_altillo_viga -->|"Pensar en la cabalgata"| anticipar_cabalgata
+
+  casa_salon_luces -->|"Guardar código para el cole"| espera_hasta_vuelta_cole
+  casa_salon_luces -->|"Responder con linternas"| casa_jardin_linternas
+
+  casa_jardin -->|"Examinar símbolo"| casa_jardin_simbolo
+  casa_jardin -->|"Volver al altillo"| casa_altillo
+
+  casa_jardin_simbolo -->|"Esperar a la vuelta al cole"| espera_hasta_vuelta_cole
+  casa_jardin_simbolo -->|"Cerrar símbolo con tiza"| final_lina_guardiana
+
+  casa_jardin_linternas -->|"Reinvestigar el cole"| cole_entrada
+  final_lina_guardiana -->|"Seguir pista al cole"| cole_entrada
+
+  %% --- Cabalgata Reyes (5 enero) ---
+  anticipar_cabalgata["anticipar_cabalgata<br>Plan cabalgata 5/01"]
+  cabalgata_reyes["cabalgata_reyes<br>Cabalgata de Reyes"]
+  cabalgata_senal["cabalgata_senal<br>Foto del símbolo en carroza"]
+  final_cabalgata_ignorar["final_cabalgata_ignorar<br>FINAL · Cabalgata tranquila"]
+
+  anticipar_cabalgata -->|"Esperar a la cabalgata"| cabalgata_reyes
+  anticipar_cabalgata -->|"Dejar decidido que investigaréis el cole"| espera_hasta_vuelta_cole
+
+  cabalgata_reyes -->|"Hacer foto del símbolo"| cabalgata_senal
+  cabalgata_reyes -->|"Disfrutar sin investigar"| final_cabalgata_ignorar
+
+  cabalgata_senal -->|"Guardar pista para el cole"| espera_hasta_vuelta_cole
+  final_cabalgata_ignorar -->|"Investigar cole después"| cole_entrada
+
+  %% --- Espera hasta vuelta al cole (8 enero) ---
+  espera_hasta_vuelta_cole["espera_hasta_vuelta_cole<br>Camino al cole · 8/01"]
+  espera_hasta_vuelta_cole --> cole_entrada
+
+  %% --- Colegio Sagrada Familia (8 enero) ---
+  cole_entrada["cole_entrada<br>Entrada del cole"]
+  cole_recepcion["cole_recepcion<br>Recepción con Julia"]
+  cole_campos["cole_campos<br>Campos de fútbol"]
+  cole_campos_foto["cole_campos_foto<br>Foto desde la grada"]
+  cole_pabellon["cole_pabellon<br>Pabellón deportivo"]
+  cole_enfermeria["cole_enfermeria<br>Enfermería con Gloria"]
+  cole_laboratorio["cole_laboratorio<br>Laboratorio"]
+  cole_laboratorio_walkie["cole_laboratorio_walkie<br>Laboratorio + walkie"]
+
+  final_heroe_laboratorio["final_heroe_laboratorio<br>FINAL · Héroes del laboratorio"]
+  final_misterio_abierto["final_misterio_abierto<br>FINAL · Caso abierto"]
+  final_acuerdo_luces["final_acuerdo_luces<br>FINAL · Acuerdo de luces"]
+  final_cortar_lab["final_cortar_lab<br>FINAL · Conexión cortada"]
+
+  cole_entrada -->|"Hablar con Julia"| cole_recepcion
+  cole_entrada -->|"Ir a los campos"| cole_campos
+
+  cole_recepcion -->|"Ir al laboratorio"| cole_laboratorio
+  cole_recepcion -->|"Ir a los campos"| cole_campos
+
+  cole_campos -->|"Foto desde la grada"| cole_campos_foto
+  cole_campos -->|"Ir al pabellón"| cole_pabellon
+
+  cole_campos_foto -->|"Seguir la pista al laboratorio"| cole_laboratorio
+  cole_campos_foto -->|"Pasar antes por enfermería"| cole_enfermeria
+
+  cole_pabellon -->|"Ir al laboratorio"| cole_laboratorio
+  cole_pabellon -->|"Ir a enfermería"| cole_enfermeria
+
+  cole_enfermeria -->|"Aceptar walkie e ir al lab"| cole_laboratorio_walkie
+  cole_enfermeria -->|"Ir al lab sin walkie"| cole_laboratorio
+
+  cole_laboratorio -->|"Cerrar portal con imaginación"| final_heroe_laboratorio
+  cole_laboratorio -->|"Dejar el caso abierto"| final_misterio_abierto
+
+  cole_laboratorio_walkie -->|"Pedir que cierren desde su lado"| final_acuerdo_luces
+  cole_laboratorio_walkie -->|"Cortar conexión apagando todo"| final_cortar_lab
+
+  %% --- Loops de re-juego desde finales ---
+  superjump_ignorar -->|"Reintentar como agente de verdad"| intro
+  casa_jardin_linternas -->|"Reinvestigar el cole"| cole_entrada
+  final_lina_guardiana -->|"Seguir pista al cole"| cole_entrada
+  final_cabalgata_ignorar -->|"Ir al cole"| cole_entrada
+

@@ -1,0 +1,1022 @@
+{
+  "meta": {
+    "version": 4,
+    "start": "intro"
+  },
+  "scenes": {
+    "intro": {
+      "datetime": "2025-12-27 11:20",
+      "place": "Super Jump Villena",
+      "characters": ["ona", "agent", "amigos", "monitor"],
+      "ending": false,
+      "textLines": [
+        "Es el noveno cumpleaños de Ona en el Super Jump de Villena.",
+        "Tú y el resto de amigos saltáis de cama en cama, persiguiéndoos entre bolas de colores.",
+        "",
+        "De repente, las luces del techo parpadean tres veces, muy seguidas.",
+        "No es un simple destello: parece casi un patrón.",
+        "",
+        "Un monitor dice que es \"un fallo del sistema\", pero Ona te mira",
+        "con esa cara de: «Esto no es normal y lo sabes».",
+        "",
+        "En una esquina, cerca de la zona Ninja, tú ves algo raro en el suelo:",
+        "un símbolo rojo pintado, como un círculo con líneas torcidas.",
+        "No parece parte de la decoración.",
+        "",
+        "Cuando os acercáis, Ona encuentra un papelito arrugado pegado",
+        "debajo de vuestra mesa de cumpleaños.",
+        "",
+        "En el papel pone, con letra temblorosa:",
+        "  \"27/12 – 11:20",
+        "   COMIENZA.\"",
+        "",
+        "Ona levanta la vista:",
+        "—Esto no es un fallo cualquiera."
+      ],
+      "choices": [
+        {
+          "text": "➤ Investigar el símbolo rojo en la zona Ninja con Ona.",
+          "next": "ninja_simbolo"
+        },
+        {
+          "text": "➤ Hacer como si nada y seguir saltando hasta la hora de la tarta.",
+          "next": "superjump_ignorar"
+        }
+      ]
+    },
+
+"ninja_simbolo": {
+  "datetime": "2025-12-27 11:35",
+  "place": "Super Jump Villena – Zona Ninja",
+  "characters": ["ona", "agent", "monitor"],
+  "ending": false,
+  "textLines": [
+    "Tú y Ona os acercáis al símbolo rojo. De cerca, parece hecho con algo que no es pintura normal: brilla un poco, como si estuviera húmedo, pero al tocarlo está frío.",
+    "Cuando pasas la mano por encima, sin llegar a tocarlo, notas un cosquilleo raro, como cuando te acercas a una tele antigua cargada de electricidad.",
+    "Llamáis a la madre de Ona y ella se acerca y hace una foto con su móvil para que quede registrada. Cuando miráis la imagen en la pantalla, el símbolo parece más grande que en el suelo… y detrás de vosotros hay una sombra que no reconocéis.",
+    "De pronto, las luces vuelven a parpadear. Tres cortos, uno largo."
+  ],
+  "choices": [
+    {
+      "text": "➤ Guardar la foto y el papelito para investigar más tarde en casa.",
+      "next": "superjump_tarta"
+    },
+    {
+      "text": "➤ Llamar al monitor y enseñarle el símbolo y la foto.",
+      "next": "superjump_monitor"
+    }
+  ]
+},
+
+    "superjump_tarta": {
+      "datetime": "2025-12-27 12:45",
+      "place": "Super Jump Villena",
+      "characters": ["ona", "agent", "amigos", "monitor"],
+      "ending": false,
+      "textLines": [
+        "Llega la hora más importante: la tarta.",
+        "Apagan las luces, todos cantáis cumpleaños feliz y Ona pide su deseo.",
+        "",
+        "Guardas el papelito y la foto en el bolsillo como si fueran",
+        "ultrasecretos de un laboratorio secreto.",
+        "",
+        "Cuando Ona sopla las velas, las luces del Super Jump se encienden",
+        "y se apagan solas una vez más, justo detrás de vosotros.",
+        "",
+        "Nadie parece fijarse salvo Ona y tú.",
+        "",
+        "Después vienen los regalos, risas y más saltos.",
+        "Por fuera, es un cumple normal.",
+        "Por dentro, sabes que algo empezó hoy a las 11:20."
+      ],
+      "choices": [
+        {
+          "text": "➤ Decidir que es solo un día raro y no pensar más en ello.",
+          "next": "superjump_ignorar"
+        },
+        {
+          "text": "➤ Prometer a Ona investigar juntos lo del símbolo en cuanto pasen las fiestas.",
+          "next": "tiempo_pasa_hasta_casa"
+        }
+      ]
+    },
+
+"superjump_monitor": {
+  "datetime": "2025-12-27 11:45",
+  "place": "Super Jump Villena – Zona Ninja",
+  "characters": ["ona", "agent", "monitor"],
+  "ending": false,
+  "textLines": [
+    "Tú y Ona llamáis a un monitor y le enseñáis el símbolo y la foto.",
+    "Él frunce el ceño, mira al suelo y luego la pantalla donde se ve la foto.",
+    "—Debe de ser alguna broma de otro turno —dice—. Lo del parpadeo de luces es normal, a veces el sistema se reinicia.",
+    "Os promete que limpiarán el símbolo y revisarán la instalación.",
+    "Pero cuando mira la foto de la sombra detrás de vosotros, se queda medio segundo demasiado serio. Luego sonríe rápido y os guiña un ojo.",
+    "—Tranquilos, agentes… digo, chicos. Si pasa algo raro, os avisamos.",
+    "Nunca llama. Pero sientes que no era una sonrisa del todo tranquila."
+  ],
+  "choices": [
+    {
+      "text": "➤ Volver a la fiesta, pero guardando la foto y el papel para más tarde.",
+      "next": "superjump_tarta"
+    }
+  ]
+},
+
+    "superjump_ignorar": {
+      "datetime": "2025-12-27 13:00",
+      "place": "Super Jump Villena",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": true,
+      "itemsGained": ["recuerdo_superjump"],
+      "textLines": [
+        "Decides no preocuparte por el símbolo ni por las luces.",
+        "Al fin y al cabo, hoy es el cumple de Ona y habéis venido a saltar.",
+        "",
+        "La fiesta sigue: tarta, risas, más regalos y fotos divertidas.",
+        "Cuando os vais, alguien limpia la zona Ninja con una fregona.",
+        "El símbolo desaparece con un par de pasadas.",
+        "",
+        "Los días siguientes llegan las comidas familiares, los juegos",
+        "y las vacaciones siguen su curso.",
+        "",
+        "Aun así, a veces, justo antes de dormir,",
+        "recuerdas el brillo rojo del suelo y el papelito arrugado.",
+        "",
+        "Has ganado un objeto de recuerdo en tu inventario:",
+        "«recuerdo_superjump».",
+        "",
+        "FINAL SIMPLE: Misterio ignorado.",
+        "El Portal 27 sigue sin vigilar… de momento."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver al inicio y tomártelo en serio como agente.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "tiempo_pasa_hasta_casa": {
+      "datetime": "2026-01-02 17:30",
+      "place": "Varios días de vacaciones",
+      "characters": ["ona", "agent", "familia"],
+      "ending": false,
+      "textLines": [
+        "Pasan los días de vacaciones: comidas familiares, juegos, pelis en el sofá,",
+        "algún rato de consola y tardes tranquilas.",
+        "",
+        "A veces, las luces parpadean una vez en tu casa o en casa de Ona,",
+        "pero los mayores siempre dicen que es \"electricidad\".",
+        "",
+        "El papelito del Super Jump y la foto del símbolo siguen guardados",
+        "como un secreto compartido entre tú y Ona.",
+        "",
+        "El 2 de enero, por la tarde, Ona te llama:",
+        "",
+        "—¿Te acuerdas de lo que pasó en el cumple?",
+        "  Hoy tengo un presentimiento raro.",
+        "  ¿Te vienes a casa a investigar de verdad?"
+      ],
+      "choices": [
+        {
+          "text": "➤ Ir a casa de Ona para investigar juntos.",
+          "next": "casa_llegada"
+        }
+      ]
+    },
+
+    "casa_llegada": {
+      "datetime": "2026-01-02 18:00",
+      "place": "Casa de Ona – Exterior",
+      "characters": ["ona", "agent", "lina", "familia"],
+      "ending": false,
+      "textLines": [
+        "Llegas a la casa de Ona, en Caprala.",
+        "El cielo sobre el bosque de pinos está anaranjado y el aire huele",
+        "a campo y a madera húmeda.",
+        "",
+        "El jardín enorme os recibe como siempre: la piscina tranquila,",
+        "la zona de barbacoa silenciosa y el gallinero medio alborotado.",
+        "",
+        "Lina corre hacia vosotros moviendo el rabito, pero de pronto se para en seco",
+        "y se queda mirando fijamente hacia la zona del bosque, muy quieta.",
+        "",
+        "El papelito del Super Jump y la foto del símbolo vuelven a salir del bolsillo.",
+        "El misterio del Portal 27 sigue abierto."
+      ],
+      "choices": [
+        {
+          "text": "➤ Subir al altillo de la habitación de Ona para montar un \"laboratorio\".",
+          "next": "casa_altillo"
+        },
+        {
+          "text": "➤ Investigar el jardín y la zona de los pinos siguiendo a Lina.",
+          "next": "casa_jardin"
+        }
+      ]
+    },
+
+    "casa_altillo": {
+      "datetime": "2026-01-02 18:15",
+      "place": "Casa de Ona – Altillo de la habitación",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Subís al altillo de la habitación, vuestro lugar secreto.",
+        "Hay cajas, cojines, juguetes viejos y una linterna olvidada.",
+        "",
+        "Convertís el altillo en un mini laboratorio:",
+        "ponéis el papelito del Super Jump, la foto del símbolo y un cuaderno.",
+        "",
+        "Cuando dejáis la foto encima del suelo de madera, durante un segundo",
+        "parece que el símbolo de la imagen brilla… y el altillo se siente",
+        "un poco más frío.",
+        "",
+        "De repente, la linterna se enciende sola y apunta a una viga del techo.",
+        "Hay algo escrito con lápiz: un número y un dibujo."
+      ],
+      "choices": [
+        {
+          "text": "➤ Acercarte a leer lo que pone en la viga.",
+          "next": "casa_altillo_viga"
+        },
+        {
+          "text": "➤ Hacer una foto rápida y bajar al salón a ver si las luces hacen algo raro.",
+          "next": "casa_salon_luces"
+        },
+        {
+          "text": "➤ Intentar ordenar las tarjetas para descubrir el código escondido.",
+          "next": "casa_altillo_reto_orden"
+        }
+      ]
+    },
+
+    "casa_altillo_reto_orden": {
+      "datetime": "2026-01-02 18:18",
+      "place": "Casa de Ona – Altillo de la habitación",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "En el altillo, encima de una caja vieja, encontráis varias tarjetas de cartón con palabras escritas en mayúsculas. Parece que alguien jugó con ellas hace tiempo y las dejó desordenadas.",
+        "Ona las coloca sobre el suelo de madera y te dice que quizá el Portal 27 solo responda si ordenáis las palabras en el orden correcto para formar un código.",
+        "Ves estas palabras: PINO, ROJO, LINA, AIRE. Sabes que si las ordenas bien podrás leer las iniciales en orden y usar ese código para desbloquear lo que sea que está escondido en el altillo."
+      ],
+      "puzzle": {
+        "type": "sorting",
+        "id": "altillo_orden_palabras",
+        "data": {
+          "items": ["PINO", "ROJO", "LINA", "AIRE"],
+          "correctOrder": ["AIRE", "LINA", "PINO", "ROJO"],
+          "code": "ALPR"
+        },
+        "successNext": "casa_altillo_viga",
+        "failText": "Colocáis las palabras, pero no pasa nada. El suelo del altillo sigue en silencio; quizá ese no es el orden correcto."
+      },
+      "choices": [
+        {
+          "text": "➤ Continuar cuando tengáis el código correcto.",
+          "next": "casa_altillo_viga"
+        }
+      ]
+    },
+
+    "casa_altillo_viga": {
+      "datetime": "2026-01-02 18:20",
+      "place": "Casa de Ona – Altillo de la habitación",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Te subes a una caja y te acercas a la viga.",
+        "Está escrito con letra pequeña:",
+        "",
+        "  \"27/12 · PORTAL 27",
+        "   SI VUELVE A APARECER EL SÍMBOLO,",
+        "   BUSCAD EN EL COLEGIO.\"",
+        "",
+        "Al lado del texto hay un dibujo muy parecido al del Super Jump,",
+        "pero un poco diferente, como si fuera la misma idea dibujada",
+        "por otra persona.",
+        "",
+        "—Esto estaba aquí antes de mi cumple —murmura Ona—.",
+        "  Alguien sabía que esto iba a pasar.",
+        "",
+        "Los dos pensáis en el cole Sagrada Familia",
+        "y en lo que pueda estar esperándoos allí."
+      ],
+      "choices": [
+        {
+          "text": "➤ Decidir que el siguiente paso será investigar el colegio cuando vuelvan las clases.",
+          "next": "espera_hasta_vuelta_cole"
+        },
+        {
+          "text": "➤ Antes de pensar en el cole, comprobar si en el jardín hay otro símbolo.",
+          "next": "casa_jardin"
+        },
+        {
+          "text": "➤ Pensar que quizá también pase algo en la cabalgata de Reyes.",
+          "next": "anticipar_cabalgata"
+        }
+      ]
+    },
+
+"casa_salon_luces": {
+  "datetime": "2026-01-02 18:25",
+  "place": "Casa de Ona – Salón",
+  "characters": ["ona", "agent", "familia"],
+  "ending": false,
+  "textLines": [
+    "Bajáis al salón con la foto y la linterna.",
+    "Apagáis todas las luces y solo dejáis la pantalla de la tablet del salón encendida con la imagen del símbolo.",
+    "Durante unos segundos no pasa nada.",
+    "Entonces, las luces del techo se encienden y se apagan solas: corto, corto, largo, corto.",
+    "Ona apunta el patrón en el cuaderno del altillo. Parece un código, quizá un mensaje.",
+    "En el reflejo de la ventana del salón, te parece ver por un instante los campos de fútbol del cole de noche.",
+    "La casa vuelve a la normalidad, pero sabes que el siguiente paso tendrá que ver con el colegio."
+  ],
+  "choices": [
+    {
+      "text": "➤ Guardar el código como pista para la vuelta al cole.",
+      "next": "espera_hasta_vuelta_cole"
+    },
+    {
+      "text": "➤ Intentar responder al mensaje usando linternas desde el jardín.",
+      "next": "casa_jardin_linternas"
+    }
+  ]
+},
+
+    "casa_jardin": {
+      "datetime": "2026-01-02 18:30",
+      "place": "Casa de Ona – Jardín y bosque de pinos",
+      "characters": ["ona", "agent", "lina"],
+      "ending": false,
+      "textLines": [
+        "Seguís a Lina hacia el jardín.",
+        "El césped está un poco húmedo y el bosque de pinos susurra con el viento.",
+        "",
+        "Lina se planta entre la piscina y la zona del bosque.",
+        "Gruñe muy bajito, mirando al suelo.",
+        "",
+        "Entre la hierba, ves algo dibujado con tierra más oscura:",
+        "el mismo símbolo del Super Jump, pero alargado,",
+        "como si se abriera en dirección a los árboles.",
+        "",
+        "La temperatura baja un poco. Se te pone la piel de gallina."
+      ],
+      "choices": [
+        {
+          "text": "➤ Examinar el símbolo del suelo con la linterna y hacer una foto.",
+          "next": "casa_jardin_simbolo"
+        },
+        {
+          "text": "➤ Alejarte del símbolo y volver dentro de casa para pensar un plan en el altillo.",
+          "next": "casa_altillo"
+        }
+      ]
+    },
+
+"casa_jardin_simbolo": {
+  "datetime": "2026-01-02 18:35",
+  "place": "Casa de Ona – Jardín",
+  "characters": ["ona", "agent", "lina"],
+  "ending": false,
+  "textLines": [
+    "Enfocáis el símbolo con la linterna. Esta vez, no solo brilla, parece moverse muy despacio, como si respirara.",
+    "Decidís hacer una foto para guardar la prueba del símbolo por si desaparece más tarde.",
+    "En la imagen, el símbolo parece distinto: alrededor se ven unas líneas que recuerdan a las porterías del campo de fútbol del cole.",
+    "Ona traga saliva y dice que el siguiente trozo de este misterio está en el colegio.",
+    "Y la fecha de vuelta a clase se acerca."
+  ],
+  "choices": [
+    {
+      "text": "➤ Decidir ir al colegio Sagrada Familia en cuanto vuelvan las clases.",
+      "next": "espera_hasta_vuelta_cole"
+    },
+    {
+      "text": "➤ Intentar \"cerrar\" el símbolo del jardín con linternas y tiza.",
+      "next": "final_lina_guardiana"
+    }
+  ]
+},
+
+    "casa_jardin_linternas": {
+      "datetime": "2026-01-02 18:40",
+      "place": "Casa de Ona – Jardín",
+      "characters": ["ona", "agent", "lina", "familia"],
+      "ending": true,
+      "textLines": [
+        "Salís al jardín con linternas y móviles.",
+        "Apagáis todas las luces de la casa.",
+        "",
+        "Entre los dos, hacéis un patrón de luz copiando el parpadeo del salón",
+        "pero al revés, como si fuera una respuesta.",
+        "",
+        "Durante unos segundos, el bosque de pinos parece contener la respiración.",
+        "Luego, muy a lo lejos, se ve un destello en dirección a Elda,",
+        "como si algo hubiera respondido desde el colegio.",
+        "",
+        "El símbolo en el jardín deja de brillar.",
+        "",
+        "FINAL SIMPLE: Mensaje recibido.",
+        "La conexión sigue, y el colegio os espera después de las vacaciones."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar e investigar el cole de otra manera.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "final_lina_guardiana": {
+      "datetime": "2026-01-02 18:45",
+      "place": "Casa de Ona – Jardín",
+      "characters": ["ona", "agent", "lina"],
+      "ending": true,
+      "itemsGained": ["sello_lina"],
+      "textLines": [
+        "Dibujáis un círculo de tiza alrededor del símbolo.",
+        "Colocas la linterna en el centro y la dejas encendida.",
+        "",
+        "Lina se tumba justo al borde del círculo, como si supiera",
+        "exactamente dónde tiene que estar.",
+        "",
+        "El símbolo se va apagando muy despacio hasta quedar como",
+        "una mancha más en la tierra.",
+        "",
+        "Esa noche, cuando miras por la ventana, ves a Lina sentada",
+        "mirando hacia el bosque, tranquila pero atenta.",
+        "",
+        "Has obtenido un nuevo objeto: «sello_lina».",
+        "Es como una promesa silenciosa de que el jardín está protegido.",
+        "",
+        "FINAL SIMPLE BUENO: El portal del jardín está vigilado.",
+        "Si algo intenta entrar, tendrá que pasar por Lina… y por ti."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar y seguir la pista principal hasta el colegio.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "anticipar_cabalgata": {
+      "datetime": "2026-01-02 18:50",
+      "place": "Casa de Ona – Altillo",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "En el altillo, con el mensaje del cole en la viga todavía en la cabeza,",
+        "piensas en voz alta:",
+        "",
+        "—Antes del cole viene la cabalgata de Reyes.",
+        "  Si los portales usan luces, esa noche puede ser perfecta para enviar señales.",
+        "",
+        "Ona sonríe:",
+        "—Vale, agente. Pues estaremos atentos el 5 de enero."
+      ],
+      "choices": [
+        {
+          "text": "➤ Esperar a la cabalgata de Reyes para buscar nuevas pistas.",
+          "next": "cabalgata_reyes"
+        },
+        {
+          "text": "➤ Aun así, dejar decidido que el 8 de enero investigaréis el cole.",
+          "next": "espera_hasta_vuelta_cole"
+        }
+      ]
+    },
+
+    "cabalgata_reyes": {
+      "datetime": "2026-01-05 19:30",
+      "place": "Cabalgata de Reyes en Elda",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": false,
+      "textLines": [
+        "Las calles de Elda están llenas de gente, música y luces.",
+        "Carrozas, caramelos que vuelan por el aire y niños gritando de alegría.",
+        "",
+        "Tú y Ona miráis todo con ojos de fiesta… y de agentes.",
+        "Las luces de las carrozas parpadean, pero solo una de ellas",
+        "parece seguir un patrón raro: corto, corto, largo, corto.",
+        "",
+        "Es la carroza de uno de los Reyes Magos.",
+        "",
+        "Cuando pasa cerca, ves fugazmente el símbolo rojo",
+        "pintado muy pequeño en un lateral,",
+        "casi escondido entre las decoraciones.",
+        "",
+        "Por un instante, parece que uno de los Reyes os mira directamente",
+        "a ti y a Ona, como si supiera algo."
+      ],
+      "choices": [
+        {
+          "text": "➤ Hacer una foto del símbolo en la carroza y tomarlo como señal clara.",
+          "next": "cabalgata_senal"
+        },
+        {
+          "text": "➤ Pensar que la cabalgata es para disfrutar y no mezclar más el misterio.",
+          "next": "final_cabalgata_ignorar"
+        }
+      ]
+    },
+
+"cabalgata_senal": {
+  "datetime": "2026-01-05 19:40",
+  "place": "Cabalgata de Reyes en Elda",
+  "characters": ["ona", "agent"],
+  "ending": false,
+  "textLines": [
+    "Le pides a tu madre que haga una foto del lateral de la carroza justo cuando pasa delante de vosotros.",
+    "Al ampliar la imagen, se ve claramente el símbolo rojo, muy parecido al del Super Jump y al del jardín.",
+    "Encima, alguien ha dibujado una pequeña corona.",
+    "—Vale —dice Ona—. El portal, la casa y ahora la cabalgata. Todo apunta a lo mismo, lo siguiente que pase será en el cole.",
+    "Esa noche, antes de dormir, sientes que el 8 de enero va a ser un día importante."
+  ],
+  "choices": [
+    {
+      "text": "➤ Guardar la foto como última pista antes de volver al cole.",
+      "next": "espera_hasta_vuelta_cole"
+    }
+  ]
+},
+
+    "final_cabalgata_ignorar": {
+      "datetime": "2026-01-05 20:00",
+      "place": "Cabalgata de Reyes en Elda",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": true,
+      "itemsGained": ["recuerdo_reyes"],
+      "textLines": [
+        "Decides no mezclar la magia de los Reyes Magos con el misterio del portal.",
+        "Os limitáis a disfrutar de la cabalgata: caramelos, música, carros y luz.",
+        "",
+        "Aun así, en un momento, uno de los Reyes saluda directamente",
+        "en vuestra dirección y parece decir algo que solo vosotros oís:",
+        "",
+        "—Nos vemos en el cole.",
+        "",
+        "Puede que fuera tu imaginación.",
+        "O puede que incluso los Reyes sepan algo del Portal 27.",
+        "",
+        "Has ganado un nuevo objeto: «recuerdo_reyes».",
+        "Un recuerdo especial de esa noche.",
+        "",
+        "FINAL SIMPLE: Noche de Reyes tranquila.",
+        "El misterio espera al 8 de enero."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar siguiendo las pistas del portal.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "espera_hasta_vuelta_cole": {
+      "datetime": "2026-01-08 08:15",
+      "place": "Camino al Colegio Sagrada Familia de Elda",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Las vacaciones se acaban. Llega el 8 de enero, día de volver al cole.",
+        "",
+        "Tú y Ona camináis hacia el Sagrada Familia con la mochila",
+        "más llena de pistas que de libros:",
+        "papelito del Super Jump, foto del símbolo,",
+        "código de luces del salón, foto del jardín",
+        "y, si la hiciste, la foto de la cabalgata.",
+        "",
+        "El colegio parece el de siempre…",
+        "pero algo en el aire te dice que hoy el Portal 27",
+        "va a decidir qué hacer."
+      ],
+      "choices": [
+        {
+          "text": "➤ Entrar al cole y empezar por la entrada principal.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "cole_entrada": {
+      "datetime": "2026-01-08 08:30",
+      "place": "Colegio Sagrada Familia de Elda – Entrada",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": false,
+      "textLines": [
+        "Llegáis al Sagrada Familia.",
+        "Los campos de fútbol, el pabellón deportivo y el edificio principal",
+        "parecen los de siempre… pero tú ya no los ves igual.",
+        "",
+        "En la pared, cerca de la entrada, alguien ha pegado un papel",
+        "con un aviso de actividades de Navidad.",
+        "Detrás del papel, asoma una esquina de algo rojo.",
+        "",
+        "Dentro, en recepción, está Julia.",
+        "Y más al fondo sabes que está el laboratorio del cole."
+      ],
+      "choices": [
+        {
+          "text": "➤ Hablar con Julia en recepción y preguntarle si ha pasado algo raro.",
+          "next": "cole_recepcion"
+        },
+        {
+          "text": "➤ Ir directo a los campos de fútbol a buscar símbolos.",
+          "next": "cole_campos"
+        }
+      ]
+    },
+
+    "cole_recepcion": {
+      "datetime": "2026-01-08 08:35",
+      "place": "Colegio Sagrada Familia de Elda – Recepción",
+      "characters": ["ona", "agent", "julia"],
+      "ending": false,
+      "textLines": [
+        "Te acercas con Ona a Julia en recepción.",
+        "Ella sonríe al veros.",
+        "",
+        "—Hola, agentes… quiero decir, hola chicos —dice medio en broma—.",
+        "  ¿Sabéis que anoche las luces del pabellón se encendieron solas?",
+        "  El vigilante dijo que fue un fallo, pero yo no estoy tan segura.",
+        "",
+        "Julia rebusca en un cajón y te da un papelito arrugado.",
+        "—Esto lo encontramos esta mañana en el suelo, cerca del laboratorio.",
+        "  No entiendo lo que pone, pero seguro que a vosotros os dice algo.",
+        "",
+        "El papel tiene el mismo símbolo rojo… y debajo, unas letras",
+        "que recuerdan al código de luces que visteis en casa de Ona."
+      ],
+      "choices": [
+        {
+          "text": "➤ Relacionar el mensaje con el código de luces y dirigirte al laboratorio.",
+          "next": "cole_laboratorio"
+        },
+        {
+          "text": "➤ Agradecer a Julia la pista e ir a mirar primero los campos de fútbol.",
+          "next": "cole_campos"
+        }
+      ]
+    },
+
+    "cole_campos": {
+      "datetime": "2026-01-08 08:40",
+      "place": "Colegio Sagrada Familia de Elda – Campos de fútbol",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": false,
+      "textLines": [
+        "Llegáis a los campos de fútbol.",
+        "La hierba tiene marcas de botas, como siempre…",
+        "pero en una esquina, cerca de la valla, alguien ha dibujado",
+        "líneas extrañas con pintura blanca.",
+        "",
+        "Si lo miras desde arriba, recuerdan al símbolo que viste",
+        "en Super Jump y en el jardín, pero mezclado con el dibujo",
+        "de un campo: porterías, área, centro del campo.",
+        "",
+        "Hace un poco de viento y por un segundo se oye un eco raro",
+        "procedente del pabellón."
+      ],
+      "choices": [
+        {
+          "text": "➤ Hacer una foto desde lo alto de la grada para ver el símbolo completo.",
+          "next": "cole_campos_foto"
+        },
+        {
+          "text": "➤ Ignorar las marcas y entrar al pabellón a investigar el eco.",
+          "next": "cole_pabellon"
+        }
+      ]
+    },
+
+    "cole_campos_foto": {
+      "datetime": "2026-01-08 08:45",
+      "place": "Colegio Sagrada Familia de Elda – Campos de fútbol",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Subes a la grada y haces una foto del campo entero.",
+        "Cuando la miras en la pantalla, el dibujo se ve claro:",
+        "es el símbolo del Portal 27, pero convertido en un campo de fútbol.",
+        "",
+        "En el centro, justo en el círculo, hay un pequeño punto rojo",
+        "que en la realidad no estaba.",
+        "",
+        "Ona amplía la imagen:",
+        "—Ese punto está en la dirección del laboratorio del cole.",
+        "  Creo que lo importante está allí."
+      ],
+      "choices": [
+        {
+          "text": "➤ Seguir la pista de la foto e ir al laboratorio.",
+          "next": "cole_laboratorio"
+        },
+        {
+          "text": "➤ Antes de ir al laboratorio, pasar por la enfermería a ver a Gloria.",
+          "next": "cole_enfermeria"
+        }
+      ]
+    },
+
+    "cole_pabellon": {
+      "datetime": "2026-01-08 08:45",
+      "place": "Colegio Sagrada Familia de Elda – Pabellón deportivo",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Entráis en el pabellón.",
+        "El eco de vuestros pasos suena más fuerte de lo normal,",
+        "como si alguien caminara con vosotros.",
+        "",
+        "Las luces del techo parpadean: corto, corto, largo, corto,",
+        "igual que en el salón de casa de Ona.",
+        "",
+        "En el marcador electrónico, por un momento, en lugar del 0–0,",
+        "aparece algo que parece un símbolo rojo muy sencillo.",
+        "",
+        "Luego todo vuelve a la normalidad, como si nada hubiera pasado."
+      ],
+      "choices": [
+        {
+          "text": "➤ Tomar esto como confirmación y dirigirte al laboratorio.",
+          "next": "cole_laboratorio"
+        },
+        {
+          "text": "➤ Buscar a Gloria en la enfermería para contarle lo que habéis visto.",
+          "next": "cole_enfermeria"
+        }
+      ]
+    },
+
+    "cole_enfermeria": {
+      "datetime": "2026-01-08 08:50",
+      "place": "Colegio Sagrada Familia de Elda – Enfermería",
+      "characters": ["ona", "agent", "gloria"],
+      "ending": false,
+      "textLines": [
+        "Entráis en la enfermería. Gloria os saluda sorprendida.",
+        "",
+        "—¿Os encontráis bien? —pregunta—.",
+        "  Anoche pasó algo muy raro con los walkies del cole.",
+        "  Sonó un ruido como… como viento mezclado con voces.",
+        "",
+        "Gloria os enseña su walkie.",
+        "En la parte de atrás, alguien ha pegado una pegatina diminuta",
+        "con el símbolo rojo.",
+        "",
+        "—Esto no lo he puesto yo —dice—.",
+        "  Si vais al laboratorio, llevaos el walkie,",
+        "  por si las voces quieren hablar otra vez."
+      ],
+      "choices": [
+        {
+          "text": "➤ Aceptar el walkie de Gloria e ir al laboratorio.",
+          "next": "cole_laboratorio_walkie"
+        },
+        {
+          "text": "➤ Decirle que mejor que lo guarde ella y aun así ir al laboratorio.",
+          "next": "cole_laboratorio"
+        }
+      ]
+    },
+
+    "cole_laboratorio": {
+      "datetime": "2026-01-08 09:00",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Entráis en el laboratorio del cole.",
+        "Hay mesas con microscopios, cables, frascos etiquetados",
+        "y una pizarra llena de fórmulas.",
+        "",
+        "Sobre una de las mesas, alguien ha dibujado el símbolo rojo",
+        "con rotulador, justo al lado de un mapa del cielo.",
+        "",
+        "Las luces parpadean.",
+        "El símbolo del papel de Julia, el del jardín,",
+        "el del Super Jump y el de la cabalgata",
+        "parecen latir a la vez dentro de vuestra memoria.",
+        "",
+        "Sabes que aquí puedes elegir qué hacer con el Portal 27."
+      ],
+      "choices": [
+        {
+          "text": "➤ Usar vuestra imaginación y el mapa para intentar cerrar el portal con un plan de niños.",
+          "next": "final_heroe_laboratorio"
+        },
+        {
+          "text": "➤ No tocar nada y limitaros a observar y tomar notas.",
+          "next": "final_misterio_abierto"
+        }
+      ]
+    },
+
+    "cole_laboratorio_walkie": {
+      "datetime": "2026-01-08 09:00",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent", "gloria", "voces"],
+      "ending": false,
+      "textLines": [
+        "Entráis en el laboratorio con el walkie de Gloria encendido.",
+        "Lo dejáis sobre la mesa, al lado del símbolo rojo.",
+        "",
+        "Al principio solo se oye estática.",
+        "Luego, un susurro muy bajo repite vuestros nombres",
+        "y el de Ona.",
+        "",
+        "Las luces del laboratorio parpadean y el símbolo parece",
+        "volverse más nítido.",
+        "",
+        "Tenéis que decidir si queréis hablar con lo que sea",
+        "que está al otro lado… cortar la conexión,",
+        "o intentar algo mucho más grande usando todo lo que habéis aprendido."
+      ],
+      "choices": [
+        {
+          "text": "➤ Hablar por el walkie y pedir que cierren el portal desde su lado.",
+          "next": "final_acuerdo_luces"
+        },
+        {
+          "text": "➤ Apagar el walkie y todas las luces a la vez para cortar la conexión.",
+          "next": "final_cortar_lab"
+        },
+        {
+          "text": "➤ Usar todos los objetos especiales reunidos en tus otras misiones para un cierre definitivo.",
+          "next": "final_secreto_agentes_legendarios",
+          "requires": ["recuerdo_superjump", "sello_lina", "recuerdo_reyes", "archivo_caso_abierto"],
+          "lockedText": "No puedes intentar este final todavía. Necesitas haber alcanzado todos los finales simples y conseguido: recuerdo_superjump, sello_lina, recuerdo_reyes y archivo_caso_abierto."
+        }
+      ]
+    },
+
+    "final_heroe_laboratorio": {
+      "datetime": "2026-01-08 09:10",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "textLines": [
+        "Extendéis el mapa del cielo sobre la mesa del laboratorio.",
+        "Con rotuladores, tiza y mucha imaginación, redibujáis",
+        "el símbolo del Portal 27, pero cerrado, como si fuera",
+        "una constelación que se apaga.",
+        "",
+        "Mientras lo dibujáis, las luces dejan de parpadear.",
+        "El laboratorio se siente más caliente, más normal.",
+        "",
+        "Imagináis muy fuerte que el portal se contrae hasta",
+        "convertirse en un punto diminuto que desaparece.",
+        "",
+        "En vuestro cuaderno escribís:",
+        "  \"27/12 · PORTAL 27 · CERRADO POR EQUIPO ONA + AGENTE.\"",
+        "",
+        "FINAL BUENO: El portal queda sellado… al menos por ahora."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar y ver qué pasa si tomáis otras decisiones.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_misterio_abierto": {
+      "datetime": "2026-01-08 09:10",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "itemsGained": ["archivo_caso_abierto"],
+      "textLines": [
+        "Decidís no tocar nada.",
+        "Os limitáis a hacer dibujos, apuntar símbolos y copiar",
+        "todo en vuestro cuaderno del altillo.",
+        "",
+        "El laboratorio se queda en silencio, pero la sensación de rareza",
+        "no se va del todo.",
+        "",
+        "Quizá habéis evitado meter la pata…",
+        "o quizá habéis dejado un portal abierto sin saberlo.",
+        "",
+        "Guardáis el cuaderno en una caja metálica en la habitación de Ona.",
+        "Habéis ganado un nuevo objeto: «archivo_caso_abierto».",
+        "",
+        "FINAL SIMPLE: Misterio sin resolver.",
+        "El Portal 27 sigue presente en los archivos del equipo."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Repetir la historia e intentar cerrarlo de verdad.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_acuerdo_luces": {
+      "datetime": "2026-01-08 09:10",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent", "voces"],
+      "ending": true,
+      "textLines": [
+        "Coges el walkie y hablas con voz firme:",
+        "—No abráis más portales aquí. Es nuestro cole, nuestra casa.",
+        "",
+        "Al principio solo se oye viento.",
+        "Luego, una voz distorsionada responde algo corto,",
+        "pero claro: \"OK\".",
+        "",
+        "Las luces del laboratorio y del pabellón dejan de parpadear.",
+        "Esa noche, en casa de Ona y en tu casa,",
+        "las luces del jardín también permanecen estables.",
+        "",
+        "El símbolo rojo del papel se borra poco a poco,",
+        "como si nunca hubiera estado ahí.",
+        "",
+        "FINAL BUENO: Acuerdo entre mundos.",
+        "El Portal 27 se cierra por pacto, no por fuerza."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar y ver qué pasa si eliges otras opciones.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_cortar_lab": {
+      "datetime": "2026-01-08 09:10",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "textLines": [
+        "Apagas el walkie, las luces del laboratorio y hasta",
+        "las pequeñas lámparas de las mesas.",
+        "",
+        "Por un segundo, el símbolo rojo se ve muy brillante",
+        "en la oscuridad… y luego se apaga como una luciérnaga.",
+        "",
+        "El laboratorio queda en silencio total.",
+        "No hay voces, no hay parpadeos, no hay respuesta.",
+        "",
+        "Puede que hayáis cortado una amenaza.",
+        "O puede que hayáis colgado el teléfono a alguien",
+        "que necesitaba ayuda.",
+        "",
+        "FINAL NEUTRO: Conexión cortada.",
+        "El Portal 27 queda en pausa, esperando otro intento."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a empezar y probar a hablar en lugar de cortar.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_secreto_agentes_legendarios": {
+      "datetime": "2026-01-08 09:15",
+      "place": "Colegio Sagrada Familia de Elda – Laboratorio",
+      "characters": ["ona", "agent", "voces"],
+      "ending": true,
+      "itemsGained": ["insignia_agente_legendario"],
+      "textLines": [
+        "Colocáis sobre la mesa todos los objetos que habéis conseguido",
+        "en vuestras otras misiones:",
+        "",
+        "— El recuerdo del cumple en Super Jump (recuerdo_superjump).",
+        "— El sello protector del jardín con Lina (sello_lina).",
+        "— El recuerdo de la noche de Reyes (recuerdo_reyes).",
+        "— El archivo del caso abierto en el altillo (archivo_caso_abierto).",
+        "",
+        "Los alineáis alrededor del símbolo rojo.",
+        "Las luces parpadean una última vez, pero esta vez",
+        "no da miedo: parece que os reconocen.",
+        "",
+        "El símbolo se eleva unos centímetros sobre la mesa",
+        "y se transforma en un pequeño punto de luz",
+        "que se divide en dos:",
+        "uno entra en el cuaderno de Ona",
+        "y otro se queda flotando frente a ti.",
+        "",
+        "Sientes que algo se te queda grabado,",
+        "como una marca invisible.",
+        "Has obtenido: «insignia_agente_legendario».",
+        "",
+        "Las voces del otro lado susurran:",
+        "—Caso Portal 27: cerrado. Responsable: equipo Ona + agente.",
+        "",
+        "FINAL SECRETO: Agentes legendarios.",
+        "Habéis usado todos los recuerdos y pistas",
+        "para cerrar el portal de la forma más poderosa posible."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar desde el principio con tu insignia legendaria en el inventario.",
+          "next": "intro"
+        }
+      ]
+    }
+  }
+}
