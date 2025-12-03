@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "version": 1
+  },
+  "puzzles": {
+    "altillo_orden_palabras": {
+      "type": "sorting",
+      "description": "Ordenar palabras relacionadas con la historia para formar un código.",
+      "data": {
+        "items": ["PINO", "ROJO", "LINA", "AIRE"],
+        "correctOrder": ["AIRE", "LINA", "PINO", "ROJO"],
+        "code": "ALPR",
+        "hint": "Piensa en el aire del bosque, en Lina, en los pinos y en el brillo rojo del portal."
+      }
+    },
+
+    "jardin_rompecabezas_simbolo": {
+      "type": "jigsaw",
+      "description": "Reconstruir la imagen del símbolo del Portal 27 en el jardín.",
+      "data": {
+        "image": "puzzles/jardin_simbolo.png",
+        "pieces": 9,
+        "rows": 3,
+        "cols": 3,
+        "hint": "Cuando el símbolo esté completo, quizá se calme por un momento."
+      }
+    },
+
+    "patron_luces_salon": {
+      "type": "pattern",
+      "description": "Repetir la secuencia de luces que viste en el salón de casa de Ona.",
+      "data": {
+        "sequence": ["corto", "corto", "largo", "corto"],
+        "maxAttempts": 3,
+        "hint": "Recuerda cómo parpadearon las luces la primera vez que las imitasteis."
+      }
+    },
+
+    "laboratorio_memoria_simbolos": {
+      "type": "memory",
+      "description": "Juego de memoria con símbolos del portal en el laboratorio.",
+      "data": {
+        "pairs": [
+          ["simbolo_portal_1.png", "simbolo_portal_1_alt.png"],
+          ["simbolo_portal_2.png", "simbolo_portal_2_alt.png"],
+          ["simbolo_portal_3.png", "simbolo_portal_3_alt.png"]
+        ],
+        "hint": "Cada pareja que encuentras hace que el portal parpadee un poco menos."
+      }
+    },
+
+    "linea_tiempo_eventos": {
+      "type": "timeline",
+      "description": "Colocar los eventos principales en el orden correcto.",
+      "data": {
+        "events": [
+          "Cumpleaños en Super Jump",
+          "Símbolo en el jardín",
+          "Cabalgata de Reyes",
+          "Vuelta al cole"
+        ],
+        "correctOrder": [
+          "Cumpleaños en Super Jump",
+          "Símbolo en el jardín",
+          "Cabalgata de Reyes",
+          "Vuelta al cole"
+        ],
+        "hint": "Piensa en cómo pasan las vacaciones: primero el cumple de Ona, luego el símbolo en su casa, después la cabalgata y al final la vuelta al cole."
+      }
+    }
+  }
+}

@@ -1,0 +1,823 @@
+{
+  "meta": {
+    "version": 6,
+    "start": "intro"
+  },
+  "scenes": {
+    "intro": {
+      "datetime": "27 Dic - 11:20",
+      "place": "Super Jump Villena",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": false,
+      "textLines": [
+        "¡Cumple de Ona! Estás saltando a tope en el Super Jump.",
+        "Risas, bolas de colores y tú, {{agent.name}}, haciendo tus mejores trucos.",
+        "",
+        "¡ZAS! Las luces del techo parpadean tres veces.",
+        "Cualquiera se asustaría, pero tú tienes {{agent.tag}}, así que te fijas bien.",
+        "",
+        "En la zona Ninja, ves algo en el suelo:",
+        "Un círculo rojo que brilla. No es pintura.",
+        "Ona encuentra una nota: \"27/12 – 11:20. COMIENZA.\"",
+        "",
+        "Ona te mira: —Agente {{agent.name}}, saca tu {{agent.specialItem}}. Esto empieza."
+      ],
+      "choices": [
+        {
+          "text": "➤ ¡A investigar ese símbolo ya!",
+          "next": "ninja_simbolo"
+        },
+        {
+          "text": "➤ Ignorarlo (aunque me da mala espina).",
+          "next": "superjump_ignorar"
+        }
+      ]
+    },
+
+"ninja_simbolo": {
+      "datetime": "27 Dic - 11:35",
+      "place": "Zona Ninja",
+      "characters": ["ona", "agent", "friend1"],
+      "ending": false,
+      "textLines": [
+        "Os acercáis. El símbolo está helado y da calambrazos.",
+        "Sacas tu {{agent.specialItem}} para examinarlo, pero oís pasos.",
+        "¡Es el monitor! Os va a pillar.",
+        "",
+        "De repente, {{friend1.name}} aparece haciendo una voltereta exagerada.",
+        "—¡Ayuda! ¡Creo que me he atascado! —grita {{friend1.name}} guiñándote un ojo.",
+        "Gracias a su {{friend1.tag}}, el monitor se gira hacia ella.",
+        "¡Vía libre! Hacéis la foto rápida. Detrás de vosotras sale una sombra rara."
+      ],
+      "choices": [
+        {
+          "text": "➤ Guardar pruebas y chocar los cinco a {{friend1.name}} luego.",
+          "next": "superjump_tarta"
+        },
+        {
+          "text": "➤ Ir a ayudar a {{friend1.name}} y contárselo todo al monitor.",
+          "next": "superjump_monitor"
+        }
+      ]
+    },
+
+    "superjump_tarta": {
+      "datetime": "27 Dic - 12:45",
+      "place": "Sala de Cumpleaños",
+      "characters": ["ona", "agent", "amigos"],
+      "ending": false,
+      "textLines": [
+        "Hora de la tarta. Se apagan las luces.",
+        "Tú acaricias tu {{agent.specialItem}} en el bolsillo para darte seguridad.",
+        "",
+        "Ona sopla las velas y... ¡las luces parpadean!",
+        "Nadie lo ve, solo vosotras.",
+        "Tu instinto de {{agent.tag}} te dice que esto no ha acabado."
+      ],
+      "choices": [
+        {
+          "text": "➤ Intentar olvidar el misterio.",
+          "next": "superjump_ignorar"
+        },
+        {
+          "text": "➤ Prometer a Ona investigar juntas.",
+          "next": "tiempo_pasa_hasta_casa"
+        }
+      ]
+    },
+
+    "superjump_monitor": {
+      "datetime": "27 Dic - 11:45",
+      "place": "Zona Ninja",
+      "characters": ["ona", "agent", "monitor"],
+      "ending": false,
+      "textLines": [
+        "Le enseñáis la foto al monitor.",
+        "Él se pone pálido, pero luego sonríe forzado.",
+        "—Nada chicas, será un fallo de la cámara.",
+        "",
+        "Tú eres muy {{agent.qualities[0]}} y sabes que miente.",
+        "Aquí pasa algo raro."
+      ],
+      "choices": [
+        {
+          "text": "➤ Volver a la fiesta disimulando.",
+          "next": "superjump_tarta"
+        }
+      ]
+    },
+
+    "superjump_ignorar": {
+      "datetime": "Fin de fiesta",
+      "place": "Super Jump",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "itemsGained": ["recuerdo_superjump"],
+      "textLines": [
+        "Decides pasar. Has venido a divertirte.",
+        "Pero esa noche, sueñas con {{agent.fear}} y luces rojas.",
+        "Al menos tienes un recuerdo del cumple.",
+        "",
+        "Objeto ganado: «recuerdo_superjump»",
+        "FINAL SIMPLE: {{agent.name}} ignora la llamada."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Reiniciar: ¡Quiero ser la heroína!",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "tiempo_pasa_hasta_casa": {
+      "datetime": "2 Ene - 17:30",
+      "place": "Vacaciones",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Pasan los días de vacaciones.",
+        "Estás en casa tranquila, jugando, pero tus luces parpadean.",
+        "",
+        "El 2 de enero, Ona te llama:",
+        "—{{agent.name}}, te necesito. Trae tu {{agent.specialItem}}.",
+        "  Tenemos que investigar en mi casa."
+      ],
+      "choices": [
+        {
+          "text": "➤ ¡Voy volando! Misión activada.",
+          "next": "casa_llegada"
+        }
+      ]
+    },
+
+    "casa_llegada": {
+      "datetime": "2 Ene - 18:00",
+      "place": "Casa de Ona",
+      "characters": ["ona", "agent", "lina"],
+      "ending": false,
+      "textLines": [
+        "Llegas a Caprala. Lina, la perrita, está nerviosa.",
+        "Mira fijamente al bosque y gruñe.",
+        "Tú, que eres súper {{agent.qualities[0]}}, notas que el aire está cargado.",
+        "",
+        "Ona te espera en la puerta con la libreta de espía."
+      ],
+      "choices": [
+        {
+          "text": "➤ Subir al Altillo (Cuartel General).",
+          "next": "casa_altillo"
+        },
+        {
+          "text": "➤ Seguir a Lina al jardín.",
+          "next": "casa_jardin"
+        }
+      ]
+    },
+
+    "casa_altillo": {
+      "datetime": "2 Ene - 18:15",
+      "place": "El Altillo",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Subís al altillo. Es vuestro refugio.",
+        "Dejas tu {{agent.specialItem}} junto a las pistas.",
+        "¡De repente brilla! Y una linterna se enciende sola apuntando al techo.",
+        "",
+        "Hay unas tarjetas desordenadas y un mensaje en la viga."
+      ],
+      "choices": [
+        {
+          "text": "➤ Leer el mensaje de la viga.",
+          "next": "casa_altillo_viga"
+        },
+        {
+          "text": "➤ Usar mi {{agent.tag}} para resolver las tarjetas.",
+          "next": "casa_altillo_reto_orden"
+        },
+        {
+          "text": "➤ Bajar al salón a ver las luces.",
+          "next": "casa_salon_luces"
+        }
+      ]
+    },
+
+    "casa_altillo_reto_orden": {
+      "datetime": "2 Ene - 18:18",
+      "place": "El Altillo",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Las tarjetas dicen: PINO, ROJO, LINA, AIRE.",
+        "—Seguro que tú sabes el orden, {{agent.name}} —dice Ona.",
+        "¡A usar esa mente privilegiada!"
+      ],
+      "puzzle": {
+        "type": "sorting",
+        "id": "altillo_orden_palabras",
+        "data": {
+          "items": ["PINO", "ROJO", "LINA", "AIRE"],
+          "correctOrder": ["AIRE", "LINA", "PINO", "ROJO"],
+          "code": "ALPR"
+        },
+        "successNext": "casa_altillo_viga",
+        "failText": "Mmm, no. Prueba otro orden lógico."
+      }
+    },
+
+    "casa_altillo_viga": {
+      "datetime": "2 Ene - 18:20",
+      "place": "El Altillo",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "En la viga pone:",
+        "\"27/12 · PORTAL 27 ACTIVADO.",
+        " SI VUELVE EL SÍMBOLO... BUSCAD EN EL COLEGIO.\"",
+        "",
+        "Ona palidece: —¡El cole! Alguien sabía que esto pasaría.",
+        "Tú aprietas los puños. No tienes miedo a {{agent.fear}}, menos a esto."
+      ],
+      "choices": [
+        {
+          "text": "➤ ¡Al cole en cuanto acaben las vacaciones!",
+          "next": "espera_hasta_vuelta_cole"
+        },
+        {
+          "text": "➤ Mirar el jardín primero.",
+          "next": "casa_jardin"
+        },
+        {
+          "text": "➤ Esperar a la Cabalgata de Reyes.",
+          "next": "anticipar_cabalgata"
+        }
+      ]
+    },
+
+    "casa_salon_luces": {
+      "datetime": "2 Ene - 18:25",
+      "place": "Salón",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Bajáis al salón. Todo oscuro.",
+        "¡Luces! Techo: CORTO, CORTO, LARGO, CORTO.",
+        "Ona lo apunta. Parece Morse o algo así.",
+        "En el reflejo de la ventana, ves tu propia cara... pero parece asustada."
+      ],
+      "choices": [
+        {
+          "text": "➤ Repetir el patrón con los interruptores.",
+          "next": "casa_luces_pattern"
+        },
+        {
+          "text": "➤ Guardar el código y esperar.",
+          "next": "espera_hasta_vuelta_cole"
+        },
+        {
+          "text": "➤ Responder con linternas desde fuera.",
+          "next": "casa_jardin_linternas"
+        }
+      ]
+    },
+
+    "casa_luces_pattern": {
+      "datetime": "2 Ene - 18:27",
+      "place": "Salón",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Vamos a intentarlo. Tú tienes ritmo.",
+        "¡Copia el mensaje para confirmar recepción!"
+      ],
+      "puzzle": {
+        "type": "pattern",
+        "id": "patron_luces_salon",
+        "data": {
+          "sequence": ["corto", "corto", "largo", "corto"],
+          "hint": "Pam, pam, paaaam, pam."
+        },
+        "successNext": "casa_jardin_linternas",
+        "failText": "Las luces no responden. Te has liado."
+      }
+    },
+
+    "casa_jardin": {
+      "datetime": "2 Ene - 18:30",
+      "place": "Jardín",
+      "characters": ["ona", "agent", "lina"],
+      "ending": false,
+      "textLines": [
+        "Lina os lleva a una zona de tierra movida.",
+        "¡Es el símbolo del Super Jump, pero gigante!",
+        "Está roto en trozos, como un puzle.",
+        "—Esto es trabajo para {{agent.name}} —dice Ona."
+      ],
+      "puzzle": {
+        "type": "jigsaw",
+        "id": "jardin_rompecabezas_simbolo",
+        "data": {
+          "image": "puzzles/jardin_simbolo.png",
+          "rows": 3,
+          "cols": 3,
+          "pieces": 9
+        },
+        "successNext": "casa_jardin_simbolo",
+        "failText": "El símbolo sigue roto."
+      }
+    },
+
+    "casa_jardin_simbolo": {
+      "datetime": "2 Ene - 18:35",
+      "place": "Jardín",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Al completar el puzle en la tierra, el dibujo cambia.",
+        "¡Aparecen las porterías del cole Sagrada Familia!",
+        "Usas tu {{agent.specialItem}} y ves huellas invisibles que van hacia Elda.",
+        "Está claro dónde hay que ir."
+      ],
+      "choices": [
+        {
+          "text": "➤ Ir al cole el día 8.",
+          "next": "espera_hasta_vuelta_cole"
+        },
+        {
+          "text": "➤ Cerrar este portal con magia de Lina.",
+          "next": "final_lina_guardiana"
+        }
+      ]
+    },
+
+    "casa_jardin_linternas": {
+      "datetime": "2 Ene - 18:40",
+      "place": "Jardín",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "textLines": [
+        "Lanzáis señales de luz al cielo con vuestras linternas.",
+        "¡Un destello responde desde Elda!",
+        "Habéis contactado.",
+        "",
+        "FINAL SIMPLE: Mensaje recibido.",
+        "Próxima parada: El Colegio."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "final_lina_guardiana": {
+      "datetime": "2 Ene - 18:45",
+      "place": "Jardín",
+      "characters": ["ona", "agent", "lina"],
+      "ending": true,
+      "itemsGained": ["sello_lina"],
+      "textLines": [
+        "Hacéis un círculo mágico.",
+        "Lina se tumba encima, protegiendo la entrada.",
+        "El jardín está a salvo gracias a vosotras y a Lina.",
+        "",
+        "Objeto ganado: «sello_lina».",
+        "FINAL BUENO: Guardianas del Jardín."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "anticipar_cabalgata": {
+      "datetime": "2 Ene - 18:50",
+      "place": "Altillo",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Piensas con lógica {{agent.qualities[1]}}:",
+        "\"Luces = Energía. ¿Dónde hay más luces? ¡En Reyes!\"",
+        "Ona sonríe: —Vamos a la Cabalgata a espiar."
+      ],
+      "choices": [
+        {
+          "text": "➤ A la Cabalgata.",
+          "next": "cabalgata_reyes"
+        },
+        {
+          "text": "➤ Esperar al cole.",
+          "next": "espera_hasta_vuelta_cole"
+        }
+      ]
+    },
+
+    "cabalgata_reyes": {
+      "datetime": "5 Ene - 19:30",
+      "place": "Cabalgata",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Gente, caramelos y ruido (tu peor pesadilla si fuera {{agent.fear}}, pero hoy no).",
+        "¡La carroza de Gaspar parpadea!",
+        "Ves el símbolo rojo pintado en un lateral.",
+        "Sacas tu {{agent.specialItem}} disimuladamente y captas la señal."
+      ],
+      "choices": [
+        {
+          "text": "➤ ¡Foto a la prueba!",
+          "next": "cabalgata_senal"
+        },
+        {
+          "text": "➤ Solo quiero caramelos.",
+          "next": "final_cabalgata_ignorar"
+        }
+      ]
+    },
+
+    "cabalgata_senal": {
+      "datetime": "5 Ene - 19:40",
+      "place": "Cabalgata",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Confirmado. El símbolo tiene una corona dibujada.",
+        "El Rey Mago te mira y asiente, como si supiera que eres {{agent.name}}.",
+        "Todo apunta al día 8 en el cole."
+      ],
+      "choices": [
+        {
+          "text": "➤ Preparar la vuelta al cole.",
+          "next": "espera_hasta_vuelta_cole"
+        }
+      ]
+    },
+
+    "final_cabalgata_ignorar": {
+      "datetime": "Noche de Reyes",
+      "place": "Elda",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "itemsGained": ["recuerdo_reyes"],
+      "textLines": [
+        "Decides disfrutar de la magia normal.",
+        "Pero el Rey te susurra: \"Nos vemos en el cole, {{agent.name}}\".",
+        "",
+        "Objeto ganado: «recuerdo_reyes».",
+        "FINAL SIMPLE: Noche de Reyes."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+    "espera_hasta_vuelta_cole": {
+      "datetime": "8 Ene - 08:15",
+      "place": "Camino al Cole",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Vuelta al cole. Llevas la mochila y tu {{agent.specialItem}}.",
+        "Ona está nerviosa, pero tú la calmas.",
+        "El Sagrada Familia os espera. Hoy eres más agente que alumna."
+      ],
+      "choices": [
+        {
+          "text": "➤ Entrar por la puerta principal.",
+          "next": "cole_entrada"
+        }
+      ]
+    },
+
+"cole_entrada": {
+      "datetime": "8 Ene - 08:30",
+      "place": "Entrada del Cole",
+      "characters": ["ona", "agent", "friend2", "julia"],
+      "ending": false,
+      "textLines": [
+        "En la entrada os espera {{friend2.name}}. Lleva su mochila colocada al revés, en modo combate.",
+        "—Chicas, el ambiente está cargado —dice ella, que es muy {{friend2.qualities[0]}}—.",
+        "",
+        "Decidís dividiros. {{friend2.name}} se quedará vigilando el patio por si las luces hacen cosas raras.",
+        "Julia os saluda desde recepción. Tú y Ona tenéis que decidir el primer paso."
+      ],
+      "choices": [
+        {
+          "text": "➤ Preguntar a Julia antes de avanzar.",
+          "next": "cole_recepcion"
+        },
+        {
+          "text": "➤ Ir a los campos de fútbol (donde vigila {{friend2.name}}).",
+          "next": "cole_campos"
+        }
+      ]
+    },
+
+    "cole_recepcion": {
+      "datetime": "8 Ene - 08:35",
+      "place": "Recepción",
+      "characters": ["ona", "agent", "julia"],
+      "ending": false,
+      "textLines": [
+        "Julia os da un papel arrugado con el símbolo.",
+        "—Lo encontré en el pasillo. ¿Es vuestro juego de espías?",
+        "Lees el código. Coincide.",
+        "Ona dice: —Laboratorio. Ya."
+      ],
+      "choices": [
+        {
+          "text": "➤ Gracias Julia. Al laboratorio.",
+          "next": "cole_laboratorio"
+        },
+        {
+          "text": "➤ Mirar los campos primero.",
+          "next": "cole_campos"
+        }
+      ]
+    },
+
+"cole_campos": {
+      "datetime": "8 Ene - 08:40",
+      "place": "Campos de Fútbol",
+      "characters": ["ona", "agent", "friend2"],
+      "ending": false,
+      "textLines": [
+        "Vais a los campos. {{friend2.name}} está allí, agachada mirando el césped.",
+        "—¡Mirad esto! —os grita.",
+        "Las líneas de cal forman un dibujo extraño, no es un campo normal.",
+        "Ona no lo ve claro, pero tú usas tu {{agent.specialItem}}... ¡Es un mapa!"
+      ],
+      "choices": [
+        {
+          "text": "➤ Subir a la grada para ver mejor el dibujo.",
+          "next": "cole_campos_foto"
+        },
+        {
+          "text": "➤ Dejar a {{friend2.name}} vigilando e ir al pabellón.",
+          "next": "cole_pabellon"
+        }
+      ]
+    },
+
+    "cole_campos_foto": {
+      "datetime": "8 Ene - 08:45",
+      "place": "Grada",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "Desde arriba lo ves: El campo es el símbolo.",
+        "Y el centro apunta directo al Laboratorio de Ciencias.",
+        "—Vamos, {{agent.name}} —dice Ona."
+      ],
+      "choices": [
+        {
+          "text": "➤ Correr al Laboratorio.",
+          "next": "cole_laboratorio"
+        },
+        {
+          "text": "➤ Pasar por enfermería.",
+          "next": "cole_enfermeria"
+        }
+      ]
+    },
+
+    "cole_pabellon": {
+      "datetime": "8 Ene - 08:45",
+      "place": "Pabellón",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "El eco repite vuestros pasos. Da miedo.",
+        "Marcador: SÍMBOLO ROJO.",
+        "Luces: CÓDIGO SECRETO.",
+        "¡Salid de aquí y id al origen!"
+      ],
+      "choices": [
+        {
+          "text": "➤ Al laboratorio.",
+          "next": "cole_laboratorio"
+        },
+        {
+          "text": "➤ A enfermería.",
+          "next": "cole_enfermeria"
+        }
+      ]
+    },
+
+    "cole_enfermeria": {
+      "datetime": "8 Ene - 08:50",
+      "place": "Enfermería",
+      "characters": ["ona", "agent", "gloria"],
+      "ending": false,
+      "textLines": [
+        "Gloria está asustada. Su walkie hace ruidos raros.",
+        "Tiene una pegatina roja que ella no puso.",
+        "—Tened, lleváoslo. Vosotras sabéis qué hacer."
+      ],
+      "choices": [
+        {
+          "text": "➤ Coger el walkie e ir al Laboratorio.",
+          "next": "cole_laboratorio_walkie"
+        },
+        {
+          "text": "➤ Ir al Laboratorio sin walkie.",
+          "next": "cole_laboratorio"
+        }
+      ]
+    },
+    
+
+"cole_laboratorio": {
+      "datetime": "8 Ene - 09:00",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent", "friend2"],
+      "ending": false,
+      "textLines": [
+        "Está a punto de entrar al Laboratorio cuando vuestro walkie suena.",
+        "Es {{friend2.name}} desde el patio:",
+        "—¡Cuidado agentes! ¡Las luces de toda la calle se acaban de apagar! ¡Solo queda la del laboratorio!",
+        "",
+        "Tragas saliva. Miras a Ona. Entráis.",
+        "En la mesa central: el mapa estelar y el símbolo rojo.",
+        "Sientes la electricidad en tu {{agent.specialItem}}. El portal está aquí."
+      ],
+      "choices": [
+        {
+          "text": "➤ Usar el mapa para cerrar el portal.",
+          "next": "final_heroe_laboratorio"
+        },
+        {
+          "text": "➤ Solo observar y tomar notas.",
+          "next": "final_misterio_abierto"
+        }
+      ]
+    },
+
+    "cole_laboratorio_walkie": {
+      "datetime": "8 Ene - 09:00",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent", "voces"],
+      "ending": false,
+      "textLines": [
+        "El walkie de Gloria empieza a sonar.",
+        "\"...{{agent.name}}... Ona... abrid...\"",
+        "¡Saben tu nombre!",
+        "Hay una caja fuerte extraña bajo la mesa que brilla."
+      ],
+      "choices": [
+        {
+          "text": "➤ Hablar y negociar.",
+          "next": "final_acuerdo_luces"
+        },
+        {
+          "text": "➤ Apagar todo y cortar.",
+          "next": "final_cortar_lab"
+        },
+        {
+          "text": "➤ ★ INTENTAR ABRIR LA CAJA MÁGICA ★",
+          "next": "puzzle_caja_final",
+          "requires": ["recuerdo_superjump", "sello_lina", "recuerdo_reyes", "archivo_caso_abierto"],
+          "lockedText": "Necesitas haber vivido todas las aventuras (y tener todos los objetos) para ver esta caja."
+        }
+      ]
+    },
+    
+    "puzzle_caja_final": {
+      "datetime": "8 Ene - 09:05",
+      "place": "Laboratorio - Caja Secreta",
+      "characters": ["ona", "agent"],
+      "ending": false,
+      "textLines": [
+        "La caja tiene un teclado numérico brillante.",
+        "Una voz dice: 'Solo la agente elegida conoce la clave'.",
+        "Tu instinto te dice que uses tu número de la suerte."
+      ],
+      "puzzle": {
+        "type": "lock",
+        "id": "caja_fuerte_agente",
+        "data": {
+          "correctCode": "{{agent.luckyNumber}}",
+          "hint": "¿Cuál es tu número especial, {{agent.name}}?"
+        },
+        "successNext": "final_secreto_agentes_legendarios",
+        "failText": "Error. La caja sigue cerrada."
+      }
+    },
+
+    "final_heroe_laboratorio": {
+      "datetime": "8 Ene - 09:10",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "textLines": [
+        "Dibujas líneas en el mapa uniendo estrellas.",
+        "Cierras el dibujo. ¡ZAS! Las luces se calman.",
+        "Ona choca los cinco contigo.",
+        "Lo habéis conseguido.",
+        "",
+        "FINAL BUENO: Portal sellado por {{agent.name}}."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_misterio_abierto": {
+      "datetime": "8 Ene - 09:10",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "itemsGained": ["archivo_caso_abierto"],
+      "textLines": [
+        "Apuntas todo en tu libreta con detalle {{agent.qualities[1]}}.",
+        "Mejor no tocar nada peligroso.",
+        "Os vais, pero sientes que algo os mira desde la oscuridad.",
+        "",
+        "Objeto ganado: «archivo_caso_abierto».",
+        "FINAL SIMPLE: Caso abierto."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Reintentar.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_acuerdo_luces": {
+      "datetime": "8 Ene - 09:10",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "textLines": [
+        "Hablas al walkie con voz firme:",
+        "—Soy la agente {{agent.name}}. Dejadnos en paz.",
+        "Silencio... y un \"O.K.\" lejano.",
+        "Las luces se estabilizan. Tienen respeto por tu {{agent.tag}}.",
+        "",
+        "FINAL BUENO: Pacto cerrado."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_cortar_lab": {
+      "datetime": "8 Ene - 09:10",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "textLines": [
+        "Apagas todo. ¡Clic!",
+        "Oscuridad. Silencio.",
+        "Has cortado la comunicación a lo bruto.",
+        "Es efectivo, pero... ¿volverán?",
+        "",
+        "FINAL NEUTRO: Conexión interrumpida."
+      ],
+      "choices": [
+        {
+          "text": "⟲ Volver a jugar.",
+          "next": "intro"
+        }
+      ]
+    },
+
+    "final_secreto_agentes_legendarios": {
+      "datetime": "8 Ene - 09:15",
+      "place": "Laboratorio",
+      "characters": ["ona", "agent"],
+      "ending": true,
+      "itemsGained": ["insignia_agente_legendario"],
+      "textLines": [
+        "¡La caja se abre! Dentro hay luz pura.",
+        "Colocas tus objetos: recuerdo, sello, foto...",
+        "La luz te envuelve a ti y a tu {{agent.specialItem}}.",
+        "",
+        "Una voz solemne dice:",
+        "\"Agente {{agent.name}}, nivel Leyenda alcanzado.\"",
+        "Ona y tú sois las guardianas definitivas de Villena y Elda.",
+        "",
+        "FINAL SECRETO: LEYENDAS."
+      ],
+      "choices": [
+        {
+          "text": "⟲ ¡ME HA ENCANTADO!",
+          "next": "intro"
+        }
+      ]
+    }
+  }
+}
