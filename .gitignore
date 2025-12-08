@@ -1,1 +1,29 @@
 .DS_Store
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# macOS
+.DS_Store
+
+# Build artifacts (if any)
+dist/
+build/
+*.egg-info/
+
+# Image optimization backups
+*_backup/
+*_optimized/
+
+# Google Cloud credentials
+*-key.json
+*-credentials.json
+service-account*.json
+
+# Reference images (private)
+reference/scenarios/*
+reference/agents/*
+!reference/scenarios/.gitkeep
+!reference/agents/.gitkeep

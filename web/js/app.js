@@ -60,6 +60,8 @@ const puzzleManager = createPuzzleManager({
   continueBtn: document.getElementById("puzzleContinueBtn")
 });
 
+let friendAgents = { friend1: null, friend2: null };
+
 function agentNameValue() {
   return currentAgent?.name || "Agente";
 }
@@ -72,9 +74,74 @@ function applyLandingVisibility() {
   }
 }
 
-function injectAgentName(text) {
+function getRandomFriends() {
+  // Obtener todos los agentes excepto el actual
+  const allAgentIds = Object.keys(agents);
+  const availableAgents = allAgentIds.filter(id => {
+    const agent = agents[id];
+    return agent && agent !== currentAgent;
+  });
+
+  // Seleccionar dos amigos aleatorios
+  const shuffled = availableAgents.sort(() => Math.random() - 0.5);
+  friendAgents.friend1 = agents[shuffled[0]] || null;
+  friendAgents.friend2 = agents[shuffled[1]] || null;
+}
+
+function injectAgentData(text) {
   if (typeof text !== "string") return text;
-  return text.replaceAll("{{agentName}}", agentNameValue());
+
+  let result = text;
+
+  // Reemplazar datos del agente principal
+  if (currentAgent) {
+    result = result.replaceAll("{{agent.name}}", currentAgent.name || "Agente");
+    result = result.replaceAll("{{agent.tag}}", currentAgent.tag || "");
+    result = result.replaceAll("{{agent.specialItem}}", currentAgent.specialItem || "objeto especial");
+    result = result.replaceAll("{{agent.fear}}", currentAgent.fear || "lo desconocido");
+    result = result.replaceAll("{{agent.luckyNumber}}", currentAgent.luckyNumber || "7");
+
+    // Reemplazar qualities por índice
+    if (Array.isArray(currentAgent.qualities)) {
+      currentAgent.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{agent.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Reemplazar datos de friend1
+  if (friendAgents.friend1) {
+    result = result.replaceAll("{{friend1.name}}", friendAgents.friend1.name || "Amiga");
+    result = result.replaceAll("{{friend1.tag}}", friendAgents.friend1.tag || "");
+
+    if (Array.isArray(friendAgents.friend1.qualities)) {
+      friendAgents.friend1.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{friend1.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Reemplazar datos de friend2
+  if (friendAgents.friend2) {
+    result = result.replaceAll("{{friend2.name}}", friendAgents.friend2.name || "Amiga");
+    result = result.replaceAll("{{friend2.tag}}", friendAgents.friend2.tag || "");
+
+    if (Array.isArray(friendAgents.friend2.qualities)) {
+      friendAgents.friend2.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{friend2.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Mantener compatibilidad con el formato antiguo
+  result = result.replaceAll("{{agentName}}", agentNameValue());
+
+  return result;
+}
+
+// Alias para mantener compatibilidad
+function injectAgentName(text) {
+  return injectAgentData(text);
 }
 
 async function loadJson(path) {
@@ -269,6 +336,10 @@ async function init() {
     const urlScene = new URLSearchParams(window.location.search).get("scene");
     initialSceneId = urlScene && scenes[urlScene] ? urlScene : startSceneId;
     currentAgent = getCurrentAgent();
+
+    // Asignar amigos aleatorios
+    getRandomFriends();
+
     renderAgent(currentAgent);
     landingTitleEl.textContent = `${agentNameValue()} & Ona · Operación Portal 27`;
     if (!gameConfig.showBackButton) {

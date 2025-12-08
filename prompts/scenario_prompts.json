@@ -6,224 +6,261 @@
   "scenes": {
     "intro": {
       "prompt": "Interior of a trampoline park called 'Super Jump', colorful foam pits, dim lighting with flickering ceiling lights, a glowing mysterious red symbol painted on the floor in a corner, slight fog, children playing in background.",
-      "output_file": "intro.png",
+      "output_file": "web/img/scenarios/intro.png",
       "use_reference_image": true,
-      "generated": false
+      "reference_image": "reference/scenarios/intro",
+      "generated": true
     },
     "ninja_simbolo": {
       "prompt": "Close-up of a glowing red symbol on the floor, texture looks wet but cold, static electricity sparks, a scary dark shadow looming behind two young girls, dramatic angle, mystery clue.",
-      "output_file": "ninja_simbolo.png",
+      "output_file": "web/img/scenarios/ninja_simbolo.png",
       "use_reference_image": false,
-      "generated": false
+      "reference_image": "reference/scenarios/ninja_simbolo",
+      "generated": true
     },
     "superjump_tarta": {
       "prompt": "Birthday party room, dark room lit only by candles on a cake, silhouettes of children singing, flickering overhead lights, mysterious atmosphere, faint red glow in the background.",
-      "output_file": "superjump_tarta.png",
+      "output_file": "web/img/scenarios/superjump_tarta.png",
       "use_reference_image": true,
-      "generated": false
+      "reference_image": "reference/scenarios/superjump_tarta",
+      "generated": true
     },
     "superjump_monitor": {
       "prompt": "A young male park monitor looking nervous and sweating, forced smile, holding a smartphone showing a photo of a dark shadow, arcade carpet floor, neon lights in background.",
-      "output_file": "superjump_monitor.png",
+      "output_file": "web/img/scenarios/superjump_monitor.png",
       "use_reference_image": false,
-      "generated": false
+      "reference_image": "reference/scenarios/superjump_monitor",
+      "generated": true
     },
     "superjump_ignorar": {
       "prompt": "Janitor mopping the floor of a trampoline park, erasing a red mark, kids leaving in the distance, lonely atmosphere, ‘The End’ feeling.",
-      "output_file": "superjump_ignorar.png",
+      "output_file": "web/img/scenarios/superjump_ignorar.png",
       "use_reference_image": false,
-      "generated": false
+      "reference_image": "reference/scenarios/superjump_ignorar",
+      "generated": true
     },
     "tiempo_pasa_hasta_casa": {
       "prompt": "Cozy 80s style living room, kids playing video console on an old TV, Christmas tree in the corner, lights in the room flickering ominously, rain on the window.",
-      "output_file": "tiempo_pasa_hasta_casa.png",
+      "output_file": "web/img/scenarios/tiempo_pasa_hasta_casa.png",
       "use_reference_image": false,
-      "generated": false
+      "reference_image": "reference/scenarios/tiempo_pasa_hasta_casa",
+      "generated": true
     },
     "casa_llegada": {
       "prompt": "Exterior of a country house near a pine forest at dusk, orange sky, a dog staring intensely at the dark woods, leaves blowing in wind, mystery mood.",
-      "output_file": "casa_llegada.png",
+      "output_file": "web/img/scenarios/casa_llegada.png",
       "use_reference_image": true,
-      "generated": false
+      "reference_image": "reference/scenarios/casa_llegada",
+      "generated": true
     },
     "casa_altillo": {
       "prompt": "Attic of a wooden house converted into a secret base, vintage boxes, cushions, a flashlight beam pointing at a wooden beam revealing a handwritten message, dust particles, magical lighting.",
-      "output_file": "casa_altillo.png",
+      "output_file": "web/img/scenarios/casa_altillo.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/casa_altillo",
       "generated": false
     },
     "casa_altillo_reto_orden": {
       "prompt": "Close up of wooden floor with scattered cardboard cards with handwritten words 'PINO', 'ROJO', 'LINA', 'AIRE', cinematic depth of field, flashlight illumination.",
-      "output_file": "casa_altillo_reto_orden.png",
+      "output_file": "web/img/scenarios/casa_altillo_reto_orden.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/casa_altillo_reto_orden",
       "generated": false
     },
     "casa_jardin_jigsaw": {
       "prompt": "Garden grass at night, a symbol drawn in the dirt that looks broken like a puzzle, flashlight beam illuminating the ground, misty forest background.",
-      "output_file": "casa_jardin_jigsaw.png",
+      "output_file": "web/img/scenarios/casa_jardin_jigsaw.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/casa_jardin_jigsaw",
       "generated": false
     },
     "casa_altillo_viga": {
       "prompt": "Close up of a wooden beam with handwritten text 'PORTAL 27', dust, cobwebs, focused flashlight beam, mystery clues.",
-      "output_file": "casa_altillo_viga.png",
+      "output_file": "web/img/scenarios/casa_altillo_viga.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/casa_altillo_viga",
       "generated": false
     },
     "casa_salon_luces": {
       "prompt": "Dark living room, illuminated only by a tablet screen on a table showing a symbol, ceiling lights blinking in a specific pattern (short, short, long), reflection in the window showing a school building.",
-      "output_file": "casa_salon_luces.png",
+      "output_file": "web/img/scenarios/casa_salon_luces.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/casa_salon_luces",
       "generated": false
     },
     "casa_luces_pattern": {
       "prompt": "Close up of light switches on a wall, young girl's hand pressing them, intense focus, dramatic lighting.",
-      "output_file": "casa_luces_pattern.png",
+      "output_file": "web/img/scenarios/casa_luces_pattern.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/casa_luces_pattern",
       "generated": false
     },
     "casa_jardin": {
       "prompt": "Wide shot of a garden next to a pine forest, a large mysterious symbol carved into the earth pointing towards the trees, night time, fog rolling in, eerie red glow from the ground.",
-      "output_file": "casa_jardin.png",
+      "output_file": "web/img/scenarios/casa_jardin.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/casa_jardin",
       "generated": false
     },
     "casa_jardin_simbolo": {
       "prompt": "Top down view of a symbol in the dirt, the lines resemble soccer goal posts, supernatural glowing effect, night vision style.",
-      "output_file": "casa_jardin_simbolo.png",
+      "output_file": "web/img/scenarios/casa_jardin_simbolo.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/casa_jardin_simbolo",
       "generated": false
     },
     "casa_jardin_linternas": {
       "prompt": "Two young girls in a garden pointing flashlights at the night sky, a distant flash of light responding from a city in the horizon, 'E.T.' movie vibe.",
-      "output_file": "casa_jardin_linternas.png",
+      "output_file": "web/img/scenarios/casa_jardin_linternas.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/casa_jardin_linternas",
       "generated": false
     },
     "final_lina_guardiana": {
       "prompt": "A dog lying peacefully inside a white chalk circle on the grass, protecting a fading red mark, moonlight, peaceful but magical ending.",
-      "output_file": "final_lina_guardiana.png",
+      "output_file": "web/img/scenarios/final_lina_guardiana.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/final_lina_guardiana",
       "generated": false
     },
     "anticipar_cabalgata": {
       "prompt": "Two girls looking at a calendar marked '5 DE ENERO', determined expressions, planning a mission, warm lamp light in a dark attic.",
-      "output_file": "anticipar_cabalgata.png",
+      "output_file": "web/img/scenarios/anticipar_cabalgata.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/anticipar_cabalgata",
       "generated": false
     },
     "cabalgata_reyes": {
       "prompt": "Three Wise Men parade at night, colorful floats, crowds of people, King Gaspar's float has a small red symbol painted on the side, lights blinking in code, festive but mysterious.",
-      "output_file": "cabalgata_reyes.png",
+      "output_file": "web/img/scenarios/cabalgata_reyes.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/cabalgata_reyes",
       "generated": false
     },
     "cabalgata_senal": {
       "prompt": "View through a camera lens, zooming in on a parade float texture, revealing a hidden red symbol with a small crown drawing, digital overlay.",
-      "output_file": "cabalgata_senal.png",
+      "output_file": "web/img/scenarios/cabalgata_senal.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/cabalgata_senal",
       "generated": false
     },
     "final_cabalgata_ignorar": {
       "prompt": "A Wise Man from the parade waving directly at the camera, holding a bag of candy, night street lights, blurred crowd background.",
-      "output_file": "final_cabalgata_ignorar.png",
+      "output_file": "web/img/scenarios/final_cabalgata_ignorar.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/final_cabalgata_ignorar",
       "generated": false
     },
     "espera_hasta_vuelta_cole": {
       "prompt": "Two girls walking towards a large brick school building 'Sagrada Familia', morning mist, backpacks, holding a notebook with clues, cinematic back shot.",
-      "output_file": "espera_hasta_vuelta_cole.png",
+      "output_file": "web/img/scenarios/espera_hasta_vuelta_cole.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/espera_hasta_vuelta_cole",
       "generated": false
     },
     "cole_entrada": {
       "prompt": "School entrance gate, students entering, a bulletin board with a poster peeling off revealing a red corner, a receptionist smiling in the background.",
-      "output_file": "cole_entrada.png",
+      "output_file": "web/img/scenarios/cole_entrada.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/cole_entrada",
       "generated": false
     },
     "cole_recepcion": {
       "prompt": "School reception desk, a friendly woman handing a crumpled note to two girls, office lighting, mysterious paper with a symbol.",
-      "output_file": "cole_recepcion.png",
+      "output_file": "web/img/scenarios/cole_recepcion.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/cole_recepcion",
       "generated": false
     },
     "cole_campos": {
       "prompt": "School soccer field, white paint lines forming a non-standard geometric shape, morning fog, empty bleachers in background.",
-      "output_file": "cole_campos.png",
+      "output_file": "web/img/scenarios/cole_campos.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/cole_campos",
       "generated": false
     },
     "cole_campos_foto": {
       "prompt": "High angle view from bleachers looking down at the soccer field, the white lines clearly form a map pointing to a specific building, digital HUD overlay effect.",
-      "output_file": "cole_campos_foto.png",
+      "output_file": "web/img/scenarios/cole_campos_foto.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/cole_campos_foto",
       "generated": false
     },
     "cole_pabellon": {
       "prompt": "Indoor school gymnasium, polished wood floor, electronic scoreboard glitching and showing a red symbol instead of numbers, flickering lights, echoing atmosphere.",
-      "output_file": "cole_pabellon.png",
+      "output_file": "web/img/scenarios/cole_pabellon.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/cole_pabellon",
       "generated": false
     },
     "cole_enfermeria": {
       "prompt": "School infirmary room, a nurse looking worried holding a walkie-talkie with a red sticker on it, medical cabinets, sterile white light.",
-      "output_file": "cole_enfermeria.png",
+      "output_file": "web/img/scenarios/cole_enfermeria.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/cole_enfermeria",
       "generated": false
     },
     "cole_laboratorio": {
       "prompt": "School science laboratory, microscopes and beakers, a star map on the blackboard, a glowing red symbol drawn on a table, room is dark with only one light on.",
-      "output_file": "cole_laboratorio.png",
+      "output_file": "web/img/scenarios/cole_laboratorio.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/cole_laboratorio",
       "generated": false
     },
     "laboratorio_alerta": {
       "prompt": "School science laboratory in total darkness except for a glowing red symbol on a table, tense atmosphere, walkie-talkie on the table.",
-      "output_file": "laboratorio_alerta.png",
+      "output_file": "web/img/scenarios/laboratorio_alerta.png",
       "use_reference_image": true,
+      "reference_image": "reference/scenarios/laboratorio_alerta",
       "generated": false
     },
     "cole_laboratorio_walkie": {
       "prompt": "Close up of a walkie-talkie on a lab table, red light indicating transmission, sparks of static electricity, background of science equipment.",
-      "output_file": "cole_laboratorio_walkie.png",
+      "output_file": "web/img/scenarios/cole_laboratorio_walkie.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/cole_laboratorio_walkie",
       "generated": false
     },
     "puzzle_caja_final": {
       "prompt": "A high-tech looking safe box hidden under a desk, glowing keypad waiting for a code, magical aura, mysterious object.",
-      "output_file": "puzzle_caja_final.png",
+      "output_file": "web/img/scenarios/puzzle_caja_final.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/puzzle_caja_final",
       "generated": false
     },
     "final_heroe_laboratorio": {
       "prompt": "Two girls drawing on a star map with markers, intense concentration, the room lighting becoming warm and stable, a feeling of relief and victory.",
-      "output_file": "final_heroe_laboratorio.png",
+      "output_file": "web/img/scenarios/final_heroe_laboratorio.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/final_heroe_laboratorio",
       "generated": false
     },
     "final_misterio_abierto": {
       "prompt": "An open notebook full of notes and drawings of symbols, a dark laboratory door closing in the background, 'Case Open' stamp effect.",
-      "output_file": "final_misterio_abierto.png",
+      "output_file": "web/img/scenarios/final_misterio_abierto.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/final_misterio_abierto",
       "generated": false
     },
     "final_acuerdo_luces": {
       "prompt": "A girl holding a walkie-talkie speaking firmly, soft blue light filling the room, peaceful atmosphere, particles of light floating.",
-      "output_file": "final_acuerdo_luces.png",
+      "output_file": "web/img/scenarios/final_acuerdo_luces.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/final_acuerdo_luces",
       "generated": false
     },
     "final_cortar_lab": {
       "prompt": "Total darkness, a fading red dot in the center, silhouette of a lab table, feeling of abrupt silence.",
-      "output_file": "final_cortar_lab.png",
+      "output_file": "web/img/scenarios/final_cortar_lab.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/final_cortar_lab",
       "generated": false
     },
     "final_secreto_agentes_legendarios": {
       "prompt": "A table with a collection of objects (photo, stone, compass) glowing intensely, beams of magical light swirling around two girls, golden aura, epic legendary ending style.",
-      "output_file": "final_secreto_agentes_legendarios.png",
+      "output_file": "web/img/scenarios/final_secreto_agentes_legendarios.png",
       "use_reference_image": false,
+      "reference_image": "reference/scenarios/final_secreto_agentes_legendarios",
       "generated": false
     }
   }

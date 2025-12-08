@@ -7,195 +7,195 @@
     "manuela_full": {
       "prompt": "Chibi full-body of Manuela, attentive and quick, hint of a mental map prop (rolled parchment).",
       "output_file": "web/img/agents/manuela_full.png",
-      "reference_image": "web/img/agents_refs/manuela",
+      "reference_image": "reference/agents/manuela",
       "use_reference_image": true
     },
     "manuela_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Manuela), keeping the same chibi face and hair, white background.",
       "output_file": "web/img/agents/manuela_avatar.png",
-      "reference_image": "web/img/agents_refs/manuela",
+      "reference_image": "reference/agents/manuela",
       "use_reference_image": true
     },
 
     "claudia_full": {
       "prompt": "Chibi full-body of Claudia, analytical and logical, holding a retro calculator or notes.",
       "output_file": "web/img/agents/claudia_full.png",
-      "reference_image": "web/img/agents_refs/claudia",
+      "reference_image": "reference/agents/claudia",
       "use_reference_image": true
     },
     "claudia_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Claudia), same chibi face and hair, white background.",
       "output_file": "web/img/agents/claudia_avatar.png",
-      "reference_image": "web/img/agents_refs/claudia",
+      "reference_image": "reference/agents/claudia",
       "use_reference_image": true
     },
 
     "zoe_full": {
       "prompt": "Chibi full-body of Zoe, ingeniosa y creativa, con un pequeño cubo de puzzles o acertijos.",
       "output_file": "web/img/agents/zoe_full.png",
-      "reference_image": "web/img/agents_refs/zoe",
+      "reference_image": "reference/agents/zoe",
       "use_reference_image": true
     },
     "zoe_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Zoe), same chibi face and hair, white background.",
       "output_file": "web/img/agents/zoe_avatar.png",
-      "reference_image": "web/img/agents_refs/zoe",
+      "reference_image": "reference/agents/zoe",
       "use_reference_image": true
     },
 
     "paula_full": {
       "prompt": "Chibi full-body of Paula, oído super fino, quizá con unos cascos retro o un pequeño walkman.",
       "output_file": "web/img/agents/paula_full.png",
-      "reference_image": "web/img/agents_refs/paula",
+      "reference_image": "reference/agents/paula",
       "use_reference_image": true
     },
     "paula_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Paula), same chibi face and hair, white background.",
       "output_file": "web/img/agents/paula_avatar.png",
-      "reference_image": "web/img/agents_refs/paula",
+      "reference_image": "reference/agents/paula",
       "use_reference_image": true
     },
 
     "marta_full": {
       "prompt": "Chibi full-body of Marta, valiente y decidida, con pulsera roja y postura firme.",
       "output_file": "web/img/agents/marta_full.png",
-      "reference_image": "web/img/agents_refs/marta",
+      "reference_image": "reference/agents/marta",
       "use_reference_image": true
     },
     "marta_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Marta), same chibi face and hair, white background.",
       "output_file": "web/img/agents/marta_avatar.png",
-      "reference_image": "web/img/agents_refs/marta",
+      "reference_image": "reference/agents/marta",
       "use_reference_image": true
     },
 
     "aitana_full": {
       "prompt": "Chibi full-body of Aitana, exploradora nata, con brújula retro o pequeño mapa, look aventurera 80s.",
       "output_file": "web/img/agents/aitana_full.png",
-      "reference_image": "web/img/agents_refs/aitana",
+      "reference_image": "reference/agents/aitana",
       "use_reference_image": true
     },
     "aitana_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Aitana), same chibi face and hair, white background.",
       "output_file": "web/img/agents/aitana_avatar.png",
-      "reference_image": "web/img/agents_refs/aitana",
+      "reference_image": "reference/agents/aitana",
       "use_reference_image": true
     },
 
     "alejandra_full": {
       "prompt": "Chibi full-body of Alejandra, artista pintora, con pincel retro o paleta ochentera como prop.",
       "output_file": "web/img/agents/alejandra_full.png",
-      "reference_image": "web/img/agents_refs/alejandra",
+      "reference_image": "reference/agents/alejandra",
       "use_reference_image": true
     },
     "alejandra_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Alejandra), same chibi face and hair, white background.",
       "output_file": "web/img/agents/alejandra_avatar.png",
-      "reference_image": "web/img/agents_refs/alejandra",
+      "reference_image": "reference/agents/alejandra",
       "use_reference_image": true
     },
 
     "ada_full": {
       "prompt": "Chibi full-body of Ada, lingüista imaginativa, con pequeño diccionario mágico o notas de símbolos.",
       "output_file": "web/img/agents/ada_full.png",
-      "reference_image": "web/img/agents_refs/ada",
+      "reference_image": "reference/agents/ada",
       "use_reference_image": true
     },
     "ada_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Ada), same chibi face and hair, white background.",
       "output_file": "web/img/agents/ada_avatar.png",
-      "reference_image": "web/img/agents_refs/ada",
+      "reference_image": "reference/agents/ada",
       "use_reference_image": true
     },
 
     "jimena_full": {
       "prompt": "Chibi full-body of Jimena, detective de detalles, con lupa retro y luz azul suave.",
       "output_file": "web/img/agents/jimena_full.png",
-      "reference_image": "web/img/agents_refs/jimena",
+      "reference_image": "reference/agents/jimena",
       "use_reference_image": true
     },
     "jimena_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Jimena), same chibi face and hair, white background.",
       "output_file": "web/img/agents/jimena_avatar.png",
-      "reference_image": "web/img/agents_refs/jimena",
+      "reference_image": "reference/agents/jimena",
       "use_reference_image": true
     },
 
     "leo_full": {
       "prompt": "Chibi full-body of Leo, coleccionista curioso, con pequeña cajita de objetos raros.",
       "output_file": "web/img/agents/leo_full.png",
-      "reference_image": "web/img/agents_refs/leo",
+      "reference_image": "reference/agents/leo",
       "use_reference_image": true
     },
     "leo_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Leo), same chibi face and hair, white background.",
       "output_file": "web/img/agents/leo_avatar.png",
-      "reference_image": "web/img/agents_refs/leo",
+      "reference_image": "reference/agents/leo",
       "use_reference_image": true
     },
 
     "isabel_full": {
       "prompt": "Chibi full-body of Isabel, orientación perfecta, con mini mapa plegable o brújula.",
       "output_file": "web/img/agents/isabel_full.png",
-      "reference_image": "web/img/agents_refs/isabel",
+      "reference_image": "reference/agents/isabel",
       "use_reference_image": true
     },
     "isabel_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Isabel), same chibi face and hair, white background.",
       "output_file": "web/img/agents/isabel_avatar.png",
-      "reference_image": "web/img/agents_refs/isabel",
+      "reference_image": "reference/agents/isabel",
       "use_reference_image": true
     },
 
     "ainhoa_full": {
       "prompt": "Chibi full-body of Ainhoa, genia de la lógica, con cuaderno de estrategias milenarias.",
       "output_file": "web/img/agents/ainhoa_full.png",
-      "reference_image": "web/img/agents_refs/ainhoa",
+      "reference_image": "reference/agents/ainhoa",
       "use_reference_image": true
     },
     "ainhoa_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Ainhoa), same chibi face and hair, white background.",
       "output_file": "web/img/agents/ainhoa_avatar.png",
-      "reference_image": "web/img/agents_refs/ainhoa",
+      "reference_image": "reference/agents/ainhoa",
       "use_reference_image": true
     },
 
     "martina_full": {
       "prompt": "Chibi full-body of Martina, calma absoluta, con pequeña piedra suave como amuleto.",
       "output_file": "web/img/agents/martina_full.png",
-      "reference_image": "web/img/agents_refs/martina",
+      "reference_image": "reference/agents/martina",
       "use_reference_image": true
     },
     "martina_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Martina), same chibi face and hair, white background.",
       "output_file": "web/img/agents/martina_avatar.png",
-      "reference_image": "web/img/agents_refs/martina",
+      "reference_image": "reference/agents/martina",
       "use_reference_image": true
     },
 
     "paola_cole_full": {
       "prompt": "Chibi full-body of Paola (Cole), detectora de pistas ocultas, con linterna ultrafina violeta.",
       "output_file": "web/img/agents/paola_cole_full.png",
-      "reference_image": "web/img/agents_refs/paola_cole",
+      "reference_image": "reference/agents/paola_cole",
       "use_reference_image": true
     },
     "paola_cole_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Paola Cole), same chibi face and hair, white background.",
       "output_file": "web/img/agents/paola_cole_avatar.png",
-      "reference_image": "web/img/agents_refs/paola_cole",
+      "reference_image": "reference/agents/paola_cole",
       "use_reference_image": true
     },
 
     "paola_full": {
       "prompt": "Chibi full-body of Paola Poveda, súper velocidad, con cordones rojos y actitud enérgica.",
       "output_file": "web/img/agents/paola_full.png",
-      "reference_image": "web/img/agents_refs/paola",
+      "reference_image": "reference/agents/paola",
       "use_reference_image": true
     },
     "paola_avatar": {
       "prompt": "Create an avatar only with the head of the last generated image (Paola Poveda), same chibi face and hair, white background.",
       "output_file": "web/img/agents/paola_avatar.png",
-      "reference_image": "web/img/agents_refs/paola",
+      "reference_image": "reference/agents/paola",
       "use_reference_image": true
     }
   }

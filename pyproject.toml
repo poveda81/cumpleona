@@ -1,0 +1,17 @@
+[project]
+name = "portal27"
+version = "0.1.0"
+description = "Image generation helper scripts for Portal 27"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "google-generativeai",
+  "google-cloud-aiplatform",
+  "openai",
+  "Pillow",
+  "python-dotenv",
+  "requests"
+]
+
+[tool.uv]
+# Default UV settings; adjust if you need custom indexes or cache dirs.
