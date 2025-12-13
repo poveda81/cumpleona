@@ -27,3 +27,6 @@ reference/scenarios/*
 reference/agents/*
 !reference/scenarios/.gitkeep
 !reference/agents/.gitkeep
+
+# Claude
+.claude

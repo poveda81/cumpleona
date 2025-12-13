@@ -11,21 +11,21 @@
       "ending": false,
       "textLines": [
         "¡Cumple de Ona! Estás saltando a tope en el Super Jump.",
-        "Risas, bolas de colores y tú, {{agent.name}}, haciendo tus mejores trucos.",
+        "Risas, bolas de colores y tú, {{agent.name}}, haciendo tus mejores saltos.",
         "",
         "¡ZAS! Las luces del techo parpadean tres veces.",
-        "Cualquiera se asustaría, pero tú tienes {{agent.tag}}, así que te fijas bien.",
+        "Cualquiera se asustaría, pero tú, que eres muy valiente te quedas tranquila y te fijas bien.",
         "",
-        "En la zona Ninja, ves algo en el suelo:",
-        "Un círculo rojo que brilla. No es pintura.",
-        "Ona encuentra una nota: \"27/12 – 11:20. COMIENZA.\"",
+        "En la zona de los cubos de espuma ves algo en el suelo:",
+        "Una especie de grieta roja que parece que brilla. No es pintura.",
+        "Ona, que está a tu lado, encuentra una nota: \"27/12 – 11:20. COMIENZA.\"",
         "",
-        "Ona te mira: —Agente {{agent.name}}, saca tu {{agent.specialItem}}. Esto empieza."
+        "Ella te mira: —Agente {{agent.name}}, saca tu {{agent.specialItem}}. Empieza la aventura."
       ],
       "choices": [
         {
-          "text": "➤ ¡A investigar ese símbolo ya!",
-          "next": "ninja_simbolo"
+          "text": "➤ ¡A investigar esa grieta ya!",
+          "next": "superjump_grieta"
         },
         {
           "text": "➤ Ignorarlo (aunque me da mala espina).",
@@ -34,28 +34,28 @@
       ]
     },
 
-"ninja_simbolo": {
+"superjump_grieta": {
       "datetime": "27 Dic - 11:35",
-      "place": "Zona Ninja",
+      "place": "Cubos de espuma",
       "characters": ["ona", "agent", "friend1"],
       "ending": false,
       "textLines": [
-        "Os acercáis. El símbolo está helado y da calambrazos.",
-        "Sacas tu {{agent.specialItem}} para examinarlo, pero oís pasos.",
+        "Os acercáis. La grieta no es muy grande pero emana algo de luz y sale una especie de humo casi imperceptible.",
+        "Te acercas todo lo que puedes para tocarlo y mirarlo bien de cerca pero oís pasos.",
         "¡Es el monitor! Os va a pillar.",
         "",
-        "De repente, {{friend1.name}} aparece haciendo una voltereta exagerada.",
-        "—¡Ayuda! ¡Creo que me he atascado! —grita {{friend1.name}} guiñándote un ojo.",
-        "Gracias a su {{friend1.tag}}, el monitor se gira hacia ella.",
-        "¡Vía libre! Hacéis la foto rápida. Detrás de vosotras sale una sombra rara."
+        "De repente, {{friend1.name}} aparece corriendo y casi sin aliento.",
+        "—¡Ayuda! ¡A {{friend2.name}} le ha pasado algo! —grita {{friend1.name}} guiñándote un ojo y con una sonrisa en los labios.",
+        "{{friend1.name}} ha estado rápida. Gracias a su distracción el monitor se ha ido a ver qué pasaba con {{friend2.name}}. Ahora podéis analizar detenidamente esa cosa extraña del suelo.",
+        "Lo que parecía ser una grieta en realiad no lo es, es solo un dibujo en el suelo. Tienes tiene tiempo suficiente para hacerle una foto con tu cámara espía."
       ],
       "choices": [
         {
-          "text": "➤ Guardar pruebas y chocar los cinco a {{friend1.name}} luego.",
+          "text": "➤ Guardar cámara y chocar los cinco a Ona.",
           "next": "superjump_tarta"
         },
         {
-          "text": "➤ Ir a ayudar a {{friend1.name}} y contárselo todo al monitor.",
+          "text": "➤ Ir a buscar a {{friend1.name}} y contárselo todo al monitor.",
           "next": "superjump_monitor"
         }
       ]
@@ -67,12 +67,12 @@
       "characters": ["ona", "agent", "amigos"],
       "ending": false,
       "textLines": [
-        "Hora de la tarta. Se apagan las luces.",
-        "Tú acaricias tu {{agent.specialItem}} en el bolsillo para darte seguridad.",
+        "Hora de la tarta. {{friend4.name}}, {{friend5.name}} y {{friend6.name}} ya están sentadas en la mesa. Se apagan las luces.",
+        "Tú acaricias tu cámara espía para asegurarte que sigue en el bolsillo.",
         "",
-        "Ona sopla las velas y... ¡las luces parpadean!",
-        "Nadie lo ve, solo vosotras.",
-        "Tu instinto de {{agent.tag}} te dice que esto no ha acabado."
+        "Ona sopla las velas y... ¡las luces parpadean de una manera!",
+        "Nadie parece darse cuenta. Ona y tú os mirais.",
+        "Vuestro instinto dice que esto no ha acabado."
       ],
       "choices": [
         {
@@ -88,15 +88,15 @@
 
     "superjump_monitor": {
       "datetime": "27 Dic - 11:45",
-      "place": "Zona Ninja",
+      "place": "Zona de Escalada",
       "characters": ["ona", "agent", "monitor"],
       "ending": false,
       "textLines": [
-        "Le enseñáis la foto al monitor.",
+        "Os asegurais que {{friend2.name}} está bien y le enseñáis la foto al monitor.",
         "Él se pone pálido, pero luego sonríe forzado.",
         "—Nada chicas, será un fallo de la cámara.",
         "",
-        "Tú eres muy {{agent.qualities[0]}} y sabes que miente.",
+        "Sabéis que miente.",
         "Aquí pasa algo raro."
       ],
       "choices": [
@@ -115,11 +115,8 @@
       "itemsGained": ["recuerdo_superjump"],
       "textLines": [
         "Decides pasar. Has venido a divertirte.",
-        "Pero esa noche, sueñas con {{agent.fear}} y luces rojas.",
-        "Al menos tienes un recuerdo del cumple.",
-        "",
-        "Objeto ganado: «recuerdo_superjump»",
-        "FINAL SIMPLE: {{agent.name}} ignora la llamada."
+        "La vida de una agente secreta no es para todos.",
+        ""
       ],
       "choices": [
         {
@@ -135,12 +132,13 @@
       "characters": ["ona", "agent"],
       "ending": false,
       "textLines": [
-        "Pasan los días de vacaciones.",
+        "Pasan algunos días de vacaciones.",
+        "Ya te has comida las uvas y has estrenado el año nuevo.",
         "Estás en casa tranquila, jugando, pero tus luces parpadean.",
         "",
         "El 2 de enero, Ona te llama:",
-        "—{{agent.name}}, te necesito. Trae tu {{agent.specialItem}}.",
-        "  Tenemos que investigar en mi casa."
+        "—{{agent.name}}, te necesito. Después de mi cumple en mi casa están pasando cosas raras.",
+        "  Tenemos que investigarlo."
       ],
       "choices": [
         {
@@ -157,14 +155,17 @@
       "ending": false,
       "textLines": [
         "Llegas a Caprala. Lina, la perrita, está nerviosa.",
-        "Mira fijamente al bosque y gruñe.",
-        "Tú, que eres súper {{agent.qualities[0]}}, notas que el aire está cargado.",
+        "Mira fijamente una parte del jardín a la que no le suele hacer mucho caso. Ladra y gruñe sin parar.",
+        "Notas algo extraño en el ambiente, una especie de neblina rojiza.",
         "",
-        "Ona te espera en la puerta con la libreta de espía."
+        "Ona te espera en la escalera de su habitación con su libreta.",
+        "-Ona, ¿qué pasa en el jardín que Lina no para de ladrar? —preguntas.",
+        "—No lo sé, pero creo que tiene que ver con las luces y el símbolo rojo que vimos en el Super Jump.",
+        "  Ven al altillo, te lo enseño."
       ],
       "choices": [
         {
-          "text": "➤ Subir al Altillo (Cuartel General).",
+          "text": "➤ Subir al Altillo.",
           "next": "casa_altillo"
         },
         {
@@ -181,22 +182,27 @@
       "ending": false,
       "textLines": [
         "Subís al altillo. Es vuestro refugio.",
-        "Dejas tu {{agent.specialItem}} junto a las pistas.",
-        "¡De repente brilla! Y una linterna se enciende sola apuntando al techo.",
+        "Dejas la linterna que te has traído junto a la de Ona y la cámara espía.",
         "",
-        "Hay unas tarjetas desordenadas y un mensaje en la viga."
+        "-Mira esto, {{agent.name}} —dice Ona señalando una caja vieja—.",
+        "-La encontré el otro día fuera de mi casa. Tiene el símbolo rojo dibujado.",
+        "Dentro de la caja hay 4 piezas de arcilla con palabras escritas.",
+        "",
+        "¡De repente unas luces fuera de la habitación parpadean! Una linterna se enciende sola apuntando al techo.",
+        "",
+        "Hay unos Post-its pegados en el techo y un mensaje en la viga."
       ],
       "choices": [
+        {
+          "text": "➤ Revisar los post-its.",
+          "next": "casa_altillo_reto_orden"
+        },
         {
           "text": "➤ Leer el mensaje de la viga.",
           "next": "casa_altillo_viga"
         },
         {
-          "text": "➤ Usar mi {{agent.tag}} para resolver las tarjetas.",
-          "next": "casa_altillo_reto_orden"
-        },
-        {
-          "text": "➤ Bajar al salón a ver las luces.",
+          "text": "➤ Bajar a ver las luces.",
           "next": "casa_salon_luces"
         }
       ]
@@ -208,17 +214,17 @@
       "characters": ["ona", "agent"],
       "ending": false,
       "textLines": [
-        "Las tarjetas dicen: PINO, ROJO, LINA, AIRE.",
+        "En cada uno de las piezas hay una palabra diferente: GALLINA, ROJO, LINA, AIRE.",
         "—Seguro que tú sabes el orden, {{agent.name}} —dice Ona.",
-        "¡A usar esa mente privilegiada!"
+        "¡A ver si somos capaces de descifrar el mensaje!"
       ],
       "puzzle": {
         "type": "sorting",
         "id": "altillo_orden_palabras",
         "data": {
-          "items": ["PINO", "ROJO", "LINA", "AIRE"],
-          "correctOrder": ["AIRE", "LINA", "PINO", "ROJO"],
-          "code": "ALPR"
+          "items": ["GALLINA", "ROJO", "LINA", "AIRE"],
+          "correctOrder": ["AIRE", "GALLINA", "LINA", "ROJO"],
+          "code": "AGLR"
         },
         "successNext": "casa_altillo_viga",
         "failText": "Mmm, no. Prueba otro orden lógico."
@@ -231,12 +237,12 @@
       "characters": ["ona", "agent"],
       "ending": false,
       "textLines": [
-        "En la viga pone:",
+        "Apartais las piezas de construcción de la viga y leéis el mensaje:",
         "\"27/12 · PORTAL 27 ACTIVADO.",
         " SI VUELVE EL SÍMBOLO... BUSCAD EN EL COLEGIO.\"",
         "",
         "Ona palidece: —¡El cole! Alguien sabía que esto pasaría.",
-        "Tú aprietas los puños. No tienes miedo a {{agent.fear}}, menos a esto."
+        "Tú aprietas los puños. No tienes miedo a nada, menos a esto."
       ],
       "choices": [
         {
