@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "theme": "The Abandoned Railway",
+    "scene_description": "walking along a set of rusted, abandoned railway tracks that disappear into a foggy forest. Character 1 is balancing on the rail with a flashlight, while Character 2 looks at a map near the wooden sleepers.",
+    "lighting_mood": "illuminated by the pale blue light of a full moon and the sharp yellow beam of the flashlight cutting through the mist"
+  },
+  {
+    "id": 2,
+    "theme": "The Treehouse",
+    "scene_description": "inside a wooden treehouse filled with comic books and radio equipment. Character 1 is looking out the window with binoculars, and Character 2 is tuning a ham radio device.",
+    "lighting_mood": "lit by the warm, cozy glow of a kerosene lantern hanging from the ceiling, creating deep shadows in the corners"
+  },
+  {
+    "id": 3,
+    "theme": "The School Hallway",
+    "scene_description": "in the long hallway of a high school at night, lined with metal lockers. Papers are scattered on the floor. Character 1 is trying to open a locker, while Character 2 stands guard looking down the hall.",
+    "lighting_mood": "bathed in the eerie, flickering fluorescent light from a single working overhead bulb, casting long, harsh shadows"
+  },
+  {
+    "id": 4,
+    "theme": "The Cornfield",
+    "scene_description": "standing at the edge of a dense, tall cornfield. The stalks are towering over them. Character 1 is pushing aside the corn leaves to enter, and Character 2 holds up their calculator to check for signals.",
+    "lighting_mood": "dominated by deep night blues, with the characters rim-lit by the headlights of a distant car passing on the road"
+  },
+  {
+    "id": 5,
+    "theme": "The Basement",
+    "scene_description": "in a cluttered basement filled with boxes and an old furnace. Character 1 is shining a light on a strange symbol drawn on the wall, while Character 2 looks terrified at a noise coming from the stairs.",
+    "lighting_mood": "cast in heavy shadow, illuminated only by the orange pilot light of the furnace and the flashlight beam"
+  },
+  {
+    "id": 6,
+    "theme": "The Storm Drain",
+    "scene_description": "crouched near the opening of a concrete storm drain pipe in a dry riverbed. Graffiti covers the concrete. Character 1 is shouting into the echoey pipe, and Character 2 is recording the sound.",
+    "lighting_mood": "lit by the fading purple and orange hues of a sunset, with the interior of the pipe falling into pitch black darkness"
+  },
+  {
+    "id": 7,
+    "theme": "The Radio Tower",
+    "scene_description": "at the base of a massive metal radio tower surrounded by a chain-link fence. High voltage signs are visible. Character 1 is cutting a hole in the fence, while Character 2 keeps a lookout.",
+    "lighting_mood": "illuminated by the red warning light blinking atop the tower and the cold, desaturated light of a cloudy night sky"
+  },
+  {
+    "id": 8,
+    "theme": "The Laboratory Exterior",
+    "scene_description": "hiding behind a dumpster outside a sterile-looking government laboratory building. Ventilation fans are spinning on the wall. Character 1 is peeking around the corner, Character 2 is analyzing data on the calculator.",
+    "lighting_mood": "contrast between the dark shadows of the alley and the harsh, clinical white security floodlights washing over the building"
+  },
+  {
+    "id": 9,
+    "theme": "The Bike Drop",
+    "scene_description": "on a suburban street corner. Their BMX bikes are lying on the grass. Character 1 is picking up a walkie-talkie from the ground, and Character 2 is pointing towards a house with broken windows.",
+    "lighting_mood": "lit by the singular, amber glow of a streetlamp overhead, creating a pool of light in the surrounding darkness"
+  },
+  {
+    "id": 10,
+    "theme": "The Junkyard",
+    "scene_description": "navigating through a maze of crushed cars and piles of scrap metal. Character 1 is climbing on top of a car hood to get a better view, while Character 2 examines a strange metallic object on the ground.",
+    "lighting_mood": "mysterious and gloomy, with moonlight reflecting off the chrome and glass of the wrecked cars"
+  },
+  {
+    "id": 11,
+    "theme": "The Attic",
+    "scene_description": "in a dusty attic full of cobwebs and old furniture covered in white sheets. Character 1 is opening an old trunk, and Character 2 is holding the calculator up to a dusty circular window.",
+    "lighting_mood": "dramatic beams of blue moonlight streaming through the window slats, cutting through the floating dust particles"
+  },
+  {
+    "id": 12,
+    "theme": "The Restricted Area",
+    "scene_description": "in a forest clearing where the ground looks scorched and strange vines are growing. Character 1 is kneeling to touch the ground, and Character 2 is backing away slowly.",
+    "lighting_mood": "eerie and supernatural, with a faint, unexplainable green bioluminescent glow coming from the strange vines"
+  },
+  {
+    "id": 13,
+    "theme": "The Diner",
+    "scene_description": "sitting in a booth inside a retro diner, looking out the window at something scary outside. A jukebox is in the background. Character 1 presses hands against the glass, Character 2 looks at the menu nervously.",
+    "lighting_mood": "illuminated by the colorful neon signs of the diner interior reflecting against the dark, rainy window glass"
+  },
+  {
+    "id": 14,
+    "theme": "The Old Bridge",
+    "scene_description": "standing in the middle of an old wooden covered bridge. Character 1 is shining the flashlight into the rafters, and Character 2 is looking down through a gap in the floorboards at the water below.",
+    "lighting_mood": "very dark and claustrophobic, with the only light sources being the flashlight and the faint reflection of the water below"
+  },
+  {
+    "id": 15,
+    "theme": "The Bus Stop",
+    "scene_description": "sitting on a bench at a lonely bus stop on a deserted road. Character 1 is checking a watch impatiently, and Character 2 is looking down the empty road with binoculars.",
+    "lighting_mood": "misty and noir-like, lit by a flickering overhead light that buzzes, casting intermittent shadows"
+  },
+  {
+    "id": 16,
+    "theme": "The Abandoned Pool",
+    "scene_description": "standing at the edge of an empty, cracked swimming pool filled with fallen leaves. Character 1 is climbing down the rusty ladder, while Character 2 examines strange markings on the pool's edge.",
+    "lighting_mood": "bathed in the golden hour sunset light, casting long dramatic shadows across the pool's interior, with orange and purple hues"
+  },
+  {
+    "id": 17,
+    "theme": "The Library After Hours",
+    "scene_description": "between towering bookshelves in a dimly lit library after closing time. Character 1 is pulling an old book from a high shelf, while Character 2 holds a flashlight and watches the door nervously.",
+    "lighting_mood": "illuminated by scattered reading lamps creating pools of warm light, with dark corridors between the shelves creating a maze-like atmosphere"
+  }
+]

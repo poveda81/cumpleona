@@ -356,7 +356,7 @@ export function createPuzzleManager(dom) {
     dom.content.appendChild(grid);
   };
 
-  const render = (sceneId, puzzleConfig, onSuccess) => {
+  const render = (sceneId, puzzleConfig, onSuccess, agentId = null) => {
     if (!puzzleConfig) {
       hide();
       return;
@@ -369,6 +369,17 @@ export function createPuzzleManager(dom) {
     dom.message.style.color = "#ffb3b3";
     dom.continueBtn.style.display = "none";
     dom.continueBtn.onclick = null;
+
+    // Personalizar imagen del jigsaw si hay un agentId
+    if (puzzleConfig.type === "jigsaw" && agentId && puzzleConfig.data) {
+      puzzleConfig = {
+        ...puzzleConfig,
+        data: {
+          ...puzzleConfig.data,
+          image: `img/puzzles/jigsaw/ona_${agentId}.png`
+        }
+      };
+    }
 
     switch (puzzleConfig.type) {
       case "sorting":

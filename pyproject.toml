@@ -10,7 +10,8 @@ dependencies = [
   "openai",
   "Pillow",
   "python-dotenv",
-  "requests"
+  "requests",
+  "beautifulsoup4>=4.14.3",
 ]
 
 [tool.uv]

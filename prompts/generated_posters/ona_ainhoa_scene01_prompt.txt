@@ -1,0 +1,37 @@
+# Prompt para Poster: Ona + Ainhoa - Escena 1
+
+Personajes: Ona + Ainhoa
+Escena: The Abandoned Railway
+Imagen de Ona: reference/agents/ona/ona_full.png
+Imagen de Ainhoa: web/img/agents/ainhoa_fullbody.png
+
+INSTRUCCIONES:
+1. Abre tu herramienta de generación de imágenes
+2. Sube las dos imágenes:
+   - reference/agents/ona/ona_full.png (imagen de Ona)
+   - web/img/agents/ainhoa_fullbody.png (imagen de Ainhoa)
+3. Copia y pega el prompt que está después de esta línea
+4. Genera la imagen (formato 2:3, tipo carta de naipes)
+5. Guarda el resultado como: ona_ainhoa_scene01.png
+
+================================================================================
+PROMPT:
+================================================================================
+
+A vintage 1980s horror/adventure comic book panel illustration.
+The art style must strictly adhere to heavy black ink outlines, bold line work, and prominent halftone dot shading (Ben-Day dots) throughout the entire image for texture and color, mimicking aged paper.
+
+You have to use the uploaded photos of the two characters.
+They will be standing together in a full-body or three-quarter view shot.
+
+Both characters are rendered consistently in the aforementioned comic book style, maintaining their unique items if applicable (e.g., flashlights, calculators).
+The clothing is styled in the 80s retro aesthetic and can be a mix of casual and adventure-ready outfits (jackets, hoodies, rolled-up jeans, retro sneakers, backpacks, etc...) always in Stranger Things style.
+
+The scene is set in:
+**The Abandoned Railway**
+
+walking along a set of rusted, abandoned railway tracks that disappear into a foggy forest. Character 1 is balancing on the rail with a flashlight, while Character 2 looks at a map near the wooden sleepers.
+
+Lighting/Mood: illuminated by the pale blue light of a full moon and the sharp yellow beam of the flashlight cutting through the mist
+
+NOTE: The aspect ratio of the image must be 2:3 (portrait, like a playing card or trading card format - 63mm x 88mm proportions).

@@ -26,6 +26,13 @@ const backBtnEl = document.getElementById("backBtn");
 const puzzleTriggerEl = document.getElementById("puzzleTrigger");
 const puzzleTriggerTextEl = document.getElementById("puzzleTriggerText");
 const puzzleAcceptBtnEl = document.getElementById("puzzleAcceptBtn");
+const resetProgressBtnEl = document.getElementById("resetProgressBtn");
+const switchAgentBtnEl = document.getElementById("switchAgentBtn");
+const agentSelectorModalEl = document.getElementById("agentSelectorModal");
+const agentSelectorBackdropEl = document.getElementById("agentSelectorBackdrop");
+const agentSelectorCloseEl = document.getElementById("agentSelectorClose");
+const agentSelectorGridEl = document.getElementById("agentSelectorGrid");
+const agentModalMessageEl = document.getElementById("agentModalMessage");
 
 let scenes = {};
 let agents = {};
@@ -43,7 +50,8 @@ let pendingPuzzle = null;
 const gameConfig = {
   showBackButton: true,
   showSceneIdInHeader: true,
-  showLanding: false
+  showLanding: false,
+  requireAllEndingsToSwitchAgent: false // Cambia a false para testear el selector de agentes sin restricciones
 };
 
 const puzzleManager = createPuzzleManager({
@@ -60,7 +68,95 @@ const puzzleManager = createPuzzleManager({
   continueBtn: document.getElementById("puzzleContinueBtn")
 });
 
-let friendAgents = { friend1: null, friend2: null };
+let friendAgents = {
+  friend1: null,
+  friend2: null,
+  friend3: null,
+  friend4: null,
+  friend5: null,
+  friend6: null
+};
+
+// Sistema de tracking de finales
+const ENDINGS_STORAGE_PREFIX = "portal27_endings_";
+
+function getAgentStorageKey() {
+  if (!currentAgent) return null;
+  const params = new URLSearchParams(window.location.search);
+  const agentId = params.get("agent") || "generic";
+  return `${ENDINGS_STORAGE_PREFIX}${agentId}`;
+}
+
+function getAllEndings() {
+  const endings = [];
+  for (const [sceneId, scene] of Object.entries(scenes)) {
+    if (scene.ending === true) {
+      endings.push(sceneId);
+    }
+  }
+  return endings;
+}
+
+function getFoundEndings() {
+  const storageKey = getAgentStorageKey();
+  if (!storageKey) return [];
+
+  try {
+    const stored = localStorage.getItem(storageKey);
+    return stored ? JSON.parse(stored) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function addFoundEnding(sceneId) {
+  const storageKey = getAgentStorageKey();
+  if (!storageKey) return;
+
+  const found = getFoundEndings();
+  if (!found.includes(sceneId)) {
+    found.push(sceneId);
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(found));
+      console.log(`Final encontrado: ${sceneId}. Total: ${found.length}`);
+    } catch (e) {
+      console.error("No se pudo guardar el progreso de finales", e);
+    }
+  }
+}
+
+function getEndingsProgress() {
+  const allEndings = getAllEndings();
+  const foundEndings = getFoundEndings();
+  return {
+    found: foundEndings.length,
+    total: allEndings.length,
+    percentage: allEndings.length > 0 ? Math.round((foundEndings.length / allEndings.length) * 100) : 0
+  };
+}
+
+function resetEndingsProgress() {
+  const storageKey = getAgentStorageKey();
+  if (storageKey) {
+    localStorage.removeItem(storageKey);
+    console.log("Progreso de finales reseteado para este agente");
+    if (currentAgent) {
+      renderAgent(currentAgent);
+    }
+  }
+}
+
+// Función de debug (puedes llamarla desde la consola)
+window.debugEndings = function() {
+  console.log("=== DEBUG FINALES ===");
+  console.log("Agente actual:", currentAgent?.name);
+  console.log("Storage key:", getAgentStorageKey());
+  console.log("Todos los finales:", getAllEndings());
+  console.log("Finales encontrados:", getFoundEndings());
+  console.log("Progreso:", getEndingsProgress());
+};
+
+window.resetProgress = resetEndingsProgress;
 
 function agentNameValue() {
   return currentAgent?.name || "Agente";
@@ -82,10 +178,14 @@ function getRandomFriends() {
     return agent && agent !== currentAgent;
   });
 
-  // Seleccionar dos amigos aleatorios
+  // Seleccionar hasta 6 amigos aleatorios
   const shuffled = availableAgents.sort(() => Math.random() - 0.5);
   friendAgents.friend1 = agents[shuffled[0]] || null;
   friendAgents.friend2 = agents[shuffled[1]] || null;
+  friendAgents.friend3 = agents[shuffled[2]] || null;
+  friendAgents.friend4 = agents[shuffled[3]] || null;
+  friendAgents.friend5 = agents[shuffled[4]] || null;
+  friendAgents.friend6 = agents[shuffled[5]] || null;
 }
 
 function injectAgentData(text) {
@@ -129,6 +229,54 @@ function injectAgentData(text) {
     if (Array.isArray(friendAgents.friend2.qualities)) {
       friendAgents.friend2.qualities.forEach((quality, index) => {
         result = result.replaceAll(`{{friend2.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Reemplazar datos de friend3
+  if (friendAgents.friend3) {
+    result = result.replaceAll("{{friend3.name}}", friendAgents.friend3.name || "Amiga");
+    result = result.replaceAll("{{friend3.tag}}", friendAgents.friend3.tag || "");
+
+    if (Array.isArray(friendAgents.friend3.qualities)) {
+      friendAgents.friend3.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{friend3.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Reemplazar datos de friend4
+  if (friendAgents.friend4) {
+    result = result.replaceAll("{{friend4.name}}", friendAgents.friend4.name || "Amiga");
+    result = result.replaceAll("{{friend4.tag}}", friendAgents.friend4.tag || "");
+
+    if (Array.isArray(friendAgents.friend4.qualities)) {
+      friendAgents.friend4.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{friend4.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Reemplazar datos de friend5
+  if (friendAgents.friend5) {
+    result = result.replaceAll("{{friend5.name}}", friendAgents.friend5.name || "Amiga");
+    result = result.replaceAll("{{friend5.tag}}", friendAgents.friend5.tag || "");
+
+    if (Array.isArray(friendAgents.friend5.qualities)) {
+      friendAgents.friend5.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{friend5.qualities[${index}]}}`, quality);
+      });
+    }
+  }
+
+  // Reemplazar datos de friend6
+  if (friendAgents.friend6) {
+    result = result.replaceAll("{{friend6.name}}", friendAgents.friend6.name || "Amiga");
+    result = result.replaceAll("{{friend6.tag}}", friendAgents.friend6.tag || "");
+
+    if (Array.isArray(friendAgents.friend6.qualities)) {
+      friendAgents.friend6.qualities.forEach((quality, index) => {
+        result = result.replaceAll(`{{friend6.qualities[${index}]}}`, quality);
       });
     }
   }
@@ -199,6 +347,17 @@ function getCurrentAgent() {
   return firstAgent || null;
 }
 
+function getCurrentAgentId() {
+  const params = new URLSearchParams(window.location.search);
+  const idFromUrl = params.get("agent");
+  if (idFromUrl && agents[idFromUrl]) {
+    return idFromUrl;
+  }
+  if (agents.generic) return "generic";
+  const [firstAgentId] = Object.keys(agents);
+  return firstAgentId || null;
+}
+
 function renderAgent(agent) {
   if (!agent) return;
   agentModalNameEl.textContent = agent.name || "Agente desconocido";
@@ -214,12 +373,45 @@ function renderAgent(agent) {
   agentModalItemEl.textContent = agent.specialItem
     ? "Objeto especial: " + agent.specialItem
     : "";
+
+  // Mostrar progreso de finales
+  const progress = getEndingsProgress();
+  const progressContainer = document.getElementById("agentEndingsProgress");
+  if (progressContainer) {
+    progressContainer.innerHTML = `
+      <div class="endings-progress">
+        <div class="endings-progress__title">Finales descubiertos</div>
+        <div class="endings-progress__bar">
+          <div class="endings-progress__fill" style="width: ${progress.percentage}%"></div>
+        </div>
+        <div class="endings-progress__text">${progress.found} de ${progress.total} finales encontrados</div>
+      </div>
+    `;
+  }
+
+  // El botón siempre está habilitado, la validación se hace al hacer click
+  const allEndingsFound = progress.found === progress.total && progress.total > 0;
+  if (switchAgentBtnEl) {
+    if (gameConfig.requireAllEndingsToSwitchAgent && !allEndingsFound) {
+      switchAgentBtnEl.title = `Encuentra todos los finales (${progress.found}/${progress.total}) para desbloquear`;
+    } else if (allEndingsFound) {
+      switchAgentBtnEl.title = "¡Todos los finales encontrados! Cambia de agente";
+    } else {
+      switchAgentBtnEl.title = "Cambiar de agente";
+    }
+  }
+
   if (agent.avatar) {
     agentAvatarThumbEl.src = agent.avatar;
     agentModalAvatarEl.src = agent.avatar;
   } else {
     agentAvatarThumbEl.src = "";
     agentModalAvatarEl.src = "";
+  }
+
+  const agentModalFullbodyEl = document.getElementById("agentModalFullbody");
+  if (agentModalFullbodyEl) {
+    agentModalFullbodyEl.src = agent.fullbody || "";
   }
   footerAgentEl.textContent =
     "OPERACIÓN PORTAL 27 · Agente: " + (agent.name || "________");
@@ -232,6 +424,11 @@ function renderScene(id) {
     choicesEl.innerHTML = "";
     puzzleManager.hide();
     return;
+  }
+
+  // Si la escena es un final, registrarla
+  if (scene.ending === true) {
+    addFoundEnding(id);
   }
 
   const textLines = Array.isArray(scene.textLines)
@@ -383,14 +580,155 @@ backBtnEl.addEventListener("click", () => {
   }
 });
 
+function showAgentMessage(message, type = "info", actions = null) {
+  if (!agentModalMessageEl) return;
+
+  agentModalMessageEl.className = `agent-modal__message agent-modal__message--${type}`;
+
+  if (actions) {
+    // Mensaje con botones de acción
+    const actionsHtml = actions.map(action =>
+      `<button class="agent-modal__message-btn ${action.danger ? 'agent-modal__message-btn--danger' : ''}" data-action="${action.id}">${action.text}</button>`
+    ).join('');
+
+    agentModalMessageEl.innerHTML = `
+      <div>${message}</div>
+      <div class="agent-modal__message-actions">${actionsHtml}</div>
+    `;
+
+    // Añadir event listeners a los botones
+    actions.forEach(action => {
+      const btn = agentModalMessageEl.querySelector(`[data-action="${action.id}"]`);
+      if (btn) {
+        btn.addEventListener("click", () => {
+          action.callback();
+        });
+      }
+    });
+  } else {
+    // Mensaje simple
+    agentModalMessageEl.textContent = message;
+  }
+
+  agentModalMessageEl.style.display = "block";
+}
+
+function hideAgentMessage() {
+  if (agentModalMessageEl) {
+    agentModalMessageEl.style.display = "none";
+    agentModalMessageEl.innerHTML = "";
+  }
+}
+
 function openAgentModal() {
+  hideAgentMessage(); // Limpiar mensajes previos
+  renderAgent(currentAgent); // Actualizar el progreso cada vez que se abre
   agentModalEl.classList.add("is-open");
   agentModalEl.setAttribute("aria-hidden", "false");
 }
 
 function closeAgentModal() {
+  hideAgentMessage();
   agentModalEl.classList.remove("is-open");
   agentModalEl.setAttribute("aria-hidden", "true");
+}
+
+function openAgentSelector() {
+  const progress = getEndingsProgress();
+  const allEndingsFound = progress.found === progress.total && progress.total > 0;
+
+  // Validar si se requieren todos los finales y no los tiene
+  if (gameConfig.requireAllEndingsToSwitchAgent && !allEndingsFound) {
+    showAgentMessage(
+      `Debes encontrar todos los finales para cambiar de agente.\n\nProgreso actual: ${progress.found}/${progress.total} finales encontrados.`,
+      "warning"
+    );
+    return;
+  }
+
+  // Renderizar grid de agentes
+  agentSelectorGridEl.innerHTML = "";
+  const currentAgentId = new URLSearchParams(window.location.search).get("agent");
+
+  Object.entries(agents).forEach(([agentId, agent]) => {
+    const card = document.createElement("div");
+    card.className = "agent-card";
+    if (agentId === currentAgentId) {
+      card.classList.add("is-current");
+    }
+
+    const avatar = document.createElement("img");
+    avatar.className = "agent-card__avatar";
+    avatar.src = agent.avatar || "";
+    avatar.alt = agent.name;
+
+    const name = document.createElement("div");
+    name.className = "agent-card__name";
+    name.textContent = agent.name;
+
+    const tag = document.createElement("div");
+    tag.className = "agent-card__tag";
+    tag.textContent = agent.tag;
+
+    card.appendChild(avatar);
+    card.appendChild(name);
+    card.appendChild(tag);
+
+    card.addEventListener("click", () => {
+      switchToAgent(agentId);
+    });
+
+    agentSelectorGridEl.appendChild(card);
+  });
+
+  agentSelectorModalEl.classList.add("is-open");
+  agentSelectorModalEl.setAttribute("aria-hidden", "false");
+}
+
+function closeAgentSelector() {
+  agentSelectorModalEl.classList.remove("is-open");
+  agentSelectorModalEl.setAttribute("aria-hidden", "true");
+}
+
+function switchToAgent(agentId) {
+  const params = new URLSearchParams(window.location.search);
+  params.set("agent", agentId);
+  params.delete("scene"); // Reiniciar desde el inicio
+  window.location.search = params.toString();
+}
+
+function handleResetProgress() {
+  const progress = getEndingsProgress();
+
+  if (progress.found === 0) {
+    showAgentMessage("No hay progreso para reiniciar.", "info");
+    return;
+  }
+
+  const message = `¿Estás seguro/a de que quieres reiniciar tu progreso?\n\nSe borrarán los ${progress.found} finales encontrados.\n\nEsta acción no se puede deshacer.`;
+
+  showAgentMessage(message, "confirm", [
+    {
+      id: "cancel",
+      text: "Cancelar",
+      danger: false,
+      callback: () => {
+        hideAgentMessage();
+      }
+    },
+    {
+      id: "confirm",
+      text: "Sí, reiniciar",
+      danger: true,
+      callback: () => {
+        resetEndingsProgress();
+        showAgentMessage("✓ Progreso reiniciado correctamente.", "info");
+        setTimeout(() => {
+          hideAgentMessage();
+        }, 3000);
+      }
+    }
+  ]);
 }
 
 agentAvatarBtnEl.addEventListener("click", openAgentModal);
@@ -400,11 +738,20 @@ startMissionBtnEl.addEventListener("click", startMission);
 puzzleAcceptBtnEl.addEventListener("click", () => {
   if (!pendingPuzzle) return;
   const { sceneId, config } = pendingPuzzle;
+  const agentId = getCurrentAgentId();
   puzzleManager.render(sceneId, config, nextScene => {
     sceneHistory.push(sceneId);
     renderScene(nextScene);
-  });
+  }, agentId);
 });
+
+// Event listeners para el modal de agente
+resetProgressBtnEl.addEventListener("click", handleResetProgress);
+switchAgentBtnEl.addEventListener("click", openAgentSelector);
+
+// Event listeners para el selector de agentes
+agentSelectorCloseEl.addEventListener("click", closeAgentSelector);
+agentSelectorBackdropEl.addEventListener("click", closeAgentSelector);
 
 document.addEventListener("DOMContentLoaded", init);
 

@@ -16,13 +16,13 @@
 
     "jardin_rompecabezas_simbolo": {
       "type": "jigsaw",
-      "description": "Reconstruir la imagen del símbolo del Portal 27 en el jardín.",
+      "description": "Reconstruir la foto que habéis encontrado en el jardín.",
       "data": {
         "image": "puzzles/jardin_simbolo.png",
         "pieces": 9,
         "rows": 3,
         "cols": 3,
-        "hint": "Cuando el símbolo esté completo, quizá se calme por un momento."
+        "hint": "Cuando la foto esté organizada podrás continuar."
       }
     },
 

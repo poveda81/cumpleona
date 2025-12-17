@@ -1,0 +1,45 @@
+# Prompt para Ainhoa - AVATAR
+
+Agente: ainhoa
+Nombre: Ainhoa
+Tag: Genia de la lógica
+Imágenes de referencia: reference/agents/ainhoa
+
+INSTRUCCIONES:
+1. Abre tu herramienta de generación de imágenes
+2. Sube las imágenes de referencia de la carpeta: reference/agents/ainhoa
+3. Copia y pega el prompt que está después de esta línea
+4. Genera la imagen
+
+================================================================================
+PROMPT:
+================================================================================
+
+### Avatar Portrait Instructions:
+
+Act as an expert vintage comic book illustrator from the 1980s. I am going to provide you with real images of a girl and a character data sheet.
+
+YOUR TASK: Generate a portrait-style avatar illustration of that specific girl in the same comic book style used for full body illustrations.
+
+VISUAL STYLE REFERENCE (Crucial):
+The result must perfectly emulate the retro 80s horror/adventure comic book style.
+- Line work: Thick, defined black outlines.
+- Shading: Heavy use of black ink shadows and halftone dot patterns to give volume and texture.
+- Color: Muted, textured, and aged color palette (mustard yellows, petrol blues, dark reds, teal greens).
+- Framing: Head and shoulders portrait (bust), centered.
+- Background: A flat, solid muted color background with comic book texture (halftone dots).
+- NEGATIVE CONSTRAINT (Very Important): Do NOT include any text, speech bubbles, sound effect words (onomatopoeia), or QR codes.
+
+CHARACTER DATA TO INTEGRATE:
+{
+  "name": "Ainhoa",
+  "tag": "Genia de la lógica",
+  "qualities": "Estratega, Paciente, Veloz con patrones",
+  "specialItem": "Cuaderno de estrategias milenarias"
+}
+
+GENERATION INSTRUCTIONS:
+1. FACE AND HAIR: Base the facial features and hairstyle on the attached REAL PHOTOS, but adapt them to the comic drawing style defined above.
+2. EXPRESSION: Her expression should reflect her "tag" and main "quality".
+3. FRAMING: Portrait style - head and shoulders only, no full body.
+4. CLOTHING: Show just the top/collar of her 80s style clothing visible in the portrait frame.

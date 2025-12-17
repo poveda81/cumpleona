@@ -84,8 +84,19 @@
         </div>
       </div>
       <div class="agent-modal__body">
+        <img id="agentModalFullbody" class="agent-modal__fullbody" alt="Personaje completo" />
         <div class="agent-qualities" id="agentModalQualities"></div>
         <div class="agent-item" id="agentModalItem"></div>
+        <div id="agentEndingsProgress"></div>
+        <div class="agent-modal__actions">
+          <button class="agent-action-btn agent-action-btn--reset" id="resetProgressBtn">
+            Reiniciar progreso
+          </button>
+          <button class="agent-action-btn agent-action-btn--switch" id="switchAgentBtn">
+            Cambiar de agente
+          </button>
+        </div>
+        <div class="agent-modal__message" id="agentModalMessage" style="display: none;"></div>
       </div>
     </div>
   </div>
@@ -108,6 +119,18 @@
         <button class="puzzle-btn success" id="puzzleContinueBtn">Continuar</button>
       </div>
       <div class="puzzle-message" id="puzzleMessage"></div>
+    </div>
+  </div>
+
+  <div class="agent-selector-modal" id="agentSelectorModal" aria-hidden="true">
+    <div class="agent-selector-modal__backdrop" id="agentSelectorBackdrop"></div>
+    <div class="agent-selector-modal__content" role="dialog" aria-modal="true">
+      <button class="agent-selector-modal__close" id="agentSelectorClose" aria-label="Cerrar">×</button>
+      <div class="agent-selector-modal__header">
+        <div class="agent-selector-title">Selecciona tu agente</div>
+        <div class="agent-selector-subtitle">Todos los finales desbloqueados. ¡Elige con quién quieres jugar!</div>
+      </div>
+      <div class="agent-selector-grid" id="agentSelectorGrid"></div>
     </div>
   </div>
 </body>

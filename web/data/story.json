@@ -67,7 +67,14 @@
       "characters": ["ona", "agent", "amigos"],
       "ending": false,
       "textLines": [
-        "Hora de la tarta. {{friend4.name}}, {{friend5.name}} y {{friend6.name}} ya están sentadas en la mesa. Se apagan las luces.",
+        "Hora de la tarta.",
+        "",
+        "Ona y tú vais tan rápido que os tropezáis con los palos que giran y hay que saltar.",
+        "¡Menudo espectáculo! Todos os miran.",
+        "",
+        "{{friend4.name}}, {{friend5.name}} y {{friend6.name}} ya están sentadas en la mesa.",
+        "",
+        "Cuando llegáis. Se apagan las luces.",
         "Tú acaricias tu cámara espía para asegurarte que sigue en el bolsillo.",
         "",
         "Ona sopla las velas y... ¡las luces parpadean de una manera!",
@@ -316,20 +323,22 @@
       "textLines": [
         "Lina os lleva a una zona de tierra movida.",
         "¡Es el símbolo del Super Jump, pero gigante!",
-        "Está roto en trozos, como un puzle.",
-        "—Esto es trabajo para {{agent.name}} —dice Ona."
+        "",
+        "Al lado hay una foto cortada en pedazos.",
+        "",
+        "—Para saber lo que es, vamos a tener que ordenar los trozos. Esto es trabajo para {{agent.name}} —dice Ona."
       ],
       "puzzle": {
         "type": "jigsaw",
         "id": "jardin_rompecabezas_simbolo",
         "data": {
-          "image": "puzzles/jardin_simbolo.png",
-          "rows": 3,
+          "image": "img/puzzles/ona_paola.jpeg",
+          "rows": 4,
           "cols": 3,
           "pieces": 9
         },
         "successNext": "casa_jardin_simbolo",
-        "failText": "El símbolo sigue roto."
+        "failText": "La foto sigue sin estar arreglada."
       }
     },
 
@@ -339,18 +348,21 @@
       "characters": ["ona", "agent"],
       "ending": false,
       "textLines": [
-        "Al completar el puzle en la tierra, el dibujo cambia.",
-        "¡Aparecen las porterías del cole Sagrada Familia!",
-        "Usas tu {{agent.specialItem}} y ves huellas invisibles que van hacia Elda.",
-        "Está claro dónde hay que ir."
+        "Al ordenar los trozos de la foto te das cuenta que sois Ona y tu en una de vuestras anteriores aventuras.",
+        "",
+        "Justo en ese momento, la tierra que había movida empieza a moverse y a formar un remolino del que empiezan a salir relámpagos rojos.",
+        "",
+        "Es entonces cuando aparece se muestra una imagen un poco difusa. Te quedas con los ojos muy abiertos.",
+        "",
+        "-Está claro dónde hay que ir. Esa imagen es del cole. Tenemos que ir allí. - le dices a Ona."
       ],
       "choices": [
         {
-          "text": "➤ Ir al cole el día 8.",
+          "text": "➤ Ir al cole el día 8 (Porque estamos de vacaciones).",
           "next": "espera_hasta_vuelta_cole"
         },
         {
-          "text": "➤ Cerrar este portal con magia de Lina.",
+          "text": "➤ Cerrar este portal con la ayuda de Lina y olvidar la misión.",
           "next": "final_lina_guardiana"
         }
       ]
@@ -362,17 +374,20 @@
       "characters": ["ona", "agent"],
       "ending": true,
       "textLines": [
-        "Lanzáis señales de luz al cielo con vuestras linternas.",
-        "¡Un destello responde desde Elda!",
-        "Habéis contactado.",
+        "Lina necesitamos tu ayuda! - gritais Ona y tú. Tenemos que cerrar este portal lo antes posible.",
         "",
-        "FINAL SIMPLE: Mensaje recibido.",
-        "Próxima parada: El Colegio."
+        "Lina os mira fijamente y ladra fuerte. Parece que ha entendido el mensaje.",
+        "",
+        "Es entonces cuando se pone a correr a una velocidad increíble pero en el sentido contrario ",
+        "al que gira el remolino y cuando el remolino casi ha desaparecido se pone a cavar frenéticamente ", 
+        "echando un montón de tierra encima de la grieta que había empezado a abrirse.",
+        "",
+        "FINAL SIMPLE: Lina la guardiana del portal."
       ],
       "choices": [
         {
           "text": "⟲ Volver a jugar.",
-          "next": "cole_entrada"
+          "next": "intro"
         }
       ]
     },

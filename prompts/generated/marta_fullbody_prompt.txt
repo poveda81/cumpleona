@@ -1,0 +1,46 @@
+# Prompt para Marta - FULLBODY
+
+Agente: marta
+Nombre: Marta
+Tag: Valentía inquebrantable
+Imágenes de referencia: reference/agents/marta
+
+INSTRUCCIONES:
+1. Abre tu herramienta de generación de imágenes
+2. Sube las imágenes de referencia de la carpeta: reference/agents/marta
+3. Copia y pega el prompt que está después de esta línea
+4. Genera la imagen
+
+================================================================================
+PROMPT:
+================================================================================
+
+### Full body Illustration Instructions:
+
+Act as an expert vintage comic book illustrator from the 1980s. I am going to provide you with real images of a girl and a character data sheet.
+
+YOUR TASK: Generate an illustration of that specific girl, transforming her real features into the requested comic book style, incorporating her "special item," and dressing her in random clothing that strictly respects the fashion of the "Stranger Things" era (early-to-mid 80s).
+
+VISUAL STYLE REFERENCE (Crucial):
+The result must perfectly emulate the retro 80s horror/adventure comic book style.
+- Line work: Thick, defined black outlines.
+- Shading: Heavy use of black ink shadows and halftone dot patterns to give volume and texture.
+- Color: Muted, textured, and aged color palette (mustard yellows, petrol blues, dark reds, teal greens).
+- Lighting: Dramatic, high-contrast lighting (chiaroscuro), usually emanating from the special object she carries.
+- Background: A flat, solid muted color background with comic book texture (halftone dots), devoid of any complex scenery, depth, or objects.
+- NEGATIVE CONSTRAINT (Very Important): Do NOT include any text, speech bubbles, sound effect words (onomatopoeia), or QR codes in the illustration. The image should only contain the character and the flat background.
+
+CHARACTER DATA TO INTEGRATE:
+Use this information to define her pose, expression, and the object she carries:
+{
+  "name": "Marta",
+  "tag": "Valentía inquebrantable",
+  "qualities": "Decidida, Firme, No se deja intimidar",
+  "specialItem": "Pulsera roja que le da coraje"
+}
+
+GENERATION INSTRUCTIONS:
+1. FACE AND HAIR: Base the facial features and hairstyle on the attached REAL PHOTOS, but adapt them to the comic drawing style defined above.
+2. POSE AND EXPRESSION: Her pose must reflect her "tag" and "qualities". (For example, if she has "Super intelligence" and is "Attentive", she should have a concentrated expression, perhaps listening intently or analyzing something).
+3. SPECIAL ITEM: She must hold her "specialItem" prominently. The object should appear active or supernatural (glowing, emitting light, or having visual sound waves).
+4. WARDROBE (Random Stranger Things style): Dress her in a random but authentic outfit of American youth fashion from 1983-1985. Examples (choose one randomly for this image): sherpa-lined corduroy jacket, denim overalls, striped ringer t-shirt, puffer vest, retro colorful windbreaker. Do not use stereotypical costumes, but clothing that would look real in the series.

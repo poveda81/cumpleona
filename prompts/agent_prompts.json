@@ -1,3 +1,68 @@
+### Full body Illustration Instructions:
+
+Act as an expert vintage comic book illustrator from the 1980s. I am going to provide you with real images of a girl and a character data sheet.
+
+YOUR TASK: Generate an illustration of that specific girl, transforming her real features into the requested comic book style, incorporating her "special item," and dressing her in random clothing that strictly respects the fashion of the "Stranger Things" era (early-to-mid 80s).
+
+VISUAL STYLE REFERENCE (Crucial):
+The result must perfectly emulate the retro 80s horror/adventure comic book style.
+- Line work: Thick, defined black outlines.
+- Shading: Heavy use of black ink shadows and halftone dot patterns to give volume and texture.
+- Color: Muted, textured, and aged color palette (mustard yellows, petrol blues, dark reds, teal greens).
+- Lighting: Dramatic, high-contrast lighting (chiaroscuro), usually emanating from the special object she carries.
+- Background: A flat, solid muted color background with comic book texture (halftone dots), devoid of any complex scenery, depth, or objects.
+- NEGATIVE CONSTRAINT (Very Important): Do NOT include any text, speech bubbles, sound effect words (onomatopoeia), or QR codes in the illustration. The image should only contain the character and the flat background.
+
+CHARACTER DATA TO INTEGRATE:
+Use this information to define her pose, expression, and the object she carries:
+{
+  "name": "Claudia",
+  "tag": "Super intelligence",
+  "qualities": "Attentive, Detects distant sounds, Likes logic games",
+  "specialItem": "Retro calculator"
+}
+
+GENERATION INSTRUCTIONS:
+1. FACE AND HAIR: Base the facial features and hairstyle on the attached REAL PHOTOS, but adapt them to the comic drawing style defined above.
+2. POSE AND EXPRESSION: Her pose must reflect her "tag" and "qualities". (For example, if she has "Super intelligence" and is "Attentive", she should have a concentrated expression, perhaps listening intently or analyzing something).
+3. SPECIAL ITEM: She must hold her "specialItem" prominently. The object should appear active or supernatural (glowing, emitting light, or having visual sound waves).
+4. WARDROBE (Random Stranger Things style): Dress her in a random but authentic outfit of American youth fashion from 1983-1985. Examples (choose one randomly for this image): sherpa-lined corduroy jacket, denim overalls, striped ringer t-shirt, puffer vest, retro colorful windbreaker. Do not use stereotypical costumes, but clothing that would look real in the series.
+
+
+
+### Avatar Illustration Instructions:
+A close-up avatar illustration of the character's face and shoulders, based specifically on image_5.png, set against a solid black background. Her features, glasses, long brown hair, and the brown corduroy sherpa jacket are rendered in the exact same retro 1980s comic book style with halftone dot shading and bold black outlines seen in the source image. The green glow from the unseen calculator still illuminates her face and neck from below. Maintain the serious expression.
+
+
+
+### With Ona
+
+A vintage comic book style illustration of two young girl secret agents standing side-by-side with equal importance. 
+Use the two provided reference images for their faces, hair, skin tones, and expressions.
+They look ready for a mystery mission. 
+Dark moody background with 80s retro aesthetic. 
+High contrast, thick outlines. 
+Square aspect ratio 1:1. 
+Leave empty negative space at the bottom center of the image for a QR code.
+
+
+
+
+A vintage 1980s horror/adventure comic book panel illustration. The art style must strictly adhere to heavy black ink outlines, bold line work, and prominent halftone dot shading (Ben-Day dots) throughout the entire image for texture and color, mimicking aged paper.
+
+You have to use the uploaded photos of the two characters. They will be standing together in a full-body or three-quarter view shot.
+
+Both characters are rendered consistently in the aforementioned comic book style, maintaining their unique items if applicable (e.g., flashlights, calculators). 
+The clothing is styled in the 80s retro aesthetic and can be a mix of casual and adventure-ready outfits (jackets, hoodies, rolled-up jeans, retro sneakers, backpacks, etc...) allways in Stranger Things style.
+
+The scene is set in: {{descripcion_detallada_de_la_escena}}.
+
+NOTE: The aspect ratio of the image must be 1:1 (square).
+
+
+
+
+
 {
   "config": {
     "base_prompt": "Create a full-body chibi-style character illustration with a cute, glossy, semi-realistic digital painting finish. Use classic chibi proportions: large head, big expressive eyes, tiny rounded body, soft limbs, and clean outlines. Stranger Things–inspired chibi universe, strong 80s retro aesthetic, warm + slightly desaturated palette, soft directional lighting, smooth gradients, gentle shadows, subtle texture on hair and clothing, cute but cinematic vibe, plain white background with a soft shadow (sticker style). Outfit: Stranger Things/80s look (jackets, hoodies, rolled-up jeans, retro sneakers, walkie-talkie, flashlight, backpack, bandana, caps, skater gear). Use the reference photo ONLY for face, hair, skin tone, and attitude. Do NOT keep the clothing from the photo; transform it into the 80s outfit. High detail, crisp focus.",

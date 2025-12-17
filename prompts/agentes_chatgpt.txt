@@ -1,0 +1,42 @@
+Imagen para Paula
+
+Te he adjuntado dos imágenes de Paula. 
+
+Puedes generar a partir de ellas una ilustración tipo comic con la temática de Stranger Things. Haz que se parezca lo máximo posible. La indumentaria tiene que estar ambientada en la época de la serie. El fondo debe ser monotono porque la figura la voy a utilizar para añadirla a un juego que estoy haciendo. Hazlo lo mejor que puedas y si el resultado es aceptable te doy una buena propina.
+
+Estas son las características que va a tener este personaje dentro del juego:
+
+{
+    "name": "Paula",
+    "tag": "Súper inteligencia",
+    "avatar": "img/agents/paula_avatar.png",
+    "qualities": ["Atenta", "Detecta sonidos lejanos", "Le gustan los juegos de lógica"],
+    "specialItem": "Cubo de rubik que emite sonidos"
+}
+
+NOTA: No pongas ningún texto a la imagen.
+
+## Second iteration
+
+Me gusta porque se parece bastante a Paula. Puedes hacer más pruebas? No es necesario que añadas ningún texto.
+
+===
+
+Imagen para Paola de Haro
+
+Te he adjuntado dos imágenes de Paola H. 
+
+Puedes generar a partir de ellas una ilustración tipo comic con la temática de Stranger Things. Haz que se parezca lo máximo posible. La indumentaria tiene que estar ambientada en la época de la serie. El fondo debe ser monotono porque la figura la voy a utilizar para añadirla a un juego que estoy haciendo. Hazlo lo mejor que puedas y si el resultado es aceptable te doy una buena propina.
+
+Estas son las características que va a tener este personaje dentro del juego:
+
+  "paola_cole": {
+    "name": "Paola H",
+    "tag": "Detectora de pistas ocultas",
+    "avatar": "img/agents/paola_cole_avatar.png",
+    "qualities": ["Aguda", "Atenta", "Capaz de ver minidetalles"],
+    "specialItem": "Linterna de luz violeta",
+  }
+
+===
+

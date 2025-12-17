@@ -1,0 +1,259 @@
+{
+  "agents": {
+    "paula": {
+      "name": "Paula",
+      "tag": "Súper inteligencia",
+      "qualities": [
+        "Atenta",
+        "Detecta sonidos lejanos",
+        "Le gustan los juegos de lógica"
+      ],
+      "specialItem": "Cubo de rubik que emite sonidos",
+      "reference_images": "reference/agents/paula",
+      "fullbody_output": "web/img/agents/paula_fullbody.png",
+      "avatar_output": "web/img/agents/paula_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "manuela": {
+      "name": "Manuela",
+      "tag": "Memoria fotográfica",
+      "qualities": [
+        "Atenta",
+        "Rápida",
+        "Recuerda detalles imposibles"
+      ],
+      "specialItem": "Mapa mental dibujado a mano",
+      "reference_images": "reference/agents/manuela",
+      "fullbody_output": "web/img/agents/manuela_fullbody.png",
+      "avatar_output": "web/img/agents/manuela_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "claudia": {
+      "name": "Claudia",
+      "tag": "Super inteligente",
+      "qualities": [
+        "Analítica",
+        "Lógica",
+        "Ve patrones invisibles"
+      ],
+      "specialItem": "Calculadora retro modificada",
+      "reference_images": "reference/agents/claudia",
+      "fullbody_output": "web/img/agents/claudia_fullbody.png",
+      "avatar_output": "web/img/agents/claudia_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "zoe": {
+      "name": "Zoe",
+      "tag": "Maestra de acertijos",
+      "qualities": [
+        "Ingeniosa",
+        "Creativa",
+        "Resuelve puzzles al instante"
+      ],
+      "specialItem": "Cubo misterioso que nunca se atasca",
+      "reference_images": "reference/agents/zoe",
+      "fullbody_output": "web/img/agents/zoe_fullbody.png",
+      "avatar_output": "web/img/agents/zoe_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "marta": {
+      "name": "Marta",
+      "tag": "Valentía inquebrantable",
+      "qualities": [
+        "Decidida",
+        "Firme",
+        "No se deja intimidar"
+      ],
+      "specialItem": "Pulsera roja que le da coraje",
+      "reference_images": "reference/agents/marta",
+      "fullbody_output": "web/img/agents/marta_fullbody.png",
+      "avatar_output": "web/img/agents/marta_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "aitana": {
+      "name": "Aitana",
+      "tag": "Exploradora nata",
+      "qualities": [
+        "Curiosa",
+        "Encuentra pasadizos",
+        "Percepción aguda"
+      ],
+      "specialItem": "Brújula que apunta a lo importante",
+      "reference_images": "reference/agents/aitana",
+      "fullbody_output": "web/img/agents/aitana_fullbody.png",
+      "avatar_output": "web/img/agents/aitana_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "alejandra": {
+      "name": "Alejandra",
+      "tag": "Artista pintora",
+      "qualities": [
+        "Creativa",
+        "Observadora",
+        "Sensible al color"
+      ],
+      "specialItem": "Pincel que revela detalles ocultos",
+      "reference_images": "reference/agents/alejandra",
+      "fullbody_output": "web/img/agents/alejandra_fullbody.png",
+      "avatar_output": "web/img/agents/alejandra_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "ada": {
+      "name": "Ada",
+      "tag": "Lingüista de idiomas inventados",
+      "qualities": [
+        "Imaginativa",
+        "Rápida",
+        "Buena comunicadora"
+      ],
+      "specialItem": "Diccionario mágico multilenguaje",
+      "reference_images": "reference/agents/ada",
+      "fullbody_output": "web/img/agents/ada_fullbody.png",
+      "avatar_output": "web/img/agents/ada_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "jimena": {
+      "name": "Jimena",
+      "tag": "Detective de detalles",
+      "qualities": [
+        "Minuciosa",
+        "Precisa",
+        "Memoria visual"
+      ],
+      "specialItem": "Lupa con luz azul",
+      "reference_images": "reference/agents/jimena",
+      "fullbody_output": "web/img/agents/jimena_fullbody.png",
+      "avatar_output": "web/img/agents/jimena_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "leo": {
+      "name": "Leo",
+      "tag": "Coleccionista",
+      "qualities": [
+        "Persistente",
+        "Curioso",
+        "Organizado"
+      ],
+      "specialItem": "Cajita con objetos rarísimos",
+      "reference_images": "reference/agents/leo",
+      "fullbody_output": "web/img/agents/leo_fullbody.png",
+      "avatar_output": "web/img/agents/leo_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "isabel": {
+      "name": "Isabel",
+      "tag": "Orientación perfecta",
+      "qualities": [
+        "Intuitiva",
+        "Sabe siempre dónde está",
+        "Decide rápido"
+      ],
+      "specialItem": "Mini-mapa plegable indestructible",
+      "reference_images": "reference/agents/isabel",
+      "fullbody_output": "web/img/agents/isabel_fullbody.png",
+      "avatar_output": "web/img/agents/isabel_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "ainhoa": {
+      "name": "Ainhoa",
+      "tag": "Genia de la lógica",
+      "qualities": [
+        "Estratega",
+        "Paciente",
+        "Veloz con patrones"
+      ],
+      "specialItem": "Cuaderno de estrategias milenarias",
+      "reference_images": "reference/agents/ainhoa",
+      "fullbody_output": "web/img/agents/ainhoa_fullbody.png",
+      "avatar_output": "web/img/agents/ainhoa_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "martina": {
+      "name": "Martina",
+      "tag": "Calma absoluta",
+      "qualities": [
+        "Tranquila",
+        "Equilibrada",
+        "Decisiones frías"
+      ],
+      "specialItem": "Piedra suave que transmite serenidad",
+      "reference_images": "reference/agents/martina",
+      "fullbody_output": "web/img/agents/martina_fullbody.png",
+      "avatar_output": "web/img/agents/martina_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "paola_cole": {
+      "name": "Paola H",
+      "tag": "Detectora de pistas ocultas",
+      "qualities": [
+        "Aguda",
+        "Atenta",
+        "Capaz de ver minidetalles"
+      ],
+      "specialItem": "Linterna de luz violeta",
+      "reference_images": "reference/agents/paola_cole",
+      "fullbody_output": "web/img/agents/paola_cole_fullbody.png",
+      "avatar_output": "web/img/agents/paola_cole_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "paola": {
+      "name": "Paola P",
+      "tag": "Súper velocidad",
+      "qualities": [
+        "Rápida",
+        "Enérgica",
+        "Puede esquivar cualquier cosa"
+      ],
+      "specialItem": "Cordones rojos que aumentan su velocidad",
+      "reference_images": "reference/agents/paola",
+      "fullbody_output": "web/img/agents/paola_fullbody.png",
+      "avatar_output": "web/img/agents/paola_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "alex": {
+      "name": "Álex",
+      "tag": "Visión submarina",
+      "qualities": [
+        "Rápido",
+        "Enérgico",
+        "Puede pescar cualquier pez"
+      ],
+      "specialItem": "Caña de pescar legendaria",
+      "reference_images": "reference/agents/alex",
+      "fullbody_output": "web/img/agents/alex_fullbody.png",
+      "avatar_output": "web/img/agents/alex_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    },
+    "noe": {
+      "name": "Noé",
+      "tag": "Superpotencia en las piernas",
+      "qualities": [
+        "Habilidoso",
+        "Intuitivo",
+        "Gran saltador"
+      ],
+      "specialItem": "Balón que nunca se pincha",
+      "reference_images": "reference/agents/noe",
+      "fullbody_output": "web/img/agents/noe_fullbody.png",
+      "avatar_output": "web/img/agents/noe_avatar.png",
+      "fullbody_generated": false,
+      "avatar_generated": false
+    }
+  }
+}

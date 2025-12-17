@@ -1,0 +1,37 @@
+# Prompt para Poster: Ona + Alejandra - Escena 5
+
+Personajes: Ona + Alejandra
+Escena: The Basement
+Imagen de Ona: reference/agents/ona/ona_full.png
+Imagen de Alejandra: web/img/agents/alejandra_fullbody.png
+
+INSTRUCCIONES:
+1. Abre tu herramienta de generación de imágenes
+2. Sube las dos imágenes:
+   - reference/agents/ona/ona_full.png (imagen de Ona)
+   - web/img/agents/alejandra_fullbody.png (imagen de Alejandra)
+3. Copia y pega el prompt que está después de esta línea
+4. Genera la imagen (formato 2:3, tipo carta de naipes)
+5. Guarda el resultado como: ona_alejandra_scene05.png
+
+================================================================================
+PROMPT:
+================================================================================
+
+A vintage 1980s horror/adventure comic book panel illustration.
+The art style must strictly adhere to heavy black ink outlines, bold line work, and prominent halftone dot shading (Ben-Day dots) throughout the entire image for texture and color, mimicking aged paper.
+
+You have to use the uploaded photos of the two characters.
+They will be standing together in a full-body or three-quarter view shot.
+
+Both characters are rendered consistently in the aforementioned comic book style, maintaining their unique items if applicable (e.g., flashlights, calculators).
+The clothing is styled in the 80s retro aesthetic and can be a mix of casual and adventure-ready outfits (jackets, hoodies, rolled-up jeans, retro sneakers, backpacks, etc...) always in Stranger Things style.
+
+The scene is set in:
+**The Basement**
+
+in a cluttered basement filled with boxes and an old furnace. Character 1 is shining a light on a strange symbol drawn on the wall, while Character 2 looks terrified at a noise coming from the stairs.
+
+Lighting/Mood: cast in heavy shadow, illuminated only by the orange pilot light of the furnace and the flashlight beam
+
+NOTE: The aspect ratio of the image must be 2:3 (portrait, like a playing card or trading card format - 63mm x 88mm proportions).
