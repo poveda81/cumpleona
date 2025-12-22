@@ -19,6 +19,7 @@ El juego incluye un sistema de analytics **privacy-friendly** que guarda eventos
 | `mission_reset` | Usuario resetea la misión | Tiempo total de sesión |
 | `agent_switch` | Usuario cambia de agente | Agente anterior, agente nuevo |
 
+
 ## 🔍 Ver analytics en vivo
 
 Abre la consola del navegador (F12) y usa estos comandos:
