@@ -172,3 +172,67 @@ Y añade tus API keys:
 - `GOOGLE_API_KEY` – para usar Google Imagen 4.0
 
 El script carga automáticamente estas variables usando `python-dotenv`.
+
+---
+
+## 🚀 Deployment y Analytics
+
+### Deployment con Custom Domain
+
+Este proyecto está listo para deployarse en cualquier hosting estático. La opción recomendada es **Cloudflare Pages** por su facilidad de uso, custom domain gratuito, y analytics integrado.
+
+**Documentación completa**: Ver [DEPLOYMENT.md](DEPLOYMENT.md)
+
+#### Quick Start:
+1. Crea una cuenta en [Cloudflare Pages](https://pages.cloudflare.com)
+2. Conecta tu repositorio de GitHub
+3. Configura: Build directory → `web`
+4. Deploy automático ✨
+5. Añade tu custom domain en la configuración
+
+**Alternativas soportadas**: Vercel, Netlify, GitHub Pages
+
+### Sistema de Analytics
+
+El juego incluye un sistema de analytics **privacy-friendly** que guarda eventos localmente y permite análisis detallado de cómo los usuarios juegan.
+
+**Documentación completa**: Ver [ANALYTICS.md](ANALYTICS.md)
+
+#### Qué se trackea:
+- 📊 Escenas visitadas
+- 🔀 Decisiones tomadas
+- 🏁 Finales alcanzados
+- ⏱️ Tiempo en cada escena
+- 🧩 Puzzles completados
+- 👥 Agentes más populares
+
+#### Uso rápido:
+```javascript
+// En la consola del navegador (F12):
+viewAnalytics()        // Ver todos los eventos
+exportAnalytics()      // Exportar a JSON
+clearAnalytics()       // Limpiar datos
+```
+
+#### Análisis de datos:
+```bash
+# Exportar datos desde el navegador, luego:
+python scripts/analyze_analytics.py portal27_analytics_XXXXX.json
+```
+
+Esto generará un reporte completo con:
+- Tasa de completación
+- Caminos más populares
+- Puntos de abandono
+- Agentes favoritos
+- Métricas de engagement
+
+#### Cloudflare Web Analytics:
+El proyecto incluye el código para Cloudflare Web Analytics (gratis, sin cookies).
+
+1. Activa Web Analytics en tu dashboard de Cloudflare
+2. Copia tu token
+3. Reemplaza `TU_TOKEN_AQUI` en `web/index.html` (línea 13)
+4. Deploy y listo 🎉
+
+---

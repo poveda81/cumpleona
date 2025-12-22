@@ -126,6 +126,22 @@ body {
   background: radial-gradient(circle at top left, #1a0b15, #050308 70%);
   box-shadow: 0 0 40px rgba(229, 9, 20, 0.6), inset 0 0 12px rgba(229, 9, 20, 0.2);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.landing-agent-image {
+  width: 200px;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+  background: transparent;
+  margin-bottom: 8px;
 }
 
 .landing-label {

@@ -1,4 +1,7 @@
 import { createPuzzleManager } from "./puzzles.js";
+import GameAnalytics from "./analytics.js";
+
+const analytics = new GameAnalytics();
 
 const storyEl = document.getElementById("story");
 const choicesEl = document.getElementById("choices");
@@ -21,6 +24,7 @@ const agentAvatarBtnEl = document.getElementById("agentAvatarBtn");
 const footerAgentEl = document.getElementById("footerAgent");
 const landingScreenEl = document.getElementById("landingScreen");
 const landingTitleEl = document.getElementById("landingTitle");
+const landingAgentImageEl = document.getElementById("landingAgentImage");
 const startMissionBtnEl = document.getElementById("startMissionBtn");
 const backBtnEl = document.getElementById("backBtn");
 const puzzleTriggerEl = document.getElementById("puzzleTrigger");
@@ -48,10 +52,10 @@ let pendingStart = false;
 let pendingPuzzle = null;
 
 const gameConfig = {
-  showBackButton: true,
-  showSceneIdInHeader: true,
-  showLanding: false,
-  requireAllEndingsToSwitchAgent: false // Cambia a false para testear el selector de agentes sin restricciones
+  showBackButton: false,
+  showSceneIdInHeader: false,
+  showLanding: true,
+  requireAllEndingsToSwitchAgent: true // Cambia a false para testear el selector de agentes sin restricciones
 };
 
 const puzzleManager = createPuzzleManager({
@@ -163,9 +167,9 @@ function agentNameValue() {
 }
 
 function applyLandingVisibility() {
-  if (!gameConfig.showLanding) {
+  if (!gameConfig.showLanding || missionStarted) {
     landingScreenEl.style.display = "none";
-  } else if (!missionStarted) {
+  } else {
     landingScreenEl.style.display = "flex";
   }
 }
@@ -426,9 +430,13 @@ function renderScene(id) {
     return;
   }
 
+  // Track scene view
+  analytics.trackSceneView(id, scene);
+
   // Si la escena es un final, registrarla
   if (scene.ending === true) {
     addFoundEnding(id);
+    analytics.trackEnding(id);
   }
 
   const textLines = Array.isArray(scene.textLines)
@@ -500,6 +508,7 @@ function renderScene(id) {
     btn.className = "choice-btn" + (scene.ending ? " ending" : "");
     btn.textContent = injectAgentName(choice.text);
     btn.addEventListener("click", () => {
+      analytics.trackChoice(id, choice.text, choice.next);
       sceneHistory.push(id);
       renderScene(choice.next);
     });
@@ -539,6 +548,17 @@ async function init() {
 
     renderAgent(currentAgent);
     landingTitleEl.textContent = `${agentNameValue()} & Ona · Operación Portal 27`;
+
+    // Configurar imagen del agente en la landing
+    if (currentAgent) {
+      const agentId = getCurrentAgentId();
+      landingAgentImageEl.src = `img/agents/${agentId}_fullbody.png`;
+      landingAgentImageEl.alt = currentAgent.name;
+    }
+
+    // Track session start
+    analytics.trackSessionStart(currentAgent);
+
     if (!gameConfig.showBackButton) {
       backBtnEl.style.display = "none";
     }
@@ -565,10 +585,12 @@ function startMission() {
   missionStarted = true;
   applyLandingVisibility();
   sceneHistory = [];
+  analytics.trackMissionStart();
   renderScene(initialSceneId);
 }
 
 resetBtn.addEventListener("click", () => {
+  analytics.trackReset();
   sceneHistory = [];
   renderScene(startSceneId);
 });
@@ -576,6 +598,8 @@ backBtnEl.addEventListener("click", () => {
   if (!gameConfig.showBackButton) return;
   const previous = sceneHistory.pop();
   if (previous) {
+    const currentSceneId = new URLSearchParams(window.location.search).get("scene");
+    analytics.trackBackButton(currentSceneId, previous);
     renderScene(previous);
   }
 });
@@ -691,6 +715,8 @@ function closeAgentSelector() {
 }
 
 function switchToAgent(agentId) {
+  const currentAgentId = getCurrentAgentId();
+  analytics.trackAgentSwitch(currentAgentId, agentId);
   const params = new URLSearchParams(window.location.search);
   params.set("agent", agentId);
   params.delete("scene"); // Reiniciar desde el inicio
