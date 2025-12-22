@@ -1,0 +1,9 @@
+{
+  "name": "cumpleona",
+  "version": "1.0.0",
+  "description": "Portal 27 - Interactive Story Game",
+  "scripts": {
+    "build": "echo 'Static site ready'"
+  },
+  "devDependencies": {}
+}
