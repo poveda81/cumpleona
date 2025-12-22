@@ -26,10 +26,12 @@
 ```
 Framework preset: None
 Build command: (dejar vacío)
-Build output directory: web
-Root directory: /
+Build output directory: _output
+Root directory: (dejar vacío)
 Branch: main
 ```
+
+**Nota**: El script `build.sh` copia automáticamente los archivos de `web/` a `_output/` durante el deployment.
 
 #### 4. Deploy
 1. Haz clic en **"Save and Deploy"**

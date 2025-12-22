@@ -31,3 +31,4 @@ reference/agents/*
 # Claude
 .claude
 img_originals_backup/
+_output/

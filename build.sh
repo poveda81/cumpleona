@@ -1,28 +1,16 @@
 #!/bin/bash
 set -e
 
-echo "📦 Building static site..."
-echo "📁 Source directory: web/"
+echo "📦 Building static site for Cloudflare Pages..."
 
-# Verificar que web/ existe y tiene archivos
-if [ ! -d "web" ]; then
-    echo "❌ Error: web/ directory not found"
+# Verificar que web/ existe
+if [ ! -d "web" ] || [ ! -f "web/index.html" ]; then
+    echo "❌ Error: web/ directory or index.html not found"
     exit 1
 fi
 
-if [ ! -f "web/index.html" ]; then
-    echo "❌ Error: web/index.html not found"
-    exit 1
-fi
+# Copiar archivos de web/ a _output/
+mkdir -p _output
+cp -r web/* _output/
 
-echo "✅ Found web/index.html"
-
-# Contar archivos
-file_count=$(find web -type f | wc -l)
-echo "📊 Total files in web/: $file_count"
-
-# Listar estructura
-echo "📂 Directory structure:"
-ls -lh web/ | head -10
-
-echo "✅ Build complete - files ready in web/ directory"
+echo "✅ Build complete - $(find _output -type f | wc -l | xargs) files ready"
