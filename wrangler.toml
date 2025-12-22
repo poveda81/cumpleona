@@ -4,3 +4,8 @@ compatibility_date = "2024-01-01"
 
 [site]
 bucket = "./web"
+
+# Asegurar que web/ sea la raíz
+[[build.upload]]
+format = "directory"
+dir = "./web"
