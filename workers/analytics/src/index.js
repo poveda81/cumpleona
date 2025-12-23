@@ -34,17 +34,17 @@ function handleOptions(request) {
   });
 }
 
-// Simple auth check (puedes mejorarlo con API keys)
-function isAuthorized(request) {
-  const authHeader = request.headers.get('Authorization');
-  // Por ahora, cualquier request con Authorization header es válido
-  // En producción, verifica un token real
-  return authHeader && authHeader.startsWith('Bearer ');
-}
-
+// Auth check with API token validation
 function isAuthorized(request, env) {
   const authHeader = request.headers.get('Authorization');
   const token = authHeader?.replace('Bearer ', '');
+
+  // Si no hay API_TOKEN configurado, acepta cualquier Bearer token
+  if (!env.API_TOKEN) {
+    return authHeader && authHeader.startsWith('Bearer ');
+  }
+
+  // Si hay API_TOKEN, validar contra él
   return token === env.API_TOKEN;
 }
 
@@ -107,7 +107,7 @@ export default {
 
       // GET /api/analytics/events - Obtener eventos (requiere auth)
       if (url.pathname === '/api/analytics/events' && request.method === 'GET') {
-        if (!isAuthorized(request)) {
+        if (!isAuthorized(request, env)) {
           return new Response(JSON.stringify({ error: 'Unauthorized' }), {
             status: 401,
             headers: {
@@ -145,7 +145,7 @@ export default {
 
       // GET /api/analytics/stats - Estadísticas agregadas (requiere auth)
       if (url.pathname === '/api/analytics/stats' && request.method === 'GET') {
-        if (!isAuthorized(request)) {
+        if (!isAuthorized(request, env)) {
           return new Response(JSON.stringify({ error: 'Unauthorized' }), {
             status: 401,
             headers: {
@@ -211,6 +211,66 @@ export default {
           agentStats,
           sceneStats,
           endingStats
+        }), {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders(origin)
+          }
+        });
+      }
+
+      // GET /api/analytics/paths - Obtener caminos por sesión (requiere auth)
+      if (url.pathname === '/api/analytics/paths' && request.method === 'GET') {
+        if (!isAuthorized(request, env)) {
+          return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+            status: 401,
+            headers: {
+              'Content-Type': 'application/json',
+              ...corsHeaders(origin)
+            }
+          });
+        }
+
+        const limit = parseInt(url.searchParams.get('limit') || '10');
+        const agentId = url.searchParams.get('agentId');
+
+        // Obtener todas las sesiones con sus eventos ordenados
+        let query = `
+          SELECT session_id, agent_id, event_type, scene_id, choice_text,
+                 target_scene, ending_id, timestamp
+          FROM analytics_events
+        `;
+
+        let bindings = [];
+        if (agentId) {
+          query += ' WHERE agent_id = ?';
+          bindings.push(agentId);
+        }
+
+        query += ' ORDER BY session_id, timestamp ASC';
+
+        const { results } = await env.DB.prepare(query).bind(...bindings).all();
+
+        // Agrupar eventos por sesión
+        const sessions = {};
+        results.forEach(event => {
+          if (!sessions[event.session_id]) {
+            sessions[event.session_id] = {
+              sessionId: event.session_id,
+              agentId: event.agent_id,
+              events: []
+            };
+          }
+          sessions[event.session_id].events.push(event);
+        });
+
+        // Convertir a array y limitar
+        const sessionArray = Object.values(sessions).slice(0, limit);
+
+        return new Response(JSON.stringify({
+          sessions: sessionArray,
+          total: Object.keys(sessions).length
         }), {
           status: 200,
           headers: {

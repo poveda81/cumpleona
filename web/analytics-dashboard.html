@@ -189,6 +189,102 @@
     .refresh-btn:hover {
       background: #444;
     }
+
+    .path-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .session-path {
+      background: #0a0a0a;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #e50914;
+    }
+
+    .session-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .session-id {
+      font-family: monospace;
+      color: #888;
+      font-size: 0.85em;
+    }
+
+    .session-agent {
+      background: #e50914;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.85em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .path-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .path-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: #1a1a1a;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .step-icon {
+      width: 24px;
+      text-align: center;
+    }
+
+    .step-type {
+      width: 120px;
+      color: #888;
+      font-size: 0.85em;
+    }
+
+    .step-detail {
+      flex: 1;
+      color: #e0e0e0;
+    }
+
+    .step-ending {
+      background: #1a4a1a;
+      border-left: 3px solid #4ade80;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .filter-bar select {
+      padding: 8px 12px;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      color: #e0e0e0;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .filter-bar label {
+      color: #888;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
@@ -248,6 +344,26 @@
           <!-- Chart will be loaded here -->
         </div>
       </div>
+
+      <div class="chart-section">
+        <h2>🛤️ Caminos de navegación</h2>
+        <div class="filter-bar">
+          <label>Filtrar por agente:</label>
+          <select id="agentFilter" onchange="loadPaths()">
+            <option value="">Todos los agentes</option>
+          </select>
+          <label>Mostrar:</label>
+          <select id="pathLimit" onchange="loadPaths()">
+            <option value="5">5 sesiones</option>
+            <option value="10" selected>10 sesiones</option>
+            <option value="20">20 sesiones</option>
+            <option value="50">50 sesiones</option>
+          </select>
+        </div>
+        <div id="pathsContainer" class="path-list">
+          <!-- Paths will be loaded here -->
+        </div>
+      </div>
     </div>
   </div>
 
@@ -294,9 +410,56 @@
 
         const data = await response.json();
         renderStats(data);
+
+        // Poblar filtro de agentes
+        if (data.agentStats && data.agentStats.length > 0) {
+          const agentFilter = document.getElementById('agentFilter');
+          data.agentStats.forEach(agent => {
+            if (agent.agent_id) {
+              const option = document.createElement('option');
+              option.value = agent.agent_id;
+              option.textContent = agent.agent_id;
+              agentFilter.appendChild(option);
+            }
+          });
+        }
+
+        // Cargar paths
+        loadPaths();
       } catch (error) {
         showError(error.message);
         console.error('Error loading stats:', error);
+      }
+    }
+
+    async function loadPaths() {
+      const agentId = document.getElementById('agentFilter').value;
+      const limit = document.getElementById('pathLimit').value;
+      const container = document.getElementById('pathsContainer');
+
+      container.innerHTML = '<div class="loading">⏳ Cargando caminos...</div>';
+
+      try {
+        let url = `${API_BASE}/paths?limit=${limit}`;
+        if (agentId) {
+          url += `&agentId=${agentId}`;
+        }
+
+        const response = await fetch(url, {
+          headers: {
+            'Authorization': authToken
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        renderPaths(data.sessions);
+      } catch (error) {
+        container.innerHTML = `<div class="error">Error cargando caminos: ${error.message}</div>`;
+        console.error('Error loading paths:', error);
       }
     }
 
@@ -354,6 +517,86 @@
               <div class="bar-fill" style="width: ${percentage}%">
                 ${item.count}
               </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderPaths(sessions) {
+      const container = document.getElementById('pathsContainer');
+
+      if (!sessions || sessions.length === 0) {
+        container.innerHTML = '<p style="color: #888; text-align: center; padding: 40px;">No hay sesiones disponibles</p>';
+        return;
+      }
+
+      container.innerHTML = sessions.map(session => {
+        const steps = session.events.map(event => {
+          let icon = '●';
+          let detail = '';
+
+          switch(event.event_type) {
+            case 'session_start':
+              icon = '🎬';
+              detail = 'Sesión iniciada';
+              break;
+            case 'mission_start':
+              icon = '🚀';
+              detail = 'Misión iniciada';
+              break;
+            case 'scene_view':
+              icon = '👁️';
+              detail = event.scene_id || 'Escena desconocida';
+              break;
+            case 'choice_made':
+              icon = '🔀';
+              detail = `"${event.choice_text || 'Decisión'}" → ${event.target_scene || '?'}`;
+              break;
+            case 'ending_reached':
+              icon = '🏁';
+              detail = `Final: ${event.ending_id || event.scene_id}`;
+              break;
+            case 'puzzle_start':
+              icon = '🧩';
+              detail = `Puzzle iniciado: ${event.puzzle_id || '?'}`;
+              break;
+            case 'puzzle_complete':
+              icon = '✅';
+              detail = `Puzzle completado: ${event.puzzle_id || '?'}`;
+              break;
+            case 'back_button':
+              icon = '⬅️';
+              detail = 'Botón atrás';
+              break;
+            case 'mission_reset':
+              icon = '🔄';
+              detail = 'Misión reiniciada';
+              break;
+            default:
+              icon = '•';
+              detail = event.event_type;
+          }
+
+          const stepClass = event.event_type === 'ending_reached' ? 'path-step step-ending' : 'path-step';
+
+          return `
+            <div class="${stepClass}">
+              <div class="step-icon">${icon}</div>
+              <div class="step-type">${event.event_type}</div>
+              <div class="step-detail">${detail}</div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="session-path">
+            <div class="session-header">
+              <div class="session-id">Session: ${session.sessionId.substring(0, 20)}...</div>
+              <div class="session-agent">${session.agentId || 'Sin agente'}</div>
+            </div>
+            <div class="path-steps">
+              ${steps}
             </div>
           </div>
         `;
