@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de Agentes - Operación Portal 27</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .no-print {
+      text-align: center;
+      margin-bottom: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .no-print h1 {
+      color: #e50914;
+      margin-bottom: 10px;
+    }
+
+    .no-print button {
+      background: #e50914;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .no-print button:hover {
+      background: #b00710;
+    }
+
+    .no-print select {
+      padding: 8px 16px;
+      font-size: 14px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10mm;
+      max-width: 210mm; /* A4 width */
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 95mm;
+      height: 135mm;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d0a0a 100%);
+      border: 2px solid #e50914;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e50914, #ff4444, #e50914);
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 10px;
+      z-index: 1;
+    }
+
+    .card-title {
+      font-size: 11px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .agent-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #e50914;
+      text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+      margin-bottom: 3px;
+    }
+
+    .agent-tag {
+      font-size: 11px;
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .agent-image-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px 0;
+      max-height: 60mm;
+    }
+
+    .agent-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.3));
+    }
+
+    .qr-container {
+      background: white;
+      padding: 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .qr-code {
+      width: 80px;
+      height: 80px;
+      display: block;
+    }
+
+    .card-footer {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 9px;
+      color: #666;
+    }
+
+    /* Estilos de impresión */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .cards-container {
+        gap: 5mm;
+      }
+
+      .card {
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+    }
+
+    /* Modo con líneas de corte */
+    .cut-lines .card {
+      position: relative;
+    }
+
+    .cut-lines .card::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border: 1px dashed #999;
+      pointer-events: none;
+    }
+
+    @media print {
+      .cut-lines .card::after {
+        border-color: #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print">
+    <h1>🎴 Tarjetas de Agentes - Operación Portal 27</h1>
+    <p style="color: #666; margin-bottom: 20px;">
+      Tarjetas de 95x135mm (tamaño tarjeta de visita/trading card) con imagen fullbody, nombre y QR code personalizado.
+    </p>
+
+    <div>
+      <label for="qrStyle">Estilo de QR:</label>
+      <select id="qrStyle" onchange="updateQRStyle()">
+        <option value="simple">Simple (Blanco y Negro)</option>
+        <option value="styled" selected>Con estilo (Rojo Stranger Things)</option>
+      </select>
+    </div>
+
+    <div>
+      <label>
+        <input type="checkbox" id="cutLines" onchange="toggleCutLines()">
+        Mostrar líneas de corte
+      </label>
+    </div>
+
+    <button onclick="window.print()">🖨️ Imprimir Tarjetas</button>
+    <button onclick="printInstructions()">📋 Ver Instrucciones de Impresión</button>
+  </div>
+
+  <div class="cards-container" id="cardsContainer">
+    <!-- Cards will be generated here -->
+  </div>
+
+  <script>
+    const agents = {
+      "ada": { "name": "Ada", "tag": "La estratega", "fullbody": "img/agents/ada_fullbody.png" },
+      "ainhoa": { "name": "Ainhoa", "tag": "La aventurera", "fullbody": "img/agents/ainhoa_fullbody.png" },
+      "aitana": { "name": "Aitana", "tag": "La valiente", "fullbody": "img/agents/aitana_fullbody.png" },
+      "alejandra": { "name": "Alejandra", "tag": "La líder", "fullbody": "img/agents/alejandra_fullbody.png" },
+      "claudia": { "name": "Claudia", "tag": "Super inteligente", "fullbody": "img/agents/claudia_fullbody.png" },
+      "isabel": { "name": "Isabel", "tag": "La detective", "fullbody": "img/agents/isable_fullbody.png" },
+      "jimena": { "name": "Jimena", "tag": "La curiosa", "fullbody": "img/agents/jimena_fullbody.png" },
+      "leo": { "name": "Leo", "tag": "La ingeniosa", "fullbody": "img/agents/leo_fullbody.png" },
+      "manuela": { "name": "Manuela", "tag": "Memoria fotográfica", "fullbody": "img/agents/manuela_fullbody.png" },
+      "marta": { "name": "Marta", "tag": "La creativa", "fullbody": "img/agents/marta_fullbody.png" },
+      "martina": { "name": "Martina", "tag": "La analítica", "fullbody": "img/agents/martina_fullbody.png" },
+      "noe": { "name": "Noé", "tag": "La observadora", "fullbody": "img/agents/noe_fullbody.png" },
+      "paola_cole": { "name": "Paola H", "tag": "La valiente", "fullbody": "img/agents/paola_h_fullbody.png" },
+      "paola": { "name": "Paola P", "tag": "La intuitiva", "fullbody": "img/agents/paola_p_fullbody.png" },
+      "paula": { "name": "Paula", "tag": "Súper inteligencia", "fullbody": "img/agents/paula_fullbody.png" },
+      "zoe": { "name": "Zoe", "tag": "Maestra de acertijos", "fullbody": "img/agents/zoe_fullbody.png" },
+      "alex": { "name": "Álex", "tag": "La decidida", "fullbody": "img/agents/alex_fullbody.png" }
+    };
+
+    let currentQRStyle = 'styled';
+
+    function generateCards() {
+      const container = document.getElementById('cardsContainer');
+      container.innerHTML = '';
+
+      Object.entries(agents).forEach(([id, agent]) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const qrPath = currentQRStyle === 'styled' ? 'img/qr_styled' : 'img/qr';
+
+        card.innerHTML = `
+          <div class="card-header">
+            <div class="card-title">Operación Portal 27</div>
+            <div class="agent-name">${agent.name}</div>
+            <div class="agent-tag">${agent.tag}</div>
+          </div>
+
+          <div class="agent-image-container">
+            <img src="${agent.fullbody}" alt="${agent.name}" class="agent-image"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22300%22%3E%3Crect fill=%22%23333%22 width=%22200%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2220%22%3E${agent.name}%3C/text%3E%3C/svg%3E'">
+          </div>
+
+          <div class="qr-container">
+            <img src="${qrPath}/qr_${id}.png" alt="QR ${agent.name}" class="qr-code"
+                 onerror="this.style.display='none'">
+          </div>
+
+          <div class="card-footer">
+            Escanea para jugar con ${agent.name}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function updateQRStyle() {
+      currentQRStyle = document.getElementById('qrStyle').value;
+      generateCards();
+    }
+
+    function toggleCutLines() {
+      const container = document.getElementById('cardsContainer');
+      if (document.getElementById('cutLines').checked) {
+        container.classList.add('cut-lines');
+      } else {
+        container.classList.remove('cut-lines');
+      }
+    }
+
+    function printInstructions() {
+      alert(`📋 INSTRUCCIONES DE IMPRESIÓN:
+
+1. Configuración de impresora:
+   - Papel: A4 (210 x 297 mm)
+   - Orientación: Vertical
+   - Márgenes: 10mm
+   - Calidad: Mejor/Alta
+
+2. Opciones recomendadas:
+   - Usar papel grueso (200-300 gsm)
+   - Imprimir en color
+   - Desactivar "Ajustar al área de impresión"
+
+3. Corte:
+   - Cada tarjeta mide 95 x 135 mm
+   - Activar "líneas de corte" para guías
+   - Se imprimen 2 tarjetas por página
+
+4. Tips:
+   - Imprime una página de prueba primero
+   - Plastifica las tarjetas para mayor durabilidad
+   - Puedes imprimir en cartulina directamente
+
+Total de tarjetas: 17 agentes = 9 páginas A4`);
+    }
+
+    // Generar tarjetas al cargar
+    generateCards();
+  </script>
+</body>
+</html>
