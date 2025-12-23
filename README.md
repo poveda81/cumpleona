@@ -175,6 +175,39 @@ El script carga automáticamente estas variables usando `python-dotenv`.
 
 ---
 
+## 🔲 Códigos QR para Agentes
+
+El proyecto incluye un generador de códigos QR para cada agente, facilitando el acceso directo al juego con un agente específico.
+
+### Generar códigos QR:
+
+```bash
+# QR codes simples (blanco y negro)
+uv run python scripts/generate_qr_codes.py
+
+# QR codes con estilo (color rojo y esquinas redondeadas)
+uv run python scripts/generate_qr_codes.py --output-dir web/img/qr_styled --style styled
+
+# Con tu propio dominio
+uv run python scripts/generate_qr_codes.py --base-url https://mi-dominio.com
+```
+
+Los códigos QR se generan en:
+- `web/img/qr/` - Versión simple (blanco y negro)
+- `web/img/qr_styled/` - Versión con estilo (rojo Stranger Things)
+
+Cada carpeta incluye un archivo `index.html` para visualizar todos los QR codes fácilmente.
+
+### Uso de los QR codes:
+
+1. **Imprime o muestra los códigos QR** en carteles, invitaciones, etc.
+2. **Los jugadores escanean** el código con su móvil
+3. **Se abre el juego** directamente con su agente seleccionado
+
+Cada QR apunta a: `https://cumpleona.pages.dev/?agent={agent_id}`
+
+---
+
 ## 🚀 Deployment y Analytics
 
 ### Deployment con Custom Domain

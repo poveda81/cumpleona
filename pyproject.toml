@@ -12,6 +12,7 @@ dependencies = [
   "python-dotenv",
   "requests",
   "beautifulsoup4>=4.14.3",
+  "qrcode[pil]>=7.4.2",
 ]
 
 [tool.uv]
