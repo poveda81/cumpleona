@@ -32,3 +32,8 @@ reference/agents/*
 .claude
 img_originals_backup/
 _output/
+
+# Wrangler / Cloudflare Workers
+.wrangler/
+.dev.vars
+workers/**/.wrangler/

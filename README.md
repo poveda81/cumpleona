@@ -227,19 +227,11 @@ Este proyecto está listo para deployarse en cualquier hosting estático. La opc
 
 ### Sistema de Analytics
 
-El juego incluye un sistema de analytics **privacy-friendly** que guarda eventos localmente y permite análisis detallado de cómo los usuarios juegan.
+Portal 27 incluye **dos sistemas de analytics** complementarios:
 
-**Documentación completa**: Ver [ANALYTICS.md](ANALYTICS.md)
+#### 1. Analytics Local (Privacy-First)
+Guarda eventos en el navegador del usuario para análisis offline.
 
-#### Qué se trackea:
-- 📊 Escenas visitadas
-- 🔀 Decisiones tomadas
-- 🏁 Finales alcanzados
-- ⏱️ Tiempo en cada escena
-- 🧩 Puzzles completados
-- 👥 Agentes más populares
-
-#### Uso rápido:
 ```javascript
 // En la consola del navegador (F12):
 viewAnalytics()        // Ver todos los eventos
@@ -247,25 +239,37 @@ exportAnalytics()      // Exportar a JSON
 clearAnalytics()       // Limpiar datos
 ```
 
-#### Análisis de datos:
+#### 2. Analytics Centralizado (Cloudflare Workers + D1)
+Sistema completo con dashboard en tiempo real y base de datos SQL.
+
+**Setup:**
 ```bash
-# Exportar datos desde el navegador, luego:
-python scripts/analyze_analytics.py portal27_analytics_XXXXX.json
+cd workers/analytics
+wrangler login
+wrangler d1 create portal27-analytics
+wrangler d1 execute portal27-analytics --file=schema.sql
+wrangler deploy
 ```
 
-Esto generará un reporte completo con:
-- Tasa de completación
-- Caminos más populares
-- Puntos de abandono
-- Agentes favoritos
-- Métricas de engagement
+**Dashboard:** `https://cumpleona.pages.dev/analytics-dashboard.html`
 
-#### Cloudflare Web Analytics:
-El proyecto incluye el código para Cloudflare Web Analytics (gratis, sin cookies).
+**Documentación completa**: Ver [CLOUDFLARE_ANALYTICS.md](CLOUDFLARE_ANALYTICS.md) y [ANALYTICS.md](ANALYTICS.md)
+
+#### Qué se trackea:
+- 📊 Escenas visitadas y tiempo en cada una
+- 🔀 Decisiones tomadas y caminos seguidos
+- 🏁 Finales alcanzados
+- 🧩 Puzzles completados
+- 👥 Agentes más populares
+- 🔄 Uso de botones (atrás, reset)
+- 🎯 Tasa de completación
+
+#### Cloudflare Web Analytics (Pageviews):
+Trackeo básico de visitas (complementario al sistema de analytics).
 
 1. Activa Web Analytics en tu dashboard de Cloudflare
 2. Copia tu token
-3. Reemplaza `TU_TOKEN_AQUI` en `web/index.html` (línea 13)
+3. Reemplaza el token en `web/index.html` (línea 13)
 4. Deploy y listo 🎉
 
 ---

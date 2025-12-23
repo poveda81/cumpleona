@@ -1,8 +1,44 @@
 # 📊 Sistema de Analytics - Operación Portal 27
 
+## Dos modos de Analytics
+
+Portal 27 incluye **dos sistemas de analytics** que puedes usar de forma independiente o combinada:
+
+### 1. Analytics Local (Privacy-First)
+Guarda eventos en el navegador del usuario (localStorage). Los datos se pueden exportar manualmente para análisis offline.
+
+**Ventajas:**
+- ✅ Sin cookies ni tracking externo
+- ✅ 100% privado
+- ✅ No requiere servidor
+- ✅ Funciona offline
+
+**Limitaciones:**
+- ❌ Requiere exportación manual
+- ❌ Datos dispersos (cada usuario tiene sus propios datos)
+- ❌ No hay visualización en tiempo real
+
+### 2. Analytics Centralizado (Cloudflare Workers + D1)
+Envía eventos a un Worker de Cloudflare que los almacena en una base de datos D1 para análisis centralizado en tiempo real.
+
+**Ventajas:**
+- ✅ Dashboard en tiempo real
+- ✅ Datos centralizados de todos los usuarios
+- ✅ Queries SQL personalizadas
+- ✅ Gratis hasta 100k requests/día
+- ✅ Privacy-friendly (es tu infraestructura)
+
+**Limitaciones:**
+- ❌ Requiere configuración inicial
+- ❌ Necesita cuenta de Cloudflare
+
+**📖 Ver [CLOUDFLARE_ANALYTICS.md](CLOUDFLARE_ANALYTICS.md) para configurar el sistema centralizado.**
+
+---
+
 ## ¿Qué datos se recopilan?
 
-El juego incluye un sistema de analytics **privacy-friendly** que guarda eventos localmente en el navegador del usuario. Los datos se pueden exportar para análisis.
+Ambos sistemas trackean los mismos eventos:
 
 ### Eventos trackeados:
 

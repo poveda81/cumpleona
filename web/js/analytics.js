@@ -10,7 +10,7 @@
  */
 
 const ANALYTICS_ENABLED = true; // Cambiar a false para deshabilitar
-const ANALYTICS_ENDPOINT = '/api/analytics'; // Cambiar por tu endpoint real
+const ANALYTICS_ENDPOINT = 'https://portal27-analytics.jlpoveda.workers.dev/api/analytics/track'; // Cambiar después de deploy
 
 class GameAnalytics {
   constructor() {
@@ -33,6 +33,21 @@ class GameAnalytics {
 
     const event = {
       sessionId: this.sessionId,
+      type: eventType,
+      timestamp: Date.now(),
+      sessionDuration: Date.now() - this.sessionStart,
+      agentId: data.agentId || data.agent,
+      sceneId: data.sceneId || data.fromScene,
+      choiceText: data.choiceText,
+      targetScene: data.toScene || data.nextSceneId,
+      puzzleId: data.puzzleId,
+      endingId: data.sceneId && eventType === 'ending_reached' ? data.sceneId : null,
+      metadata: data
+    };
+
+    // Guardar en localStorage como backup
+    this.saveEventLocally({
+      sessionId: this.sessionId,
       timestamp: Date.now(),
       sessionDuration: Date.now() - this.sessionStart,
       eventType,
@@ -46,28 +61,26 @@ class GameAnalytics {
         width: window.innerWidth,
         height: window.innerHeight
       }
-    };
+    });
 
-    // Guardar en localStorage como backup
-    this.saveEventLocally(event);
-
-    // Intentar enviar al servidor
-    try {
-      // Si tienes un endpoint, descomenta esto:
-      /*
-      await fetch(ANALYTICS_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(event)
-      });
-      */
-
-      // Por ahora, solo log para debugging
-      console.log('📊 Analytics Event:', eventType, data);
-    } catch (error) {
-      console.warn('Failed to send analytics:', error);
+    // Intentar enviar al servidor (solo si el endpoint está configurado)
+    if (ANALYTICS_ENDPOINT && !ANALYTICS_ENDPOINT.includes('YOUR_SUBDOMAIN')) {
+      try {
+        await fetch(ANALYTICS_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(event)
+        });
+        console.log('📊 Analytics sent:', eventType);
+      } catch (error) {
+        console.warn('Failed to send analytics:', error);
+        // No pasa nada, el evento ya está guardado localmente
+      }
+    } else {
+      // Solo log para debugging si no hay endpoint configurado
+      console.log('📊 Analytics Event (local only):', eventType, data);
     }
   }
 
