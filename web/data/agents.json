@@ -9,6 +9,7 @@
       "Recuerda detalles imposibles"
     ],
     "specialItem": "Mapa mental dibujado a mano",
+    "luckyNumber": "7",
     "generated": false,
     "fullbody": "img/agents/manuela_fullbody.png"
   },
@@ -22,6 +23,7 @@
       "Ve patrones invisibles"
     ],
     "specialItem": "Calculadora retro modificada",
+    "luckyNumber": "3",
     "generated": false,
     "fullbody": "img/agents/claudia_fullbody.png"
   },
@@ -36,7 +38,8 @@
     ],
     "specialItem": "Cubo misterioso que nunca se atasca",
     "generated": false,
-    "fullbody": "img/agents/zoe_fullbody.png"
+    "fullbody": "img/agents/zoe_fullbody.png",
+    "luckyNumber": "9"
   },
   "paula": {
     "name": "Paula",
@@ -49,7 +52,8 @@
     ],
     "specialItem": "Cubo de rubik que emite sonidos",
     "generated": false,
-    "fullbody": "img/agents/paula_fullbody.png"
+    "fullbody": "img/agents/paula_fullbody.png",
+    "luckyNumber": "5"
   },
   "marta": {
     "name": "Marta",
@@ -62,7 +66,8 @@
     ],
     "specialItem": "Pulsera roja que le da coraje",
     "generated": false,
-    "fullbody": "img/agents/marta_fullbody.png"
+    "fullbody": "img/agents/marta_fullbody.png",
+    "luckyNumber": "11"
   },
   "aitana": {
     "name": "Aitana",
@@ -75,7 +80,8 @@
     ],
     "specialItem": "Brújula que apunta a lo importante",
     "generated": false,
-    "fullbody": "img/agents/aitana_fullbody.png"
+    "fullbody": "img/agents/aitana_fullbody.png",
+    "luckyNumber": "13"
   },
   "alejandra": {
     "name": "Alejandra",
@@ -88,7 +94,8 @@
     ],
     "specialItem": "Pincel que revela detalles ocultos",
     "generated": false,
-    "fullbody": "img/agents/alejandra_fullbody.png"
+    "fullbody": "img/agents/alejandra_fullbody.png",
+    "luckyNumber": "2"
   },
   "ada": {
     "name": "Ada",
@@ -101,7 +108,8 @@
     ],
     "specialItem": "Diccionario mágico multilenguaje",
     "generated": false,
-    "fullbody": "img/agents/ada_fullbody.png"
+    "fullbody": "img/agents/ada_fullbody.png",
+    "luckyNumber": "8"
   },
   "jimena": {
     "name": "Jimena",
@@ -114,7 +122,8 @@
     ],
     "specialItem": "Lupa con luz azul",
     "generated": false,
-    "fullbody": "img/agents/jimena_fullbody.png"
+    "fullbody": "img/agents/jimena_fullbody.png",
+    "luckyNumber": "4"
   },
   "leo": {
     "name": "Leo",
@@ -127,7 +136,8 @@
     ],
     "specialItem": "Cajita con objetos rarísimos",
     "generated": false,
-    "fullbody": "img/agents/leo_fullbody.png"
+    "fullbody": "img/agents/leo_fullbody.png",
+    "luckyNumber": "6"
   },
   "isabel": {
     "name": "Isabel",
@@ -140,7 +150,8 @@
     ],
     "specialItem": "Mini-mapa plegable indestructible",
     "generated": false,
-    "fullbody": "img/agents/isabel_fullbody.png"
+    "fullbody": "img/agents/isabel_fullbody.png",
+    "luckyNumber": "10"
   },
   "ainhoa": {
     "name": "Ainhoa",
@@ -153,7 +164,8 @@
     ],
     "specialItem": "Cuaderno de estrategias milenarias",
     "generated": false,
-    "fullbody": "img/agents/ainhoa_fullbody.png"
+    "fullbody": "img/agents/ainhoa_fullbody.png",
+    "luckyNumber": "12"
   },
   "martina": {
     "name": "Martina",
@@ -166,7 +178,8 @@
     ],
     "specialItem": "Piedra suave que transmite serenidad",
     "generated": false,
-    "fullbody": "img/agents/martina_fullbody.png"
+    "fullbody": "img/agents/martina_fullbody.png",
+    "luckyNumber": "1"
   },
   "paola_cole": {
     "name": "Paola H",
@@ -179,7 +192,8 @@
     ],
     "specialItem": "Linterna de luz violeta",
     "generated": false,
-    "fullbody": "img/agents/paola_cole_fullbody.png"
+    "fullbody": "img/agents/paola_cole_fullbody.png",
+    "luckyNumber": "14"
   },
   "paola": {
     "name": "Paola P",
@@ -192,7 +206,8 @@
     ],
     "specialItem": "Cordones rojos que aumentan su velocidad",
     "generated": false,
-    "fullbody": "img/agents/paola_fullbody.png"
+    "fullbody": "img/agents/paola_fullbody.png",
+    "luckyNumber": "15"
   },
   "alex": {
     "name": "Álex",
@@ -205,7 +220,8 @@
     ],
     "specialItem": "Caña de pescar legendaria",
     "generated": false,
-    "fullbody": "img/agents/alex_fullbody.png"
+    "fullbody": "img/agents/alex_fullbody.png",
+    "luckyNumber": "16"
   },
   "noe": {
     "name": "Noé",
@@ -218,6 +234,7 @@
     ],
     "specialItem": "Balón que nunca se pincha",
     "generated": false,
-    "fullbody": "img/agents/noe_fullbody.png"
+    "fullbody": "img/agents/noe_fullbody.png",
+    "luckyNumber": "17"
   }
 }
