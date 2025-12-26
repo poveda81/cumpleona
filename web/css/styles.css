@@ -60,7 +60,7 @@ body {
   border-radius: 8px;
   border: 1px solid #3cff3c;
   background: #000;
-  display: inline-flex;
+  display: none; /* Ocultar avatar - no todas las niñas tienen imagen */
   align-items: center;
   justify-content: center;
   padding: 3px;

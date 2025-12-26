@@ -346,9 +346,8 @@ function getCurrentAgent() {
   if (idFromUrl && agents[idFromUrl]) {
     return agents[idFromUrl];
   }
-  if (agents.generic) return agents.generic;
-  const [firstAgent] = Object.values(agents);
-  return firstAgent || null;
+  // Si no hay agente en la URL, retornar null para mostrar pantalla de acceso restringido
+  return null;
 }
 
 function getCurrentAgentId() {
@@ -357,9 +356,8 @@ function getCurrentAgentId() {
   if (idFromUrl && agents[idFromUrl]) {
     return idFromUrl;
   }
-  if (agents.generic) return "generic";
-  const [firstAgentId] = Object.keys(agents);
-  return firstAgentId || null;
+  // Si no hay agente en la URL, retornar null
+  return null;
 }
 
 function renderAgent(agent) {
@@ -528,6 +526,31 @@ function renderScene(id) {
   updateBackButtonState();
 }
 
+function showRestrictedAccessScreen() {
+  // Ocultar todo el contenido del juego
+  document.querySelector('.frame').style.display = 'none';
+
+  // Modificar la landing screen para mostrar mensaje de acceso restringido
+  landingScreenEl.style.display = 'flex';
+  const landingPanel = landingScreenEl.querySelector('.landing-panel');
+
+  landingPanel.innerHTML = `
+    <div style="text-align: center; padding: 40px 20px;">
+      <div style="font-size: 80px; margin-bottom: 20px; filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.8));">
+        🔒
+      </div>
+      <div style="font-size: 28px; font-weight: bold; color: #e50914; margin-bottom: 16px; text-shadow: 0 0 10px rgba(229, 9, 20, 0.8);">
+        ACCESO RESTRINGIDO
+      </div>
+      <div style="font-size: 16px; color: #d4ffd4; line-height: 1.6; max-width: 500px; margin: 0 auto;">
+        Has llegado a un lugar secreto del Laboratorio Hawkins.<br><br>
+        Solo los mejores agentes con credenciales válidas pueden acceder a esta misión.<br><br>
+        <span style="color: #9df89d; font-style: italic;">Código de error: PORTAL_27_UNAUTHORIZED</span>
+      </div>
+    </div>
+  `;
+}
+
 async function init() {
   try {
     const [agentsData, storyData, puzzlesData] = await Promise.all([
@@ -542,6 +565,12 @@ async function init() {
     const urlScene = new URLSearchParams(window.location.search).get("scene");
     initialSceneId = urlScene && scenes[urlScene] ? urlScene : startSceneId;
     currentAgent = getCurrentAgent();
+
+    // Si no hay agente, mostrar pantalla de acceso restringido
+    if (!currentAgent) {
+      showRestrictedAccessScreen();
+      return;
+    }
 
     // Asignar amigos aleatorios
     getRandomFriends();
