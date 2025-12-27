@@ -361,6 +361,7 @@ body {
 }
 
 .agent-modal__avatar {
+  display: none; /* Oculto - no se usa */
   width: 70px;
   height: 70px;
   border-radius: 12px;
