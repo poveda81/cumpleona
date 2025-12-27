@@ -252,6 +252,12 @@ body {
   color: #ffd4d4;
 }
 
+.agent-lucky-number {
+  font-size: 0.7rem;
+  color: #ffd4d4;
+  margin-top: 4px;
+}
+
 .endings-progress {
   margin-top: 12px;
   padding-top: 12px;

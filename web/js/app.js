@@ -375,6 +375,14 @@ function renderAgent(agent) {
     ? "Objeto especial: " + agent.specialItem
     : "";
 
+  // Mostrar número de la suerte
+  const luckyNumberEl = document.getElementById("agentModalLuckyNumber");
+  if (luckyNumberEl) {
+    luckyNumberEl.textContent = agent.luckyNumber
+      ? "Número de la suerte: " + agent.luckyNumber
+      : "";
+  }
+
   // Mostrar progreso de finales
   const progress = getEndingsProgress();
   const progressContainer = document.getElementById("agentEndingsProgress");
