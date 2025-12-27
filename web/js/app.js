@@ -11,7 +11,6 @@ const sceneImageEl = document.getElementById("sceneImage");
 const sceneDateEl = document.getElementById("sceneDate");
 const scenePlaceEl = document.getElementById("scenePlace");
 
-const agentAvatarThumbEl = document.getElementById("agentAvatarThumb");
 const agentModalEl = document.getElementById("agentModal");
 const agentModalBackdropEl = document.getElementById("agentModalBackdrop");
 const agentModalCloseEl = document.getElementById("agentModalClose");
@@ -404,10 +403,8 @@ function renderAgent(agent) {
   }
 
   if (agent.avatar) {
-    agentAvatarThumbEl.src = agent.avatar;
     agentModalAvatarEl.src = agent.avatar;
   } else {
-    agentAvatarThumbEl.src = "";
     agentModalAvatarEl.src = "";
   }
 

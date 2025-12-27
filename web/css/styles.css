@@ -60,13 +60,15 @@ body {
   border-radius: 8px;
   border: 1px solid #3cff3c;
   background: #000;
-  display: none; /* Ocultar avatar - no todas las niñas tienen imagen */
+  display: inline-flex; /* Mostrar como icono de usuario */
   align-items: center;
   justify-content: center;
   padding: 3px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(60, 255, 60, 0.35);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  font-size: 24px;
+  color: #3cff3c;
 }
 
 .agent-avatar-btn:hover {
